@@ -1,0 +1,21 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Acknowledgements</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m50977</md:content-id>
+  <md:title>Acknowledgements</md:title>
+  <md:abstract/>
+  <md:uuid>2192e014-e81b-43ff-9c35-83ab997a2754</md:uuid>
+</metadata>
+
+<content>
+  <para id="eip-255">I would like to express my appreciation to all of my students in the Power and Process Engineering program between the academic years 2011-12 and 2015-16 for their feedback and understanding that this book is a work in-progress.</para><para id="eip-683">Special thanks go to those who supported the book along the way:
+<newline/></para><list id="eip-639"><item>Dr. David Porter<footnote id="Porter">
+<link url=" http://commons.bcit.ca/update/2015/05/bcit-welcomes-new-associate-vice-president-education-support-and-innovation/" window="new"> BCIT, Associate Vice President, Education Support and Innovation</link>
+</footnote>, the founder of BCIT OER Group in 2015 who constantly provides me with the latent energy to continue working on this book,</item>
+<item>Mr. Alex Podut with whom I co-taught MATLAB in 2015. His input was very valuable,</item>
+<item>Dr. Sanja Boskovic who promoted this book at management levels in 2012,</item>
+<item>Mr. Sergiy Yatlo who gave feedback to the first iterations of the book in early 2011.</item>
+</list></content>
+
+</document>

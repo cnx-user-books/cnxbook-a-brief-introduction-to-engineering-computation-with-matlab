@@ -1,0 +1,185 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Interpolation</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41455</md:content-id>
+  <md:title>Interpolation</md:title>
+  <md:abstract>Interpolation with MATLAB.</md:abstract>
+  <md:uuid>542ed12f-a884-484f-b912-1ae53bcf19b0</md:uuid>
+</metadata>
+
+<content>
+  <para id="eip-306"><media id="LinearInterpolation" alt="LinearInterpolation">
+       
+  <image mime-type="image/jpg" src="../../media/LinearInterpolation.jpg"/>
+         
+</media>
+</para><para id="delete_me"><!-- Insert module text here -->
+Linear interpolation is one of the most common techniques for estimating values between two given data points. For example, when using steam tables, we often have to carry out interpolations. With this technique, we assume that the function between the two points is linear. MATLAB has a built-in interpolation function.
+  </para><section id="eip-594"><title>The <code>interp1</code> Function</title><para id="eip-324">Give an x-y table, <code>y_new = interp1(x,y,x_new)</code> interpolates to find y_new. Consider the following examples:</para><example id="eip-554"><para id="eip-163">To demonstrate how the <code>interp1</code> function works, let us create an x-y table with the following commands;
+<code id="eip-id1169040596727" display="block">
+x = 0:5;
+y = [0,20,60,68,77,110];
+</code>
+ 
+To tabulate the output, we can use 
+
+<code id="eip-id1168915582295" display="block">
+[x',y']
+</code>
+
+The result is
+
+<code id="eip-id1168921624000" display="block">
+ans =
+
+     0     0
+     1    20
+     2    60
+     3    68
+     4    77
+     5   110
+</code>
+Suppose we want to find the corresponding value for 1.5 or interpolate for 1.5. Using <code>y_new = interp1(x,Y,x_new)</code> syntax, let us type in:
+
+<code id="eip-id1168257252648" display="block">
+y_new=interp1(x,y,1.5)
+
+y_new =
+
+    40
+</code> 
+
+</para>
+</example><example id="eip-381"><para id="eip-412">The table we created above has only 6 elements in it and suppose we need a more detailed table. In order to do that, instead of a single new x value, we can define an array of new x values, the <code>interp1</code> function returns an array of new y values:
+<code id="eip-id1168204797582" display="block">
+new_x = 0:0.2:5;
+new_y = interp1(x,y,new_x);
+</code>
+Let's display this table
+<code id="eip-id1168209284863" display="block">
+[new_x',new_y']
+</code>
+The result is
+<code id="eip-id1168203331782" display="block">
+ans =
+
+         0         0
+    0.2000    4.0000
+    0.4000    8.0000
+    0.6000   12.0000
+    0.8000   16.0000
+    1.0000   20.0000
+    1.2000   28.0000
+    1.4000   36.0000
+    1.6000   44.0000
+    1.8000   52.0000
+    2.0000   60.0000
+    2.2000   61.6000
+    2.4000   63.2000
+    2.6000   64.8000
+    2.8000   66.4000
+    3.0000   68.0000
+    3.2000   69.8000
+    3.4000   71.6000
+    3.6000   73.4000
+    3.8000   75.2000
+    4.0000   77.0000
+    4.2000   83.6000
+    4.4000   90.2000
+    4.6000   96.8000
+    4.8000  103.4000
+    5.0000  110.0000
+</code>
+</para>
+</example><example id="eip-833"><para id="eip-73">Using the table below, find the internal energy of steam at 215 ˚C and the temperature if the internal energy is 2600 kJ/kg (use linear interpolation).
+</para><table id="eip-320" summary="An extract from Steam Tables">
+<tgroup cols="2"><thead>
+      <row>
+        <entry>Temperature [C]</entry>
+        <entry>Internal Energy [kJ/kg]</entry>
+      </row>
+</thead>
+
+<tbody>
+  <row>
+    <entry>100</entry>
+    <entry>2506.7</entry>
+  </row>
+  <row>
+    <entry>150</entry>
+    <entry>2582.8</entry>
+  </row>
+  <row>
+    <entry>200</entry>
+    <entry>2658.1</entry>
+  </row>
+  <row>
+    <entry>250</entry>
+    <entry>2733.7</entry>
+  </row>
+  <row>
+    <entry>300</entry>
+    <entry>2810.4</entry>
+  </row>
+  <row>
+    <entry>400</entry>
+    <entry>2967.9</entry>
+  </row>
+  <row>
+    <entry>500</entry>
+    <entry>3131.6</entry>
+  </row>
+
+</tbody>
+
+                        
+
+</tgroup><caption>An extract from Steam Tables</caption>
+</table><para id="eip-683">First let us enter the temperature and energy values
+<code id="eip-id1170196378387" display="block">temperature = [100, 150, 200, 250, 300, 400, 500];
+energy = [2506.7, 2582.8, 2658.1, 2733.7, 2810.4, 2967.9, 3131.6];
+[temperature',energy']
+</code>
+returns
+<code id="eip-id1428818" display="block">
+ans =
+
+  1.0e+003 *
+
+    0.1000    2.5067
+    0.1500    2.5828
+    0.2000    2.6581
+    0.2500    2.7337
+    0.3000    2.8104
+    0.4000    2.9679
+    0.5000    3.1316
+</code>
+issue the following for the first question:
+<code id="eip-id1170219367992" display="block">
+ new_energy = interp1(temperature,energy,215)
+</code>
+returns
+<code id="eip-id1170200199894" display="block">
+new_energy =
+
+  2.6808e+003
+</code>
+
+Now, type in the following for the second question:
+<code id="eip-id1164706935677" display="block">
+new_temperature = interp1(energy,temperature,2600)
+</code>
+returns
+<code id="eip-id1164705303018" display="block">
+new_temperature =
+
+  161.4210
+</code>
+</para>
+</example></section><section id="eip-193"><title>Summary of Key Points</title><list id="eip-257" list-type="enumerated" number-style="arabic"><item>Linear interpolation is a technique for estimating values between two given data points,</item>
+<item>Problems involving steam tables often require interpolated data,</item>
+<item>MATLAB has a built-in interpolation function.</item></list></section>
+</content>
+
+</document>

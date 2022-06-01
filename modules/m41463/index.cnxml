@@ -1,0 +1,81 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Problem Set</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41463</md:content-id>
+  <md:title>Problem Set</md:title>
+  <md:abstract>Problem Set for What is MATLAB?</md:abstract>
+  <md:uuid>3120fd4a-bf9b-40ab-a358-db803d1ea4d0</md:uuid>
+</metadata>
+
+<content>
+  <exercise id="eip-718"><problem id="eip-862">
+  <para id="eip-683">Learn about the following terms using <code>help</code> command:
+<list id="eip-id1165466452613" list-type="enumerated" number-style="arabic"><item>workspace</item>
+<item>plot</item>
+<item>clear</item>
+<item>format</item>
+<item>roots</item></list>
+
+
+  </para>
+</problem>
+
+<solution id="eip-853">
+  <para id="eip-418"><list id="eip-id1165466452613_1" list-type="enumerated" number-style="arabic">
+<item><code id="eip-id1170548028612_1" display="block">&gt;&gt; help workspace
+ WORKSPACE Open Workspace browser to manage workspace
+    WORKSPACE Opens the Workspace browser with a view of the variables
+    in the current Workspace.  Displayed variables may be viewed,
+    manipulated, saved, and cleared.
+ 
+    See also whos, openvar, save.
+
+    Reference page in Help browser
+       doc workspace
+
+&gt;&gt; 
+<newline/></code></item>
+<item><code id="eip-id1170548028612_2" display="block">&gt;&gt; help plot
+ PLOT   Linear plot. 
+    PLOT(X,Y) plots vector Y versus vector X. If X or Y is a matrix,
+    then the vector is plotted versus the rows or columns of the matrix,
+    whichever line up.  If X is a scalar and Y is a vector, disconnected
+    line objects are created and plotted as discrete points vertically at
+    X. ..........
+<newline/></code></item>
+<item><code id="eip-id1170548028612_3" display="block">&gt;&gt; help clear
+ CLEAR  Clear variables and functions from memory.
+    CLEAR removes all variables from the workspace.
+    CLEAR VARIABLES does the same thing.
+    CLEAR GLOBAL removes all global variables.
+    CLEAR FUNCTIONS removes all compiled M- and MEX-functions.
+ 
+    CLEAR ALL removes all variables, globals, functions and MEX links.
+    CLEAR ALL at the command prompt also removes the Java packages import
+    list.
+......
+<newline/></code></item>
+
+<item><code id="eip-id1170548028612_4" display="block">&gt;&gt; help format
+ FORMAT Set output format.
+    FORMAT with no inputs sets the output format to the default appropriate
+    for the class of the variable. For float variables, the default is
+    FORMAT SHORT.
+......
+<newline/></code></item>
+<item><code id="eip-id1170548028612_5" display="block">&gt;&gt; help roots
+ ROOTS  Find polynomial roots.
+    ROOTS(C) computes the roots of the polynomial whose coefficients
+    are the elements of the vector C. If C has N+1 components,
+    the polynomial is C(1)*X^N + ... + C(N)*X + C(N+1).
+......
+<newline/></code></item>
+</list>
+
+
+  </para>
+</solution>
+</exercise></content>
+
+</document>

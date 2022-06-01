@@ -1,0 +1,1088 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>Essentials</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41409</md:content-id>
+  <md:title>Essentials</md:title>
+  <md:abstract>Essential skills to use MATLAB effectively.</md:abstract>
+  <md:uuid>23c0d0b9-cf3b-4e4e-bf14-474de8308165</md:uuid>
+</metadata>
+
+<content>
+  <para id="eip-689"><media id="MATLABEssentials" alt="MATLAB Essentials">
+       
+  <image mime-type="image/png" src="../../media/MATLABEssentials.jpg"/>
+         
+</media>
+</para><para id="delete_me">Learning a new skill, especially a computer program in this case, can be overwhelming. However, if we build on what we already know, the process can be handled rather effectively. In the preceding chapter we learned about MATLAB Graphical User Interface (GUI) and how to get help. Knowing the GUI, we will use basic math skills in MATLAB to solve linear equations and find roots of polynomials in this chapter.</para><section id="eip-0"><title>Basic Computation</title><section id="eip-260"><title>Mathematical Operators</title><para id="eip-479">The evaluation of expressions is accomplished with arithmetic operators as we use them in scientific calculators. Note the addtional operators shown in the table below: 
+</para><table id="eip-552" summary="Operators">
+<tgroup cols="3"><thead>
+      <row>
+        <entry>Operator</entry>
+        <entry>Name</entry>
+        <entry>Description</entry>
+      </row>
+</thead>
+<tbody>
+  <row>
+    <entry>+</entry>
+    <entry>Plus</entry>
+    <entry>Addition</entry>
+  </row>
+  <row>
+    <entry>-</entry>
+    <entry>Minus</entry>
+    <entry>Subtraction</entry>
+  </row>
+  <row>
+    <entry>*</entry>
+    <entry>Asterisk</entry>
+    <entry>Multiplication</entry>
+  </row>
+  <row>
+    <entry>/</entry>
+    <entry>Forward Slash</entry>
+    <entry>Division</entry>
+  </row>
+<row>
+    <entry>\</entry>
+    <entry>Back Slash</entry>
+    <entry>Left Matrix Division</entry>
+  </row>
+  <row>
+    <entry>^</entry>
+    <entry>Caret</entry>
+    <entry>Power</entry>
+  </row>
+  <row>
+    <entry>.*</entry>
+    <entry>Dot Asterisk</entry>
+    <entry>Array multiplication (element-wise)</entry>
+  </row>
+  <row>
+    <entry>./</entry>
+    <entry>Dot Slash</entry>
+    <entry>Right array divide (element-wise)</entry>
+  </row>
+  <row>
+    <entry>.\</entry>
+    <entry>Dot Back Slash</entry>
+    <entry>Left array divide (element-wise)</entry>
+  </row>
+  <row>
+    <entry>.^</entry>
+    <entry>Dot Caret</entry>
+    <entry>Array power (element-wise)</entry>
+  </row>
+</tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tgroup><caption>Operators</caption>
+</table><note id="eip-583">The backslash operator is used to solve linear systems of equations, see <link target-id="eip-482"/>.</note><note id="eip-642" type="important">Matrix is a rectangular array of numbers and formed by rows and columns. For example
+
+<m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>A</m:ci>
+    <m:matrix>
+      <m:matrixrow>
+        <m:cn>1</m:cn>
+        <m:cn>2</m:cn>
+        <m:cn>3</m:cn>
+        <m:cn>4</m:cn>
+      </m:matrixrow>
+      <m:matrixrow>
+        <m:cn>5</m:cn>
+        <m:cn>6</m:cn>
+        <m:cn>7</m:cn>
+        <m:cn>8</m:cn>
+      </m:matrixrow>
+      <m:matrixrow>
+        <m:cn>9</m:cn>
+        <m:cn>10</m:cn>
+        <m:cn>11</m:cn>
+        <m:cn>12</m:cn>
+      </m:matrixrow>
+      <m:matrixrow>
+        <m:cn>13</m:cn>
+        <m:cn>14</m:cn>
+        <m:cn>15</m:cn>
+        <m:cn>16</m:cn>
+      </m:matrixrow>
+    </m:matrix>
+  </m:apply>
+</m:math>. In this example A consists of 4 rows and 4 columns and therefore is a 4x4 matrix. (see <link url="http://en.wikipedia.org/wiki/Matrix_%28mathematics%29" window="new"> Wikipedia</link>).</note><note id="eip-817" type="important">Row vector is a special matrix that contains only one row. In other words, a row vector is a 1xn matrix where n is the number of elements in the row vector. <m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>B</m:ci>
+    <m:matrix>
+      <m:matrixrow>
+        <m:cn>1</m:cn>
+        <m:cn>2</m:cn>
+        <m:cn>3</m:cn>
+        <m:cn>4</m:cn>
+        <m:cn>5</m:cn>
+      </m:matrixrow>
+    </m:matrix>
+  </m:apply>
+</m:math></note><note id="eip-729" type="important">Column vector is also a special matrix. As the term implies, it contains only one column. A column vector is an nx1 matrix where n is the number of elements in the column vector. <m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>C</m:ci>
+    <m:matrix>
+      <m:matrixrow>
+        <m:cn>1</m:cn>
+      </m:matrixrow>
+      <m:matrixrow>
+        <m:cn>2</m:cn>
+      </m:matrixrow>
+      <m:matrixrow>
+        <m:cn>3</m:cn>
+      </m:matrixrow>
+      <m:matrixrow>
+        <m:cn>4</m:cn>
+      </m:matrixrow>
+      <m:matrixrow>
+        <m:cn>5</m:cn>
+      </m:matrixrow>
+    </m:matrix>
+  </m:apply>
+</m:math> </note><note id="eip-265">Array operations refer to element-wise calculations on the arrays, for example if x is an a by b matrix and y is a c by d matrix then x.*y can be performed only if a=c and b=d. Consider the following example, x consists of 2 rows and 3 columns and therefore it is a 2x3 matrix. Likewise, y has 2 rows and 3 columns and an array operation is possible.
+
+<m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>x</m:ci>
+    <m:matrix>
+      <m:matrixrow>
+        <m:cn>1</m:cn>
+        <m:cn>2</m:cn>
+        <m:cn>3</m:cn>
+      </m:matrixrow>
+      <m:matrixrow>
+        <m:cn>4</m:cn>
+        <m:cn>5</m:cn>
+        <m:cn>6</m:cn>
+      </m:matrixrow>
+      
+    </m:matrix>
+  </m:apply>
+</m:math>
+
+and 
+
+<m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:matrix>
+      <m:matrixrow>
+        <m:cn>10</m:cn>
+        <m:cn>20</m:cn>
+        <m:cn>30</m:cn>
+      </m:matrixrow>
+      <m:matrixrow>
+        <m:cn>40</m:cn>
+        <m:cn>50</m:cn>
+        <m:cn>60</m:cn>
+      </m:matrixrow>
+      
+    </m:matrix>
+  </m:apply>
+</m:math>
+
+then 
+
+<m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>x.*y</m:ci>
+    <m:matrix>
+      <m:matrixrow>
+        <m:cn>10</m:cn>
+        <m:cn>40</m:cn>
+        <m:cn>90</m:cn>
+      </m:matrixrow>
+      <m:matrixrow>
+        <m:cn>160</m:cn>
+        <m:cn>250</m:cn>
+        <m:cn>360</m:cn>
+      </m:matrixrow>
+      
+    </m:matrix>
+  </m:apply>
+</m:math></note><example id="eip-937"><para id="eip-751">The following figure illustrates a typical calculation in the Command Window.</para><para id="eip-939">
+<figure id="Example5"><media id="Example_5a" alt="Example">
+       
+  <image mime-type="image/png" src="../../media/example5.PNG"/>
+         
+</media>
+  
+<caption>Basic arithmetic in the command window.
+  </caption></figure>
+</para>
+</example></section><section id="eip-565"><title>Operator Precedence</title><para id="eip-605">MATLAB allows us to build mathematical expressions with any combination of arithmetic operators. The order of operations are set by precedence levels in which MATLAB evaluates an expression from left to right. The precedence rules for MATLAB operators are shown in the list below from the highest precedence level to the lowest.
+ 
+</para><list id="eip-92" list-type="enumerated" number-style="arabic"><item>Parentheses ()</item>
+<item>Power (^)</item>
+<item>Multiplication (*), right division (/), left division (\)</item>
+<item>Addition (+), subtraction (-)</item></list></section></section>
+
+<section id="eip-966"><title>Mathematical Functions</title><para id="eip-494">MATLAB has all of the usual mathematical functions found on a scientific calculator including square root, logarithm, and sine. </para><note id="eip-372" type="important">Typing <code>pi</code> returns the number 3.1416. To find the sine of pi, type in <code>sin(pi)</code> and press enter.</note><note id="eip-686" type="important">The arguments in trigonometric functions are in radians. Multiply degrees by pi/180 to get radians. For example, to calculate sin(90), type in <code>sin(90*pi/180)</code>.</note><note id="eip-320" type="warning">In MATLAB <code>log</code> returns the natural logarithm of the value. To find the ln of 10, type in log(10) and press enter, (ans = 2.3026).</note><note id="eip-105" type="warning">MATLAB accepts <code>log10</code> for common (base 10) logarithm. To find the log of 10, type in log10(10) and press enter, (ans = 1).</note><para id="eip-868">Practice the following examples to familiarize yourself with the common mathematical functions. Be sure to read the relevant <code>help</code> and <code>doc</code> pages for functions that are not self explanatory. </para><example id="eip-854"><para id="eip-135">Calculate the following quantities:
+</para><list id="eip-930" list-type="enumerated" number-style="arabic"><item><m:math display="display">
+  <m:apply>
+    <m:divide/>
+    <m:apply>
+      <m:power/>
+      <m:cn>2</m:cn>
+      <m:cn>3</m:cn>
+    </m:apply>
+    <m:apply>
+      <m:minus/>
+      <m:apply>
+        <m:power/>
+        <m:cn>3</m:cn>
+        <m:cn>2</m:cn>
+      </m:apply>
+      <m:cn>1</m:cn>
+    </m:apply>
+  </m:apply>
+</m:math>,</item>
+
+<item><m:math>
+  <m:apply>
+    <m:minus/>
+    <m:apply>
+      <m:power/>
+      <m:cn>5</m:cn>
+      <m:cn>0.5</m:cn>
+    </m:apply>
+    <m:cn>1</m:cn>
+  </m:apply>
+</m:math></item>
+
+<item><m:math>
+  <m:apply>
+    <m:times/>
+    <m:apply>
+      <m:divide/>
+      <m:pi/>
+      <m:cn>4</m:cn>
+    </m:apply>
+    <m:apply>
+      <m:power/>
+      <m:ci>d</m:ci>
+      <m:cn>2</m:cn>
+    </m:apply>
+  </m:apply>
+</m:math> for d=2</item>
+</list><para id="eip-359">MATLAB inputs and outputs are as follows:</para><list id="eip-619" list-type="enumerated" number-style="arabic"><item><m:math display="display">
+  <m:apply>
+    <m:divide/>
+    <m:apply>
+      <m:power/>
+      <m:cn>2</m:cn>
+      <m:cn>3</m:cn>
+    </m:apply>
+    <m:apply>
+      <m:minus/>
+      <m:apply>
+        <m:power/>
+        <m:cn>3</m:cn>
+        <m:cn>2</m:cn>
+      </m:apply>
+      <m:cn>1</m:cn>
+    </m:apply>
+  </m:apply>
+</m:math> is entered by typing <code> 2^3/(3^2-1)</code> (ans = 1)</item>
+<item><m:math>
+  <m:apply>
+    <m:minus/>
+    <m:apply>
+      <m:power/>
+      <m:cn>5</m:cn>
+      <m:cn>0.5</m:cn>
+    </m:apply>
+    <m:cn>1</m:cn>
+  </m:apply>
+</m:math>
+
+is entered by typing <code>sqrt(5)-1</code> (ans = 1.2361)</item>
+<item><m:math>
+  <m:apply>
+    <m:times/>
+    <m:apply>
+      <m:divide/>
+      <m:pi/>
+      <m:cn>4</m:cn>
+    </m:apply>
+    <m:apply>
+      <m:power/>
+      <m:ci>d</m:ci>
+      <m:cn>2</m:cn>
+    </m:apply>
+  </m:apply>
+</m:math> for d=2 is entered by typing <code>pi/4*2^2</code> (ans = 3.1416)</item></list>
+</example><example id="eip-835"><para id="eip-575">Calculate the following exponential and logarithmic quantities:
+</para><list id="eip-825" list-type="enumerated" number-style="arabic"><item><m:math>
+  <m:apply>
+    <m:exp/>
+    <m:cn>2</m:cn>
+  </m:apply>
+</m:math></item>
+<item><m:math>
+  <m:apply>
+    <m:ln/>
+    <m:apply>
+      <m:power/>
+      <m:cn>5</m:cn>
+      <m:cn>10</m:cn>
+    </m:apply>
+  </m:apply>
+</m:math></item>
+<item><m:math>
+  <m:apply>
+    <m:log/>
+    <m:apply>
+      <m:power/>
+      <m:cn>10</m:cn>
+      <m:cn>5</m:cn>
+    </m:apply>
+  </m:apply>
+</m:math></item></list><para id="eip-652">MATLAB inputs and outputs are as follows:</para><list id="eip-366" list-type="enumerated" number-style="arabic"><item><code>exp(2)</code>
+
+(ans =
+
+    7.3891)</item>
+<item><code>log((5^10))</code>
+
+(ans =
+
+   16.0944)</item>
+<item><code>log10(10^5)</code>
+
+(ans =
+
+     5)</item></list>
+</example><example id="eip-812"><para id="eip-68">
+Calculate the following trigonometric quantities:
+</para><list id="eip-54" list-type="enumerated" number-style="arabic"><item><m:math>
+  <m:apply>
+    <m:cos/>
+    <m:apply>
+      <m:divide/>
+      <m:pi/>
+      <m:cn>6</m:cn>
+    </m:apply>
+  </m:apply>
+</m:math></item>
+<item><m:math>
+  <m:apply>
+    <m:tan/>
+    <m:cn>45</m:cn>
+  </m:apply>
+</m:math></item>
+<item><m:math>
+  <m:apply>
+    <m:plus/>
+    <m:apply>
+      <m:sin/>
+      <m:pi/>
+    </m:apply>
+    <m:apply>
+      <m:cos/>
+      <m:cn>45</m:cn>
+    </m:apply>
+  </m:apply>
+</m:math></item></list><para id="eip-549">MATLAB inputs and outputs are as follows:</para><list id="eip-396" list-type="enumerated" number-style="arabic"><item><code>cos(pi/6)</code> (ans =
+
+    0.8660)</item>
+<item><code>tan(45*pi/180)</code> (ans =
+
+    1.0000)</item>
+<item><code>sin(pi)+cos(45*pi/180)</code> (ans =
+
+    0.7071)</item></list>
+</example>
+
+</section>
+
+
+<section id="eip-534"><title>The <code>format</code> Function</title><para id="eip-541">The <code>format</code> function is used to control how the numeric values are displayed in the Command Window. The <code>short</code> format is set by default and the numerical results are displayed with 4 digits after the decimal point (see the examples above). The <code>long</code> format produces 15 digits after the decimal point.
+</para><example id="eip-600"><para id="eip-604">Calculate <m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>θ</m:ci>
+    <m:apply>
+      <m:tan/>
+      <m:apply>
+        <m:divide/>
+        <m:pi/>
+        <m:cn>3</m:cn>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math> and display results in <code>short</code> and <code>long</code> formats.
+</para><para id="eip-779">The <code>short</code> format is set by default:</para><code id="eip-732" display="block">&gt;&gt; theta=tan(pi/3)
+
+theta =
+
+    1.7321
+
+&gt;&gt; </code><para id="eip-691">And the <code>long</code> format is turned on by typing <code>format long</code>:</para><code id="eip-983" display="block">&gt;&gt; theta=tan(pi/3)
+
+theta =
+
+    1.7321
+
+&gt;&gt; format long
+&gt;&gt; theta
+
+theta =
+
+   1.732050807568877</code></example></section>
+
+<section id="eip-986"><title>Variables</title><para id="eip-913">In MATLAB, a named value is called a variable. MATLAB comes with several predefined variables. For example, the name pi refers to the mathematical quantity π, which is approximately <code>pi ans = 3.1416</code>
+</para><note id="eip-540" type="warning">MATLAB is case-sensitive, which means it distinguishes between upper- and lowercase letters (e.g. data, DATA and DaTa are three different variables). Command and function names are also case-sensitive. Please note that when you use the command-line help, function names are given in upper-case letters (e.g., CLEAR) only to emphasize them. Do not use upper-case letters when running functions and commands.
+</note>
+
+<section id="eip-617"><title>Declaring Variables</title><para id="eip-27">Variables in MATLAB are generally represented as matrix quantities. Scalars and vectors are special cases of matrices having size 1x1 (scalar), 1xn (row vector) or nx1 (column vector).
+</para>
+
+<section id="eip-785"><title>Declaration of a Scalar</title><para id="eip-700">The term scalar as used in linear algebra refers to a real number. Assignment of scalars in MATLAB is easy, type in the variable name followed by = symbol and a number: </para><example id="eip-379"><para id="eip-354">
+<code>a = 1</code>
+</para><para id="eip-653"><figure id="Example1"><media id="Example_1" alt="Example1">
+       
+  <image mime-type="image/png" src="../../media/example1.PNG"/>
+         
+</media>
+  
+<caption>Assignment of a scalar quantity.
+  </caption></figure></para>
+</example></section>
+
+<section id="eip-491"><title>Declaration of a Row Vector</title><para id="eip-55">Elements of a row vector are separated with blanks or commas.</para><example id="eip-70"><para id="eip-883">Let's type the following at the command prompt:</para><para id="eip-121"><code>b = [1 2 3 4 5]</code>
+</para><para id="eip-199"><figure id="Example2"><media id="Example_2" alt="Example2">
+       
+  <image mime-type="image/png" src="../../media/example2.PNG"/>
+         
+</media>
+  
+<caption>Assignment of a row vector quantity.
+  </caption></figure></para><para id="eip-591">We can also use the New Variable button to assign a row vector. In the tool strip, select Home &gt; New Variable. This action will create a variable called unnamed which is displayed in the workspace. By clicking on the title unnamed, we can rename it to something more descriptive. By double-clicking on the variable, we can open the Variable Editor and type in the values into spreadsheet looking table.    </para><para id="eip-793"><figure id="Example_2ax">
+  <title/>
+  <media id="Example_2a1" alt="Example_2a1">
+    <image mime-type="image/png" src="../../media/example2a1.PNG"/>
+  </media>
+  <caption>
+     Using the New Variable button in the tool strip.
+  </caption>
+</figure>
+
+<figure id="Example2a"><media id="Example_2a" alt="Example2a">
+       
+  <image mime-type="image/png" src="../../media/example2a.PNG"/>
+         
+</media>
+  
+<caption>Assignment of a row vector by using the Variable Editor.
+  </caption></figure></para></example>
+</section>
+
+
+<section id="eip-590"><title>Declaration of a Column Vector</title><para id="eip-626">Elements of a column vector is ended by a semicolon:</para><example id="eip-318"><para id="eip-462"><code>c = [1;2;3;4;5;]</code>
+</para><para id="eip-225"><figure id="Example3"><media id="Example_3" alt="Example3">
+       
+  <image mime-type="image/png" src="../../media/example3.PNG"/>
+         
+</media>
+  
+<caption>Assignment of a column vector quantity.
+  </caption></figure></para><para id="eip-362">Or by transposing a row vector with the ' operator:</para><para id="eip-748"><code>c = [1 2 3 4 5]'</code></para><para id="eip-714"><figure id="Example3a"><media id="Example_3a" alt="Example3a">
+       
+  <image mime-type="image/png" src="../../media/example3a.PNG"/>
+         
+</media>
+  
+<caption>Assignment of a column vector quantity by transposing a row vector with the ' operator.
+  </caption></figure></para><para id="eip-608">Or by using the Variable Editor:</para><para id="eip-373"><figure id="Example3b"><media id="Example_3b" alt="Example3b">
+       
+  <image mime-type="image/png" src="../../media/example3b.PNG"/>
+         
+</media>
+  
+<caption>Assignment of a column vector quantity by using the Variable Editor.
+  </caption></figure></para>
+</example>
+</section>
+
+<section id="eip-881"><title>Declaration of a Matrix</title><para id="eip-328">Matrices are typed in rows first and separated by semicolons to create columns. Consider the examples below:
+</para><example id="eip-419"><para id="eip-334">Let us type in a 2x5 matrix:</para><para id="eip-409">
+  <code>d = [2 4 6 8 10; 1 3 5 7 9]</code>
+</para><para id="eip-45"><figure id="Example4"><media id="Example_4" alt="Example4">
+       
+  <image mime-type="image/png" src="../../media/example4.PNG"/>
+         
+</media>
+  
+<caption>Assignment of a 2x5 matrix.
+  </caption></figure></para><para id="eip-571"><figure id="Example4a"><media id="Example_4a" alt="Example4a">
+       
+  <image mime-type="image/png" src="../../media/example4a.PNG"/>
+         
+</media>
+  
+<caption>Assignment of a matrix by using the Variable Editor.
+  </caption></figure></para>
+</example><example id="eip-488"><para id="eip-161">
+This example is a 5x2 matrix:
+</para><para id="eip-885"><figure id="example4b"><media id="example4b_1" alt="example4b">
+       
+  <image mime-type="image/png" src="../../media/example4b.PNG"/>
+         
+</media>
+  
+<caption>Assignment of a 5x2 matrix.
+  </caption></figure>
+</para>
+</example>
+
+</section>
+
+</section>
+
+</section>
+
+
+
+<section id="eip-482"><title>Linear Equations</title><para id="eip-343">Systems of linear equations are very important in engineering studies. In the course of solving a problem, we often reduce the problem to simultaneous equations from which the results are obtained. As you learned earlier, MATLAB stands for Matrix Laboratory and has features to handle matrices. Using the coefficients of simultaneous linear equations, a matrix can be formed to solve a set of simultaneous equations.  
+</para><example id="eip-96"><para id="eip-5">
+Let's solve the following simultaneous equations: 
+</para><equation id="eip-339"><m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:apply>
+      <m:plus/>
+      <m:ci>x</m:ci>
+      <m:ci>y</m:ci>
+    </m:apply>
+    <m:cn>1</m:cn>
+  </m:apply>
+</m:math></equation><equation id="eip-437"><m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:apply>
+      <m:minus/>
+      <m:apply>
+        <m:times/>
+        <m:cn>2</m:cn>
+        <m:ci>x</m:ci>
+      </m:apply>
+      <m:apply>
+        <m:times/>
+        <m:cn>5</m:cn>
+        <m:ci>y</m:ci>
+      </m:apply>
+    </m:apply>
+    <m:cn>9</m:cn>
+  </m:apply>
+</m:math></equation><para id="eip-450">First, we will create a matrix for the left-hand side of the equation using the coefficients, namely 1 and 1 for the first and 2 and -5 for the second. The matrix looks like this: </para><equation id="eip-438"><m:math>
+  <m:matrix>
+    <m:matrixrow>
+      <m:cn>1</m:cn>
+      <m:cn>1</m:cn>
+    </m:matrixrow>
+    <m:matrixrow>
+      <m:cn>2</m:cn>
+      <m:apply>
+        <m:minus/>
+        <m:cn>5</m:cn>
+      </m:apply>
+    </m:matrixrow>
+  </m:matrix>
+</m:math></equation><para id="eip-758">The above matrix can be entered in the command window by typing <code>A=[1 1; 2 -5]</code>.</para><para id="eip-269">Second, we create a column vector to represent the right-hand side of the equation as follows:</para><equation id="eip-52"><m:math>
+  <m:matrix>
+    <m:matrixrow>
+      <m:cn>1</m:cn>
+    </m:matrixrow>
+    <m:matrixrow>
+      <m:cn>9</m:cn>
+    </m:matrixrow>
+  </m:matrix>
+</m:math></equation><para id="eip-461">The above column vector can be entered in the command window by typing <code>B= [1;9]</code>.</para><para id="eip-731">To solve the simultaneous equation, we will use the left division operator and issue the following command: <code>C=A\B</code>. These three steps are illustrated below:</para><code id="eip-367" display="block">&gt;&gt; A=[1 1; 2 -5]
+
+A =
+
+     1     1
+     2    -5
+
+&gt;&gt; B= [1;9]
+
+B =
+
+     1
+     9
+
+&gt;&gt; C=A\B
+
+C =
+
+     2
+    -1
+
+&gt;&gt; </code><para id="eip-514">The result <code>C</code> indicating 2 and 1 are the values for <code>x</code> and <code>y</code>, respectively.</para>
+</example></section>
+
+
+
+<section id="eip-657"><title>Polynomials</title><para id="eip-520">In the preceding section, we briefly learned about how to use MATLAB to solve linear equations. Equally important in engineering problem solving is the application of polynomials. Polynomials are functions that are built by simply adding together (or subtracting) some power functions. (see <link url="http://en.wikipedia.org/wiki/Polynomial" window="new"> Wikipedia</link>).</para><equation id="eip-914"><m:math>
+  <m:apply>
+    <m:eq/>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:times/>
+        <m:ci>a</m:ci>
+        <m:apply>
+          <m:power/>
+          <m:ci>x</m:ci>
+          <m:cn>2</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:times/>
+        <m:ci>b</m:ci>
+        <m:ci>x</m:ci>
+      </m:apply>
+      <m:ci>c</m:ci>
+    </m:apply>
+    <m:cn>0</m:cn>
+  </m:apply>
+</m:math></equation><equation id="eip-460"><m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>f(x)</m:ci>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:times/>
+        <m:ci>a</m:ci>
+        <m:apply>
+          <m:power/>
+          <m:ci>x</m:ci>
+          <m:cn>2</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:times/>
+        <m:ci>b</m:ci>
+        <m:ci>x</m:ci>
+      </m:apply>
+      <m:ci>c</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math></equation><para id="eip-305">The coeffcients of a polynominal are entered as a row vector beginning with the highest power and including the ones that are equal to 0. </para><example id="eip-77"><para id="eip-928">Create a row vector for the following function: <m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:times/>
+        <m:cn>2</m:cn>
+        <m:apply>
+          <m:power/>
+          <m:ci>x</m:ci>
+          <m:cn>4</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:times/>
+        <m:cn>3</m:cn>
+        <m:apply>
+          <m:power/>
+          <m:ci>x</m:ci>
+          <m:cn>3</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:times/>
+        <m:cn>5</m:cn>
+        <m:apply>
+          <m:power/>
+          <m:ci>x</m:ci>
+          <m:cn>2</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:ci>x</m:ci>
+      <m:cn>10</m:cn>
+    </m:apply>
+  </m:apply>
+</m:math></para><para id="eip-204">Notice that in this example we have 5 terms in the function and therefore the row vector will contain 5 elements. <code>p=[2 3 5 1 10]</code>
+</para>
+</example>
+
+<example id="eip-784"><para id="eip-535">
+Create a row vector for the following function: 
+<m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:times/>
+        <m:cn>3</m:cn>
+        <m:apply>
+          <m:power/>
+          <m:ci>x</m:ci>
+          <m:cn>4</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:minus/>
+        <m:apply>
+          <m:times/>
+          <m:cn>4</m:cn>
+          <m:apply>
+            <m:power/>
+            <m:ci>x</m:ci>
+            <m:cn>2</m:cn>
+          </m:apply>
+        </m:apply>
+        <m:cn>5</m:cn>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math>
+</para><para id="eip-558">In this example, coefficients for the terms involving power of 3 and 1 are 0. The row vector still contains 5 elements as in the previous example but this time we will enter two zeros for the coefficients with power of 3 and 1: <code>p=[3 0 4 0 -5]</code>. </para>
+</example><section id="eip-572"><title>The <code>polyval</code> Function</title><para id="eip-364">We can evaluate a polynomial <code>p</code> for a given value of <code>x</code> using the syntax <code>polyval(p,x)</code> where p contains the coefficients of polynomial and x is the given number.</para><example id="eip-299"><para id="eip-167">Evaluate f(x) at 5.
+</para><equation id="eip-615"><m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>f(x)</m:ci>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:times/>
+        <m:ci>3</m:ci>
+        <m:apply>
+          <m:power/>
+          <m:ci>x</m:ci>
+          <m:cn>2</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:times/>
+        <m:ci>2</m:ci>
+        <m:ci>x</m:ci>
+      </m:apply>
+      <m:ci>1</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math></equation><para id="eip-40">The row vector representing f(x) above is <code>p=[3 2 1]</code>. To evaluate f(x) at 5, we type in: <code>polyval(p,5)</code>. The following shows the Command Window output:</para><code id="eip-737" display="block">&gt;&gt; p=[3 2 1]
+
+p =
+
+     3     2     1
+
+&gt;&gt; polyval(p,5)
+
+ans =
+
+    86
+
+&gt;&gt; </code>
+</example></section>
+
+
+<section id="eip-390"><title>The <code>roots</code> Function</title><para id="eip-940">Consider the following equation:</para><equation id="eip-104"><m:math>
+  <m:apply>
+    <m:eq/>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:times/>
+        <m:ci>a</m:ci>
+        <m:apply>
+          <m:power/>
+          <m:ci>x</m:ci>
+          <m:cn>2</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:times/>
+        <m:ci>b</m:ci>
+        <m:ci>x</m:ci>
+      </m:apply>
+      <m:ci>c</m:ci>
+    </m:apply>
+    <m:cn>0</m:cn>
+  </m:apply>
+</m:math></equation><para id="eip-694">Probably you have solved this type of equations numerous times. In MATLAB, we can use the <code>roots</code> function to find the roots very easily. </para><example id="eip-553"><para id="eip-887">Find the roots for the following:
+</para><equation id="eip-397"><m:math>
+  <m:apply>
+    <m:eq/>
+    <m:apply>
+      <m:minus/>
+      <m:apply>
+        <m:plus/>
+        <m:apply>
+          <m:times/>
+          <m:cn>0.6</m:cn>
+          <m:apply>
+            <m:power/>
+            <m:ci>x</m:ci>
+            <m:cn>2</m:cn>
+          </m:apply>
+        </m:apply>
+        <m:apply>
+          <m:times/>
+          <m:cn>0.3</m:cn>
+          <m:ci>x</m:ci>
+        </m:apply>
+      </m:apply>
+      <m:cn>0.9</m:cn>
+    </m:apply>
+    <m:cn>0</m:cn>
+  </m:apply>
+</m:math></equation><para id="eip-164">To find the roots, first we enter the coefficients of polynomial in to a row vector p with <code>p=[0.6 0.3 -0.9]</code> and issue the <code>r=roots(p)</code> command. The following shows the command window output:</para><code id="eip-484" display="block">&gt;&gt; p=[0.6 0.3 -0.9]
+
+p =
+
+    0.6000    0.3000   -0.9000
+
+&gt;&gt; r=roots(p)
+
+r =
+
+   -1.5000
+    1.0000
+
+&gt;&gt; </code>
+</example></section>
+
+
+
+</section>
+
+
+<section id="eip-232"><title>Splitting a Statement</title><para id="eip-17">You will soon find out that typing long statements in the Command Window or in the the Text Editor makes it very hard to read and maintain your code. To split a long statement over multiple lines simply enter three periods "..." at the end of the line and carry on with your statement on the next line.
+</para><example id="eip-374"><para id="eip-733">The following command window output illustrates the use of three periods:
+</para><code id="eip-124" display="block">&gt;&gt; sin(pi)+cos(45*pi/180)-sin(pi/2)+cos(45*pi/180)+tan(pi/3)
+
+ans =
+
+    2.1463
+
+&gt;&gt; sin(pi)+cos(45*pi/180)-sin(pi/2)...
++cos(45*pi/180)+tan(pi/3)
+
+ans =
+
+    2.1463
+
+&gt;&gt; </code>
+</example>
+
+</section>
+
+
+<section id="eip-466"><title>Comments</title><para id="eip-87">Comments are used to make scripts more "readable". The percent symbol % separates the comments from the code. Examine the following examples:
+
+</para><example id="eip-220"><para id="eip-821">The long statements are split to make it easier to read. However, despite the use of descriptive variable names, it is hard to understand what this script does, see the following Command Window output:
+</para><code id="eip-871" display="block">t_water=80;         
+t_outside=15;       
+inner_dia=0.05;     
+thickness=0.006;    
+Lambda_steel=48;    
+AlfaInside=2800;    
+AlfaOutside=17;     
+thickness_insulation=0.012;     
+Lambda_insulation=0.03;         
+
+r_i=inner_dia/2                                         
+r_o=r_i+thickness                                       
+r_i_insulation=r_o                                      
+r_o_insulation=r_i_insulation+thickness_insulation      
+AreaInside=2*pi*r_i
+AreaOutside=2*pi*r_o
+AreaOutside_insulated=2*pi*r_o_insulation
+AreaM_pipe=(2*pi*(r_o-r_i))/log(r_o/r_i)                
+AreaM_insulation=(2*pi*(r_o_insulation-r_i_insulation)) ...
+    /log(r_o_insulation/r_i_insulation)    
+TotalResistance=(1/(AlfaInside*AreaInside))+ ...
+    (thickness/(Lambda_steel*AreaM_pipe))+(1/(AlfaOutside*AreaOutside))
+TotalResistance_insulated=(1/(AlfaInside*AreaInside))+ ...
+    (thickness/(Lambda_steel*AreaM_pipe))+(thickness_insulation ...
+    /(Lambda_insulation*AreaM_insulation))+(1/(AlfaOutside*AreaOutside_insulated))
+Q_dot=(t_water-t_outside)/(TotalResistance*1000) 
+Q_dot_insulated=(t_water-t_outside)/(TotalResistance_insulated*1000)
+PercentageReducttion=((Q_dot-Q_dot_insulated)/Q_dot)*100</code>
+</example><example id="eip-198"><para id="eip-171">The following is an edited version of the above including numerous comments:
+</para><code id="eip-455" display="block">% Problem 16.06
+% Problem Statement
+% Calculate the percentage reduction in heat loss when a layer of hair felt
+% is wrapped around the outside surface (see problem 16.05)
+
+format short
+
+% Input Values
+t_water=80;         % Water temperature [C]
+t_outside=15;       % Atmospheric temperature [C]
+inner_dia=0.05;     % Inner diameter [m]
+thickness=0.006;    % [m]
+Lambda_steel=48;    % Thermal conductivity of steel [W/mK]
+AlfaInside=2800;    % Heat transfer coefficient of inside [W/m2K]
+AlfaOutside=17;     % Heat transfer coefficient of outside [W/m2K]
+% Neglect radiation
+% Additional layer
+thickness_insulation=0.012;     % [m]
+Lambda_insulation=0.03;         % Thermal conductivity of insulation [W/mK]
+
+
+% Output Values
+% Q_dot=(t_water-t_outside)/TotalResistance
+% TotalResistance=(1/(AlfaInside*AreaInside))+(thickness/(Lambda_steel*AreaM))+ ...
+(1/(AlfaOutside*AreaOutside)
+% Calculating the unknown terms
+r_i=inner_dia/2                                         % Inner radius of pipe [m]
+r_o=r_i+thickness                                       % Outer radius of pipe [m]
+r_i_insulation=r_o                                      % Inner radius of insulation [m]
+r_o_insulation=r_i_insulation+thickness_insulation      % Outer radius of pipe [m]
+AreaInside=2*pi*r_i
+AreaOutside=2*pi*r_o
+AreaOutside_insulated=2*pi*r_o_insulation
+AreaM_pipe=(2*pi*(r_o-r_i))/log(r_o/r_i)                % Logarithmic mean area for pipe
+AreaM_insulation=(2*pi*(r_o_insulation-r_i_insulation)) ...
+    /log(r_o_insulation/r_i_insulation)    % Logarithmic mean area for insulation
+TotalResistance=(1/(AlfaInside*AreaInside))+(thickness/ ...
+    (Lambda_steel*AreaM_pipe))+(1/(AlfaOutside*AreaOutside))
+TotalResistance_insulated=(1/(AlfaInside*AreaInside))+(thickness/ ...
+    (Lambda_steel*AreaM_pipe))+(thickness_insulation/(Lambda_insulation*AreaM_insulation)) ...
+    +(1/(AlfaOutside*AreaOutside_insulated))
+Q_dot=(t_water-t_outside)/(TotalResistance*1000) % converting into kW
+Q_dot_insulated=(t_water-t_outside)/(TotalResistance_insulated*1000) % converting into kW
+PercentageReducttion=((Q_dot-Q_dot_insulated)/Q_dot)*100
+</code>
+</example></section><section id="eip-463"><title>Basic Operations</title><table id="eip-688" summary="Basic operations.">
+<tgroup cols="2"><thead>
+      <row>
+        <entry>Command</entry>
+        <entry>Meaning</entry>
+       </row>
+</thead>
+<tbody>
+  <row>
+    <entry>sum</entry>
+    <entry>Sum of array elements</entry>
+  </row>
+  <row>
+    <entry>prod</entry>
+    <entry>Product of array elements</entry>
+  </row>
+  <row>
+    <entry>sqrt</entry>
+    <entry>Square root</entry>
+  </row>
+  <row>
+    <entry>log10</entry>
+    <entry>Common logarithm (base 10)</entry>
+  </row>
+  <row>
+    <entry>log</entry>
+    <entry>Natural logarithm</entry>
+  </row>
+  <row>
+    <entry>max</entry>
+    <entry>Maximum elements of array</entry>
+  </row>
+  <row>
+    <entry>min</entry>
+    <entry>Minimum elements of array</entry>
+  </row>
+  <row>
+    <entry>mean</entry>
+    <entry>Average or mean value of arrays</entry>
+  </row>
+  <row>
+    <entry>std</entry>
+    <entry>Standard deviation</entry>
+  </row>
+</tbody>
+</tgroup><caption>Basic operations.</caption>
+</table></section><section id="eip-936"><title>Special Characters</title><table id="eip-612" summary="Special Characters">
+<tgroup cols="2"><thead>
+      <row>
+        <entry>Character</entry>
+        <entry>Meaning</entry>
+       </row>
+</thead>
+<tbody>
+  <row>
+    <entry>=</entry>
+    <entry>Assignment</entry>
+  </row>
+  <row>
+    <entry>( )</entry>
+    <entry>Prioritize operations</entry>
+  </row>
+  <row>
+    <entry>[ ]</entry>
+    <entry>Construct array</entry>
+  </row>
+  <row>
+    <entry>:</entry>
+    <entry>Specify range of array elements</entry>
+  </row>
+  <row>
+    <entry>,</entry>
+    <entry>Row element separator in an array</entry>
+  </row>
+  <row>
+    <entry>;</entry>
+    <entry>Column element separator in an array</entry>
+  </row>
+  <row>
+    <entry>...</entry>
+    <entry>Continue statement to next line</entry>
+  </row>
+  <row>
+    <entry>.</entry>
+    <entry>Decimal point, or structure field separator</entry>
+  </row>
+  <row>
+    <entry>%</entry>
+    <entry>Insert comment line into code</entry>
+  </row>
+</tbody>
+
+</tgroup><caption>Special Characters</caption>
+</table></section><section id="eip-202"><title>Summary of Key Points</title><list id="eip-348" list-type="enumerated" number-style="arabic"><item>MATLAB has the common functions found on a scientific calculator and can be operated in a similar way,</item>
+<item>MATLAB can store values in variables. Variables are case sensitive and some variables are reserved by MATLAB (e.g. <code>pi</code> stores 3.1416),</item>
+<item>Variable Editor can be used to enter or manipulate matrices,</item> 
+<item>The coefficients of simultaneous linear equations and polynomials are used to form a row vector. MATLAB then can be used to solve the equations,</item>
+<item>The <code>format</code> function is used to control the number of digits displayed,</item>
+<item>Three periods "..." at the end of the line is used to split a long statement over multiple lines,</item>
+<item>The percent symbol % separates the comments from the code, anything following % symbol is ignored by MATLAB.</item>
+</list></section>
+
+
+
+</content>
+
+</document>

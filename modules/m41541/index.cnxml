@@ -1,0 +1,406 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>Problem Set</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41541</md:content-id>
+  <md:title>Problem Set</md:title>
+  <md:abstract>Problem Set for Numerical Integration with MATLAB</md:abstract>
+  <md:uuid>44694c51-ce49-44a9-8e82-262e77c9f83d</md:uuid>
+</metadata>
+
+<content>
+ <exercise id="eip-476"><problem id="eip-846">
+  <para id="eip-491">Let the function y defined by <m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:cos/>
+      <m:ci>x</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math>. Plot this function over the interval [-pi,pi]. Use numerical integration techniques to estimate the integral of y over [0, pi/2] using increments of pi/10 and pi/1000.
+  </para></problem>
+
+<solution id="eip-604">
+  <para id="eip-795"><list id="eip-id3474895" list-type="enumerated">
+<item>Plotting:<code id="eip-id1172753753255" display="block">
+x=-pi:pi/100:pi;
+y=cos(x);
+plot(x,y),title('Graph of y=cos(x)'),xlabel('x'),ylabel('y'),grid
+</code></item>
+<item>Area calculation 1: <code id="eip-id1172753753255_1" display="block">&gt;&gt; x=0:pi/10:pi/2;
+&gt;&gt; y=cos(x);
+&gt;&gt; area1=trapz(x,y)
+
+area1 =
+
+  0.9918
+</code></item>
+<item>Area calculation 2: <code id="eip-id1172753753255_2" display="block">&gt;&gt; x=0:pi/1000:pi/2;
+&gt;&gt; y=cos(x);
+&gt;&gt; area2=trapz(x,y)
+
+area2 =
+
+  1.0000
+</code></item>
+</list>
+
+
+
+
+
+
+
+
+  </para>
+</solution>
+</exercise><exercise id="eip-727"><problem id="eip-618">
+  <para id="eip-700">Let the function y defined by <m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:minus/>
+      <m:apply>
+        <m:times/>
+        <m:cn>0.04</m:cn>
+        <m:apply>
+          <m:power/>
+          <m:ci>x</m:ci>
+          <m:cn>2</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:plus/>
+        <m:apply>
+          <m:times/>
+          <m:cn>2.13</m:cn>
+          <m:ci>x</m:ci>
+        </m:apply>
+        <m:cn>32.58</m:cn>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math>. Plot this function over the interval [3,30]. Use numerical integration techniques to estimate the integral of y over [3,30].
+  </para>
+</problem>
+
+<solution id="eip-197">
+  <para id="eip-256"><list id="eip-id3474895_1" list-type="enumerated">
+<item>Plotting:<code id="eip-id1172753753255_3" display="block">&gt;&gt; x=3:.1:30;
+&gt;&gt; y=0.04*(x.^2)-2.13.*x+32.58;
+&gt;&gt; plot(x,y), title('Graph of ...
+y=.04*(x^2)-2.13*x+32.58'),xlabel('x'),ylabel('y'),grid
+</code></item>
+<item>Area calculation: <code id="eip-id1172753753255_4" display="block">
+&gt;&gt; area=trapz(x,y)
+
+area =
+
+  290.3868
+</code></item>
+</list>
+  </para>
+</solution>
+</exercise><exercise id="eip-718"><problem id="eip-862">
+  <para id="eip-683">A 2000-liter tank is full of lube oil. It is known that if lube oil is drained from the tank, the mass flow rate will decrease from the maximum when the tank level is at the highest. The following data were collected when the tank was drained. 
+ <table id="eip-430" summary="data">
+<tgroup cols="2"><thead>
+      <row>
+        <entry>Time [min]</entry>
+        <entry>Mass Flow [kg/min]</entry>
+      </row>
+</thead>
+
+<tbody>
+  <row>
+    <entry>0</entry>
+    <entry>50.00</entry>
+  </row>
+  <row>
+    <entry>5</entry>
+    <entry>48.25</entry>
+  </row>
+  <row>
+    <entry>10</entry>
+    <entry>46.00</entry>
+  </row>
+  <row>
+    <entry>15</entry>
+    <entry>42.50</entry>
+  </row>
+  <row>
+    <entry>20</entry>
+    <entry>37.50</entry>
+  </row>
+  <row>
+    <entry>25</entry>
+    <entry>30.50</entry>
+  </row>
+  <row>
+    <entry>30</entry>
+    <entry>19.00</entry>
+  </row>
+  <row>
+    <entry>35</entry>
+    <entry>9.00</entry>
+  </row>
+</tbody>
+
+
+</tgroup><caption>Data</caption>
+</table>
+<newline/>
+Write a script to estimate the amount of oil drained in 35 minutes.
+  </para>
+</problem>
+
+<solution id="eip-853">
+  <para id="eip-418"><code id="eip-id1163816637258" display="block">clc
+t=linspace(0,35,8)                  % Data entry for time [min]
+m=[50 48.25 46 42.5 37.5 30.5 19 9] % Data entry for mass flow [kg/min]
+% Calculate time intervals
+dt=[t(2)-t(1),t(3)-t(2),t(4)-t(3),...
+t(5)-t(4),t(6)-t(5),t(7)-t(6),t(8)-t(7)]
+% Calculate mass out  
+dm=[0.5*(m(2)+m(1)),0.5*(m(3)+m(2)),0.5*(m(4)+m(3)),0.5*(m(5)+...
+m(4)),0.5*(m(6)+m(5)),0.5*(m(7)+m(6)),0.5*(m(8)+m(7))]
+% Calculate differential areas 
+da=dt.*dm;  
+% Tabulate time and mass flow                         
+[t',m']
+% Tabulate time intervals, mass out and differential areas                             
+[dt',dm',da']
+% Calculate the amount of oil drained [kg] in 35 minutes                       
+Oil_Drained=sum(da)                 
+</code>
+The output is:
+<code id="eip-id1169789513138" display="block">
+ans =
+
+         0   50.0000
+    5.0000   48.2500
+   10.0000   46.0000
+   15.0000   42.5000
+   20.0000   37.5000
+   25.0000   30.5000
+   30.0000   19.0000
+   35.0000    9.0000
+
+
+ans =
+
+    5.0000   49.1250  245.6250
+    5.0000   47.1250  235.6250
+    5.0000   44.2500  221.2500
+    5.0000   40.0000  200.0000
+    5.0000   34.0000  170.0000
+    5.0000   24.7500  123.7500
+    5.0000   14.0000   70.0000
+
+
+Oil_Drained =
+
+  1.2663e+003
+</code>
+  </para>
+</solution>
+</exercise><exercise id="eip-311"><problem id="eip-350">
+  <para id="eip-643">
+A gas is expanded in an engine cylinder, following the law PV<sup>1.3</sup>=c. The initial pressure is 2550 kPa and the final pressure is 210 kPa. If the volume at the end of expansion is 0.75 m<sup>3</sup>, compute the work done by the gas.
+<footnote id="AppliedHeat"> 
+    <cite>
+  <cite-title>Applied Heat for Engineers</cite-title>
+  by W. Embleton and L Jackson, Thomas Reed Publications. © 1999, (p. 80)
+</cite>
+  </footnote> 
+
+  </para>
+</problem>
+
+<solution id="eip-18">
+  <para id="eip-875"><code id="eip-id1170594829364" display="block">
+clc
+disp('A gas is expanded in an engine cylinder, following the law PV^1.3=c')
+disp('The initial pressure is 2550 kPa and the final pressure is 210 kPa.')
+disp('If the volume at the end of expansion is 0.75 m3,')
+disp('Compute the work done by the gas.')
+disp(' ')               % Display blank line
+n=1.3;
+P_i=2550;               % Initial pressure
+P_f=210;                % Final pressure
+V_f=.75;                % Final volume
+V_i=(P_f*(V_f^n)/P_i)^(1/n); % Initial volume
+c=P_f*V_f^n;
+v=V_i:.001:V_f;         % Creating a row vector for volume, v
+p=c./(v.^n);            % Computing pressure for volume
+WorkDone=trapz(v,p)     % Integrating p*dv
+</code>
+The output is:
+<code id="eip-id1168442172095" display="block">
+A gas is expanded in an engine cylinder, following the law PV^1.3=c
+The initial pressure is 2550 kPa and the final pressure is 210 kPa.
+If the volume at the end of expansion is 0.75 m3,
+Compute the work done by the gas.
+ 
+
+WorkDone =
+
+  409.0666
+</code>
+</para>
+</solution>
+</exercise><exercise id="eip-601"><problem id="eip-856">
+  <para id="eip-548">A force F acting on a body at a distance s from a fixed point is given by
+<m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>F</m:ci>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:times/>
+        <m:cn>3</m:cn>
+        <m:ci>s</m:ci>
+      </m:apply>
+      <m:apply>
+        <m:divide/>
+        <m:cn>1</m:cn>
+        <m:apply>
+          <m:power/>
+          <m:ci>s</m:ci>
+          <m:cn>2</m:cn>
+        </m:apply>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math>.
+Write a script to compute the work done when the body moves from the position where s=1 to that where s=10. <footnote id="ON_Math3"> 
+    <cite>
+  <cite-title>O. N. Mathematics: 2</cite-title>
+  by J. Dobinson, Penguin Library of Technology. © 1969, (p. 213)
+</cite>
+  </footnote>
+
+  </para>
+</problem>
+
+<solution id="eip-940">
+  <para id="eip-834">
+
+<code id="eip-id4252328" display="block">clc
+disp('A force F acting on a body at a distance s from a fixed point is given by')
+disp('F=3*s+(1/(s^2)) where s is the distance in meters')
+disp('Compute the total work done in moving') 
+disp('From the position where s=1 to that where s=10.')
+disp(' ')                     % Display blank line
+s=1:.001:10;     % Creating a row vector for distance, s
+F=3.*s+(1./(s.^2));    % Computing Force for s
+WorkDone=trapz(s,F) % Integrating F*ds over 1 to 10 meters.
+</code>
+The output is:
+<code id="eip-id1169783464442" display="block">A force F acting on a body at a distance s from a fixed point is given by
+F=3*s+(1/(s^2)) where s is the distance in meters
+Compute the total work done in moving
+From the position where s=1 to that where s=10.
+ 
+
+WorkDone =
+
+  149.4000
+</code>
+
+  </para>
+</solution>
+</exercise><exercise id="eip-165"><problem id="eip-379">
+  <para id="eip-489">
+The pressure p and volume v of a given mass of gas are connected by the relation
+<m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:apply>
+      <m:times/>
+      <m:apply>
+        <m:plus/>
+        <m:ci>p</m:ci>
+        <m:apply>
+          <m:divide/>
+          <m:ci>a</m:ci>
+          <m:apply>
+            <m:power/>
+            <m:ci>v</m:ci>
+            <m:cn>2</m:cn>
+          </m:apply>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:minus/>
+        <m:ci>v</m:ci>
+        <m:ci>b</m:ci>
+      </m:apply>
+    </m:apply>
+    <m:ci>k</m:ci>
+  </m:apply>
+</m:math>
+ where a, b and k are constants. Express p in terms of v, and write a script to compute the work done by the gas in expanding from an initial volume to a final volume. <footnote id="ON_Math4"> 
+    <cite>
+  <cite-title>O. N. Mathematics: 2</cite-title>
+  by J. Dobinson, Penguin Library of Technology. © 1969, (p. 212)
+</cite>
+  </footnote>
+<newline/>
+<newline/>
+Test your solution with the following input:
+<newline/>
+a: 0.01
+<newline/>
+b: 0.001
+<newline/>
+The initial pressure [kPa]: 100
+<newline/>
+The initial volume [m3]: 1
+<newline/>
+The final volume [m3]: 2
+</para>
+</problem>
+
+<solution id="eip-614">
+  <para id="eip-444">
+<code id="eip-id1166926985034" display="block">clc                           % Clear screen
+disp('This script computes the work done by')
+disp('The gas in expanding from volume v1 to v2')
+disp(' ')                     % Display blank line
+a=input('Enter the constant a: ');                                     
+b=input('Enter the constant b: ');
+p_i=input('Enter the initial pressure [kPa]: ');
+v_i=input('Enter the initial volume [m3]: ');
+v_f=input('Enter the final volume [m3]: ');
+k=(p_i+(a/(v_i^2))*(v_i-b)); % Calculating constant k
+v=v_i:.001:v_f;              % Creating a row vector for volume
+p=(k./(v-b))-(a./(v.^2));    % Computing pressure for volume
+WorkDone=trapz(v,p);         % Integrating p*dv
+disp(' ')                    % Display blank line
+str = ['The work done by the gas in expanding from ', num2str(v_i),...
+ ' m3 to ' num2str(v_f), ' m3 is ', num2str(WorkDone), ' kW.'];
+disp(str);
+</code>
+The output is:
+<code id="eip-id1170585161679" display="block">This script computes the work done by
+The gas in expanding from volume v1 to v2
+ 
+Enter the constant a: .01
+Enter the constant b: .001
+Enter the initial pressure [kPa]: 100
+Enter the initial volume [m3]: 1
+Enter the final volume [m3]: 2
+ 
+The work done by the gas in expanding from 1 m3 to 2 m3 is 69.3667 kW.
+</code> 
+</para>
+</solution>
+</exercise>
+</content>
+
+</document>

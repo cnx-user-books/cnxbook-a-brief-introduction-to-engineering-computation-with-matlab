@@ -1,0 +1,406 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>Writing Scripts to Solve Problems</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41440</md:content-id>
+  <md:title>Writing Scripts to Solve Problems</md:title>
+  <md:abstract>Basic MATLAB programming concepts are presented to demonstrate how to create, save and execute script files.</md:abstract>
+  <md:uuid>59691341-77a2-4287-af54-a46be0f2d38e</md:uuid>
+</metadata>
+
+<content>
+  <para id="eip-164"><media id="ProgrammingWithMATLAB" alt="ProgrammingWithMATLAB">
+       
+  <image mime-type="image/png" src="../../media/ProgrammingWithMATLAB.jpg"/>
+         
+</media>
+</para><para id="delete_me"><!-- Insert module text here -->
+MATLAB provides scripting and automation tools that can simplify repetitive computational tasks. For example, a series of commands executed in a MATLAB session to solve a problem can be saved in a script file called an m-file. An m-file can be executed from the command line by typing the name of the file or by pressing the run button in the built-in text editor tool bar.    
+  </para><section id="eip-975"><title>Script Files</title><para id="eip-168">A script is a file containing a sequence of MATLAB statements. Script files have a filename extension of .m. By typing the filename at the command prompt, we can run the script and obtain results in the command window. </para><para id="eip-3"><figure id="M_File"><media id="M_File_a" alt="m-file">
+       
+  <image mime-type="image/png" src="../../media/M_File.PNG"/>
+         
+</media>
+  
+<caption>Number of m-files are displayed in the Current Folder sub-window. 
+  </caption></figure></para><para id="eip-167">A sample m-file named <code>ThermalConductivity.m</code> is displayed in Text Editor below. Note the triangle (in green) run button in the tool bar, pressing this button executes the script in the command window. </para><para id="eip-710"><figure id="M_File_b"><media id="M_File_c" alt="m-file editor">
+       
+  <image mime-type="image/png" src="../../media/M_FileEditor.PNG"/>
+         
+</media>
+  
+<caption>The content of <code>ThermalConductivity.m</code> file is displayed in Text Editor.
+  </caption></figure></para><para id="eip-834">Now let us see how an m-file is created and executed.</para><example id="eip-231"><para id="eip-951">A cylindrical acetylene bottle with a radius r=0.3 m has a hemispherical top. The height of the cylindrical part is h=1.5 m. Write a simple script to calculate the volume of the acetylene bottle.     
+</para><para id="eip-247">To solve this problem, we will first apply the <link target-id="eip-31">volume of cylinder equation</link>. Using the <link target-id="eip-25">volume of sphere equation</link>, we will calculate the <link target-id="eip-216">volume of hemisphere</link>. The total volume of the acetylene bottle is found with the <link target-id="eip-398">sum of volumes equation</link>.</para><equation id="eip-31"><m:math display="block">
+  <m:mrow>
+    <m:msub>
+      <m:mi>V</m:mi>
+      <m:mi>cylinder</m:mi>
+    </m:msub>
+    <m:mo>=</m:mo>
+    <m:apply>
+      <m:times/>
+      <m:pi/>
+      <m:apply>
+        <m:power/>
+        <m:ci>r</m:ci>
+        <m:cn>2</m:cn>
+      </m:apply>
+      <m:ci>h</m:ci>
+    </m:apply>
+  </m:mrow>
+</m:math></equation><equation id="eip-25"><m:math display="block">
+  <m:mrow>
+    <m:msub>
+      <m:mi>V</m:mi>
+      <m:mi>sphere</m:mi>
+    </m:msub>
+    <m:mo>=</m:mo>
+    <m:apply>
+      <m:divide/>
+      <m:cn>4</m:cn>
+      <m:cn>3</m:cn>
+    </m:apply>
+    <m:apply>
+      <m:times/>
+      <m:pi/>
+      <m:apply>
+        <m:power/>
+        <m:ci>r</m:ci>
+        <m:cn>3</m:cn>
+      </m:apply>
+    </m:apply>
+  </m:mrow>
+</m:math></equation><equation id="eip-216"><m:math display="block">
+  <m:mrow>
+    <m:msub>
+      <m:mi>V</m:mi>
+      <m:mi>top</m:mi>
+    </m:msub>
+    <m:mo>=</m:mo>
+    <m:apply>
+      <m:divide/>
+      <m:cn>2</m:cn>
+      <m:cn>3</m:cn>
+    </m:apply>
+    <m:apply>
+      <m:times/>
+      <m:pi/>
+      <m:apply>
+        <m:power/>
+        <m:ci>r</m:ci>
+        <m:cn>3</m:cn>
+      </m:apply>
+    </m:apply>
+  </m:mrow>
+</m:math></equation><equation id="eip-398"><m:math display="block">
+  <m:mrow>
+    <m:msub>
+      <m:mi>V</m:mi>
+      <m:ci>acetylene bottle</m:ci>
+    </m:msub>
+    <m:mo>=</m:mo>
+    <m:apply>
+      <m:plus/>
+      <m:msub>
+        <m:mi>V</m:mi>
+        <m:ci>cylinder</m:ci>
+      </m:msub>
+      <m:msub>
+        <m:mi>V</m:mi>
+        <m:ci>top</m:ci>
+      </m:msub>
+    </m:apply>
+  </m:mrow>
+</m:math></equation><para id="eip-294">To write the script, we will use the built-in text editor. From the menu bar select File &gt; New &gt; Script. The text editor window will open in a separate window. First save this file as <code>AcetyleneBottle.m</code>. In that window type the following code paying attention to the use of percentage and semicolon symbols to comment out the lines and suppress the output, respectively.
+  </para><code id="eip-87" display="block">% This script computes the volume of an acetylene bottle with a radius r=0.3 m, 
+% a hemispherical top and a height of cylindrical part h=1.5 m.
+r=0.3;                      % Radius [m]
+h=1.5;                      % Height [m]
+Vol_top=(2*pi*r^3)/3;       % Calculating the volume of hemispherical top [m3]
+Vol_cyl=pi*r^2*h;           % Calculating the volume of cylindrical bottom [m3]
+Vol_total=Vol_top+Vol_cyl   % Calculating the total volume of acetylene bottle [m3]</code><para id="eip-954"><figure id="AcetyleneBottle"><media id="AcetyleneBottle_a" alt="AcetyleneBottle">
+       
+  <image mime-type="image/png" src="../../media/AcetyleneBottle.PNG"/>
+         
+</media>
+  
+<caption>Script created with the built-in text editor.
+  </caption></figure></para><para id="eip-73">After running the script by pressing the green button in the Text Editor tool bar, the output is displayed in the command window as shown below.</para><para id="eip-83"><figure id="AcetyleneBottle1"><media id="AcetyleneBottle1_a" alt="AcetyleneBottle">
+       
+  <image mime-type="image/png" src="../../media/AcetyleneBottle1.PNG"/>
+         
+</media>
+  
+<caption>The MATLAB output in the command window.
+  </caption></figure></para>
+</example>
+</section>
+
+<section id="eip-427"><title>The <code>input</code> Function</title><para id="eip-688">Notice that the script we have created <link target-id="eip-231">above</link> is not interactive and computes the total volume only for the variables defined in the m-file. To make this script interactive we will make some changes to the existing <code>AcetyleneBottle.m</code> by adding <code>input</code> function and save it as <code>AcetyleneBottleInteractive.m</code>.  
+</para><para id="eip-159">The syntax for <code>input</code> is as follows:</para><code id="eip-586" display="block">userResponse = input('prompt')</code><example id="eip-18"><para id="eip-567">Now, let's incorporate the <code>input</code> command in <code>AcetyleneBottleInteractive.m</code> as shown below and the subsequent figure: 
+</para><code id="eip-884" display="block">% This script computes the volume of an acetylene bottle 
+    % user is prompted to enter 
+        % a radius r for a hemispherical top
+        % a height h for a cylindrical part
+r=input('Enter the radius of acetylene bottle in meters ');                                     
+h=input('Enter the height of cylindrical part of acetylene bottle in meters ');
+Vol_top=(2*pi*r^3)/3;         % Calculating the volume of hemispherical top [m3]
+Vol_cyl=pi*r^2*h;             % Calculating the volume of cylindrical bottom [m3]
+Vol_total=Vol_top+Vol_cyl     % Calculating the total volume of acetylene bottle [m3]</code><para id="eip-687"><figure id="AcetyleneBottle3"><media id="AcetyleneBottle2_a" alt="AcetyleneBottle">
+       
+  <image mime-type="image/png" src="../../media/AcetyleneBottle2a.PNG"/>
+         
+</media>
+  
+<caption>Interactive script that computes the volume of acetylene cylinder.
+  </caption></figure></para><para id="eip-13">The command window upon run will be as follows, note that user keys in the radius and height values and the same input values result in the same numerical answer as in <link target-id="eip-231">example</link> which proves that the computation is correct.</para><para id="eip-129"><figure id="AcetyleneBottle33"><media id="AcetyleneBottle3_a" alt="AcetyleneBottle">
+       
+  <image mime-type="image/png" src="../../media/AcetyleneBottle3.PNG"/>
+         
+</media>
+  
+<caption>The same numerical result is obtained through interactive script.
+  </caption></figure></para>
+</example>
+</section>
+
+<section id="eip-983"><title>The <code>disp</code> Function</title><para id="eip-245">As you might have noticed, the output of our script is not displayed in a well-formatted fashion. Using <code>disp</code>, we can control how text or arrays are displayed in the command window. For example, to display a text string on the screen, type in <code>disp('Hello world!')</code>. This command will return our friendly greeting as follows: <code>Hello world!</code>
+</para><para id="eip-300"><code>disp(variable)</code> can be used to display only the value of a variable. To demonstrate this, issue the following command in the command window: </para><code id="eip-747" display="block"><code>b = [1 2 3 4 5]</code></code><para id="eip-171">We have created a row vector with 5 elements. The following is displayed in the command window:</para><code id="eip-627" display="block">&gt;&gt; b = [1 2 3 4 5]
+
+b =
+
+     1     2     3     4     5</code><para id="eip-376">Now if we type in <code>disp(b)</code> and press enter, the variable name will not be displayed but its value will be printed on the screen: </para><code id="eip-875" display="block">&gt;&gt; disp(b)
+     1     2     3     4     5</code><para id="eip-697">The following example demonstrates the usage of <code>disp</code> function. </para><example id="eip-571"><para id="eip-877">Now, let's open <code>AcetyleneBottleInteractive.m</code> file and modify it by using the <code>disp</code> command. First save the file as <code>AcetyleneBottleInteractiveDisp.m</code>, so that we don't accidentally introduce errors to a working file and also we can easily find this particular file that utilizes the <code>disp</code> command in the future. The new file should contain the code below:  
+</para><code id="eip-594" display="block">% This script computes the volume of an acetylene bottle 
+    % user is prompted to enter 
+        % a radius r for a hemispherical top
+        % a height h for a cylindrical part
+clc                           % Clear screen
+disp('This script computes the volume of an acetylene bottle')
+r=input('Enter the radius of acetylene bottle in meters ');                                     
+h=input('Enter the height of cylindrical part of acetylene bottle in meters ');
+Vol_top=(2*pi*r^3)/3;         % Calculating the volume of hemispherical top [m3]
+Vol_cyl=pi*r^2*h;             % Calculating the volume of cylindrical bottom [m3]
+Vol_total=Vol_top+Vol_cyl;    % Calculating the total volume of acetylene bottle [m3]
+disp(' ')                     % Display blank line
+disp('The volume of the acetylene bottle is') % Display text
+disp(Vol_total)               % Display variable</code><para id="eip-258">Your screen output should look similar to the one below:</para><code id="eip-889" display="block">This script computes the volume of an acetylene bottle
+Enter the radius of acetylene bottle in meters .3
+Enter the height of cylindrical part of acetylene bottle in meters 1.5
+ 
+The volume of the acetylene bottle is
+    0.4807</code>
+</example>
+</section>
+
+<section id="eip-421"><title>The <code>num2str</code> Function</title><para id="eip-762">The <code>num2str</code> function allows us to convert a number to a text string. Basic syntax is <code>str = num2str(A)</code> where variable A is converted to a text and stored in <code>str</code>. Let's see how it works in <code>AcetyleneBottleInteractiveDisp.m</code>. Remember to save the file with a different name before editing it, for example, <code>AcetyleneBottleInteractiveDisp1.m</code>.
+</para><example id="eip-273"><para id="eip-337">
+Add the following line of code to your file:
+</para><code id="eip-597" display="block">str = ['The volume of the acetylene bottle is ', num2str(Vol_total), ' cubic meters.'];</code><para id="eip-679">Notice that the three arguments in <code>str</code> are separated with commas. The first argument is a simple text that is contained in ' '. The second argument is where the number to string conversion take place. And finally the third argument is also a simple text that completes the sentence displayed on the screen. Using semicolon at the end of the line suppresses the output. In the next line of our script, we will call <code>str</code> with <code>disp(str);</code>. </para><para id="eip-680">AcetyleneBottleInteractiveDisp1.m file should look like this:</para><code id="eip-566" display="block">% This script computes the volume of an acetylene bottle 
+  % user is prompted to enter 
+        % a radius r for a hemispherical top
+        % a height h for a cylindrical part
+clc                           % Clear screen
+disp('This script computes the volume of an acetylene bottle:')
+disp(' ')                     % Display blank line
+r=input('Enter the radius of acetylene bottle in meters ');                                     
+h=input('Enter the height of cylindrical part of acetylene bottle in meters ');
+Vol_top=(2*pi*r^3)/3;         % Calculating the volume of hemispherical top [m3]
+Vol_cyl=pi*r^2*h;             % Calculating the volume of cylindrical bottom [m3]
+Vol_total=Vol_top+Vol_cyl;    % Calculating the total volume of acetylene bottle [m3]
+disp(' ')                     % Display blank line
+str = ['The volume of the acetylene bottle is ', num2str(Vol_total), ' cubic meters.'];
+disp(str);</code><para id="eip-992">Running the script should produce the following:</para><code id="eip-699" display="block">This script computes the volume of an acetylene bottle:
+ 
+Enter the radius of acetylene bottle in meters .3
+Enter the height of cylindrical part of acetylene bottle in meters 1.5
+ 
+The volume of the acetylene bottle is 0.48066 cubic meters.</code>
+</example>
+</section>
+
+<section id="eip-220"><title>The <code>fopen</code> and <code>fclose</code> Functions</title><para id="eip-957">The first command is used to open or create a file. The basic syntax for <code>fopen</code> is as follows: </para><code id="eip-82" display="block">fid = fopen(filename, permission)</code><para id="eip-850">For example, <code>fo = fopen('output.txt', 'w');</code> opens or creates a new file named <code>output.txt</code> and sets the permission for writing. If the file already exists, it discards the existing contents.</para><para id="eip-758"><code>fclose</code> command is used to close a file. For example, if we type in <code>fclose(fo);</code>, we close the file that was created above.</para></section><section id="eip-291"><title>The <code>fprintf</code> Function </title><para id="eip-802"><code>fprintf</code> function writes formatted data to the computer monitor or a file. This command can be used to save the results of a calculation to a file. To do this, first we create or open an output file with <code>fopen</code>, second we issue the <code>fprintf</code> command and then we close the output file with <code>fclose</code>.     
+</para><para id="eip-657">The simplified syntax for <code>fprintf</code> is as follows: </para><code id="eip-451" display="block">fprintf=(fid, format, variable1, variable 2, ...)</code><example id="eip-439"><para id="eip-26">Add the following lines to your .m file: 
+
+</para><code id="eip-298" display="block">fo = fopen('output.txt', 'w');
+fprintf(fo,'The radius of acetylene bottle: %g meters \n', r);
+fprintf(fo,'The height of cylindrical part of acetylene bottle: %g meters \n', h);
+fprintf(fo,'The volume of the acetylene bottle: %g cubic meters. \n', Vol_total);
+fclose(fo);</code><para id="eip-60">Here, we first create the <code>output.txt</code> file that will contain the following three variables <code>r,</code> <code>h</code> and <code>Vol_total</code>. In the <code>fo</code> output file, the variables are formated with <code>%g</code> which automatically uses the shortest display format. You can also use <code>%i</code> or <code>%d</code> for integers and <code>%e</code> for scientific notation. In our script above, the <code>\n</code> (newline) moves the cursor to the next line.</para><para id="eip-991">Naming the new .m file as <code>AcetyleneBottleInteractiveOutput.m</code>, it should look like this:</para><code id="eip-242" display="block">% This script computes the volume of an acetylene bottle 
+  % user is prompted to enter 
+        % a radius r for a hemispherical top
+        % a height h for a cylindrical part
+clc                           % Clear screen
+disp('This script computes the volume of an acetylene bottle:')
+disp(' ')                     % Display blank line
+r=input('Enter the radius of acetylene bottle in meters ');                                     
+h=input('Enter the height of cylindrical part of acetylene bottle in meters ');
+Vol_top=(2*pi*r^3)/3;         % Calculating the volume of hemispherical top [m3]
+Vol_cyl=pi*r^2*h;             % Calculating the volume of cylindrical bottom [m3]
+Vol_total=Vol_top+Vol_cyl;    % Calculating the total volume of acetylene bottle [m3]
+disp(' ')                     % Display blank line
+str = ['The volume of the acetylene bottle is ', num2str(Vol_total), ' cubic meters.'];
+disp(str);
+fo = fopen('output.txt', 'w');
+fprintf(fo,'The radius of acetylene bottle: %g meters \n', r);
+fprintf(fo,'The height of cylindrical part of acetylene bottle: %g meters \n', h);
+fprintf(fo,'The volume of the acetylene bottle: %g cubic meters. \n', Vol_total);
+fclose(fo);</code></example><para id="eip-879">Upon running the file, the <code>output.txt</code> file will display the following:</para><code id="eip-624" display="block">The radius of acetylene bottle: 0.3 meters 
+The height of cylindrical part of acetylene bottle: 1.5 meters 
+The volume of the acetylene bottle: 0.480664 cubic meters.</code></section><section id="eip-577"><title>Loops</title><para id="eip-530">In programming, a loop executes a set of code a specified number of times or until a condition is met. 
+</para><section id="eip-27"><title>For Loop</title><para id="eip-876">This loop iterates an index variable from an initial value using a specified increment to a final value and runs a set of code. The for loop syntax is the following:
+<code id="forloop" display="block">
+    for loop_index=vector_statement
+      code
+      ...
+      code
+    end
+</code></para><example id="eip-844"><para id="eip-547">Calculate <m:math display="display"><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:cos/><m:ci>x</m:ci></m:apply></m:apply></m:math> for <m:math display="display"><m:apply><m:leq/><m:apply><m:minus/><m:pi/></m:apply><m:ci>x</m:ci><m:pi/></m:apply></m:math> using an increment of <m:math display="display"><m:apply><m:divide/><m:pi/><m:cn>4</m:cn></m:apply></m:math>.
+
+<code id="forloop1" display="block">
+for x=-pi:pi/4:pi       
+    y=cos(x);           
+    fprintf('%8.3f %8.2f \n',x,y); 
+end
+</code>
+</para><para id="eip-21">In the brief script above, <m:math><m:ci>x</m:ci></m:math> is the loop index that is initiated from <m:math><m:apply><m:minus/><m:pi/></m:apply></m:math> and incremented with <m:math display="display"><m:apply><m:divide/><m:pi/><m:cn>4</m:cn></m:apply></m:math> to a final value of <m:math display="display"><m:pi/></m:math>. At the end of each increment, <m:math display="display"><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:cos/><m:ci>x</m:ci></m:apply></m:apply></m:math> is calculated and displayed with the fprintf command. This process continues until <m:math><m:apply><m:eq/><m:ci>x</m:ci><m:pi/></m:apply></m:math>.</para><para id="eip-528">From a previous exercise we know \n creates a new line when included in the fprintf command. Here, we also use %8.3f to specify eight spaces and three decimal places for the first variable x. Likewise %8.2f specifies the formatting for the second variable y but in this case, y is displayed with two decimal places. The result is the following:
+<code id="forloop2" display="block">
+  -3.142    -1.00 
+  -2.356    -0.71 
+  -1.571     0.00 
+  -0.785     0.71 
+   0.000     1.00 
+   0.785     0.71 
+   1.571     0.00 
+   2.356    -0.71 
+   3.142    -1.00
+</code>
+</para><para id="eip-52">We can improve our code by adding formatting lines as follows:
+<code id="forloop3" display="block">
+clear; clc;
+fprintf('   x         cos(x)\n') % title row
+fprintf('   ----------------\n') % title row
+ for x=-pi:pi/4:pi       % loop_index=inital_value:increment_value:final_value
+    y=cos(x);           % code to calculate cos(x)
+    fprintf('%8.3f %8.2f \n',x,y); % code to print the output to screen
+ end
+</code></para><para id="eip-443">Screen output:
+<code id="forloop4" display="block">
+   x         cos(x)
+   ----------------
+  -3.142    -1.00 
+  -2.356    -0.71 
+  -1.571     0.00 
+  -0.785     0.71 
+   0.000     1.00 
+   0.785     0.71 
+   1.571     0.00 
+   2.356    -0.71 
+   3.142    -1.00
+</code></para></example></section><section id="eip-698"><title>While Loop</title><para id="eip-863">Like the for loop, a while loop executes blocks of code over and over again however it runs as long as the test condition remains true. The syntax of a while loop is
+<code id="while11" display="block">
+    while test_condition
+     code
+     ...
+     code
+    end 
+</code></para><example id="eip-993"><para id="eip-629">Using a <code>while</code> loop, calculate <m:math display="display"><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:cos/><m:ci>x</m:ci></m:apply></m:apply></m:math> for <m:math display="display"><m:apply><m:leq/><m:apply><m:minus/><m:pi/></m:apply><m:ci>x</m:ci><m:pi/></m:apply></m:math> using an increment of <m:math display="display"><m:apply><m:divide/><m:pi/><m:cn>4</m:cn></m:apply></m:math>.
+</para><para id="eip-800">This time we need to initialize the x value outside the loop and then state the test condition in the first line of the while loop. We also need to create an increment statement within the while loop:  
+<code id="while12" display="block">
+x=-pi;
+    while x&lt;=pi     
+        y=cos(x); 
+        fprintf('%8.3f %8.2f \n',x,y); 
+        x = x + (pi/4);                   
+    end
+</code></para><para id="eip-402">The result is the same as that of the previous example:
+<code id="while1" display="block">
+  -3.142    -1.00 
+  -2.356    -0.71 
+  -1.571     0.00 
+  -0.785     0.71 
+   0.000     1.00 
+   0.785     0.71 
+   1.571     0.00 
+   2.356    -0.71 
+   3.142    -1.00
+</code></para><para id="eip-142">Now we can improve the code by adding extra formatting lines and comments:
+<code id="while2" display="block">
+clear; clc;
+fprintf('   x         cos(x)\n') % title row
+fprintf('   ----------------\n') % title row
+x=-pi;                           % initiating the x value
+while x&lt;=pi                    % stating the test condition
+    y=cos(x);                    % calculating the value of y
+    fprintf('%8.3f %8.2f \n',x,y); % printing a and y
+    x = x + (pi/4);      % iterating to the next step             
+end
+</code></para><para id="eip-194">The result should look the same as before. 
+<code id="while3" display="block">
+   x         cos(x)
+   ----------------
+  -3.142    -1.00
+  -2.356    -0.71
+  -1.571     0.00
+  -0.785     0.71
+   0.000     1.00
+   0.785     0.71
+   1.571     0.00
+   2.356    -0.71
+   3.142    -1.00
+</code></para></example></section></section><section id="eip-431"><title>The <code>diary</code> Function</title><para id="eip-626">Instead of writing a script from scratch, we sometimes solve problems in the Command Window as if we are using a scientific calculator. The steps we perform in this fashion can be used to create an m-file. For example, the <code>diary</code> function allows us to record a MATLAB session in a file and retrieve it for review. Reviewing the file and by copying relevant parts of it and pasting them in to an m-file, a script can be written easily. 
+</para><para id="eip-406">Typing <code>diary</code> at the MATLAB prompt toggles the diary mode on and off. As soon as the diary mode is turned on, a file called diary is created in the current directory. If you like to save that file with a specific name, say for example problem16, type 
+
+<newline/>
+<code>&gt;&gt; diary problem16.txt</code>.
+<newline/> 
+A file named problem16.txt will be created. The following is the content of a diary file called problem16.txt. Notice that in that session, the user is executing the four files we created earlier. The user's keyboard input and the resulting display output is recorded in the file. The session is ended by typing <code>diary</code> which is printed in the last line. This might be useful to create a record of your work to hand in with a lab or to create the beginnings of an m-file.</para><code id="eip-620" display="block">AcetyleneBottle
+
+Vol_total =
+
+    0.4807
+
+AcetyleneBottleInteractive
+Enter the radius of acetylene bottle in meters .3
+Enter the height of cylinderical part of acetylene bottle in meters 1.5
+
+Vol_total =
+
+    0.4807
+
+AcetyleneBottleInteractiveDisp
+This script computes the volume of an acetylene bottle
+Enter the radius of acetylene bottle in meters .5
+Enter the height of cylinderical part of acetylene bottle in meters 1.6
+ 
+The volume of the acetylene bottle is
+    1.5184
+
+AcetyleneBottleInteractiveDisp1
+This script computes the volume of an acetylene bottle:
+ 
+Enter the radius of acetylene bottle in meters .9
+Enter the height of cylinderical part of acetylene bottle in meters 1.9
+ 
+The volume of the acetylene bottle is 6.3617 cubic meters.
+diary</code>
+</section>
+
+<section id="eip-583"><title>Style Guidelines</title><para id="eip-812">Try to apply the following guidelines when writing your scripts:
+</para><list id="eip-413"><item>Share your code or programs with others, consider adopting one of <link url="http://creativecommons.org/" window="new"> Creative Commons</link> or <link url="http://www.gnu.org/licenses/gpl-3.0.html" window="new"> GNU General Public License</link> schemes</item>
+<item>Include your name and contact info in the opening lines</item>
+<item>Use comments liberally</item>
+<item>Group your code and use proper indentation</item>
+<item>Use white space liberally</item>
+<item>Use descriptive names for your variables</item>
+<item>Use descriptive names for your m-files</item></list></section><section id="eip-369"><title>Summary of Key Points</title><list id="eip-959" list-type="enumerated" number-style="arabic"><item>A script is a file containing a sequence of MATLAB statements. Script files have a filename extension of .m.</item>
+<item>Functions such as <code>input</code>, <code>disp</code> and <code>num2str</code> can be used to make scripts interactive,</item>
+<item><code>fopen</code>, <code>fprintf</code> and <code>fclose</code> functions are used to create output files,</item>
+<item>A <code>for</code> loop is used to repeat a specific block of code a definite number of times.</item>
+<item>A <code>while</code> loop is used to repeat a specific block of code an indefinite number of times, until a condition is met.</item>
+<item>The <code>diary</code> function is useful to record a MATLAB command window session from which an m-file can be easily created,</item>
+<item>Various style guidelines covered here help improve our code.</item></list></section>
+</content>
+
+</document>

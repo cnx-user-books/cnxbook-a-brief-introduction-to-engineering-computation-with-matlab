@@ -1,0 +1,257 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>What is MATLAB?</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41403</md:content-id>
+  <md:title>What is MATLAB?</md:title>
+  <md:abstract>A brief introduction to MATLAB.</md:abstract>
+  <md:uuid>f71df50e-2887-4f18-851e-528497e81350</md:uuid>
+</metadata>
+
+<content>
+  <para id="eip-138"><media id="WhatsMATLAB1" alt="WhatsMATLAB">
+       
+  <image mime-type="image/png" src="../../media/WhatsMATLAB.jpg"/>
+         
+</media></para><para id="eip-384">MATLAB stands for MATrix LABoratory (see <link url="http://en.wikipedia.org/wiki/MATLAB" window="new"> wikipedia</link>) and is a commercial software application written by <link url="http://www.mathworks.com/" window="new">The MathWorks, Inc.</link> When you first use MATLAB, you can think of it as a glorified calculator allowing you to perform engineering calculations and plot data. However, MATLAB is more than an advanced scientific calculator, for example MATLAB's sophisticated numerical computation environment also allows us to analyze data, simulate engineering systems, document and share our code with others.</para><section id="eip-574"><title>Why Use MATLAB?</title><para id="eip-615">MATLAB has become a defacto standard in many fields of engineering and science. Even a casual exploration of MATLAB should unveil its computational power however a closer look at MATLAB's graphics and data analysis tools as well as interaction with other applications and programing languages prove why MATLAB is a very strong application for technical computing.   
+</para><para id="eip-807">The standard MATLAB installation includes graphics features to visualize engineering and scientific data in 2-D and 3-D plots. We can interactivity build graphs and generate MATLAB command output that can be saved for use in the future. The saved-instructions can be called again with different data set to build new plots. The plots created with MATLAB can be exported in various file formats (e.g. .jpg, .png) to embed in Microsoft Word documents or PowerPoint slideshows. </para><para id="eip-735">MATLAB also contains interactive tools to explore and analyze data. For example, we can visualize data with one of the many plotting routines, zoom in to plots to take measurements, perform statistical calculations, fit curves to data and evaluate the obtained expression for a desired value.</para><para id="eip-760">MATLAB interacts with other applications (e.g. Microsoft Excel) and can be called from C code, C++ or Fortran programming language.</para></section><section id="eip-372"><title>Running MATLAB</title><para id="eip-462">To use MATLAB, it must be installed on your computer and you can start it just like you start any application on your system or you must have access to a network where it is available. 
+</para><para id="eip-845">BCIT holds a Total Student Headcount (TSH) license for Mathworks software and this allows students to install MathWorks software on their personally-owned computers.
+</para><para id="eip-452"><link url="http://kb.bcit.ca/sr/software/secure/2195.shtml" window="new"> Matlab download and installation instructions for BCIT students</link></para><para id="eip-416">For your install, choose the latest version available and install MATLAB, Curve Fitting Toolbox and Symbolic Math Toolbox.</para><para id="eip-595">In addition, MATLAB Online provides access to MATLAB from your web browser. Just log in to use MATLAB:</para><para id="eip-669"><link url="https://www.mathworks.com/products/matlab-online/" window="new"> Access MATLAB From Your Web Browser</link></para></section><section id="eip-510"><title>The MATLAB Desktop</title><para id="eip-30">When you start the MATLAB program, it displays the MATLAB desktop. The desktop is a set of tools (graphical user interfaces or GUIs) for managing files, variables, and applications associated with MATLAB. The first time you start MATLAB, the desktop appears with the default layout, as shown in the following illustration. 
+</para><para id="eip-252"><figure id="desktop"><media id="desktop1" alt="The MATLAB Desktop.">
+	   
+  <image mime-type="image/png" src="../../media/Desktop.PNG"/>
+		 
+</media>
+  
+<caption>The MATLAB Desktop.
+  </caption></figure></para><section id="eip-143"><title>Command Window</title><para id="eip-636">The Command Window is where we execute MATLAB commands. We enter statements at the Command Window prompt. The prompt can be any one of the following:</para><list id="eip-279"><item><code>Trial&gt;&gt;</code> indicates that the Command Window is in normal mode and the MATLAB license will expire after the trial period ends.</item>
+<item><code>EDU&gt;&gt;</code> indicates that the Command Window is in normal mode, in MATLAB Student Version.</item>
+<item><code>&gt;&gt;</code> indicates that the Command Window is in normal mode.</item>
+
+
+
+
+
+
+</list><para id="eip-36"><figure id="CommandWindow">
+  <title/>
+<media id="CommandWindow1" alt="The Command Window.">
+	   
+  <image mime-type="image/png" src="../../media/CommandWindow.PNG"/>
+		 
+</media>
+  <caption>
+     The Command Window.
+  </caption>
+</figure>
+</para></section><section id="eip-176"><title>Command History</title><para id="eip-526">
+The Command History is a log of the commands we have executed in the command window.
+</para><para id="eip-166"><figure id="CommandHistory">
+  <title/>
+<media id="CommandHistory1" alt="The Command History.">
+	   
+  <image mime-type="image/png" src="../../media/CommandHistory.PNG"/>
+		 
+</media>
+  <caption>
+     The Command History.
+  </caption>
+</figure></para></section><section id="eip-82"><title>Workspace</title><para id="eip-128">The workspace consists of a set of variables stored in memory during a MATLAB session. To open the Workspace browser, select Desktop &gt; Workspace in the MATLAB desktop, or type 
+</para><code id="eip-988" display="block">&gt;&gt; workspace</code><para id="eip-173">at the Command Window prompt.</para><para id="eip-549"><figure id="Workspace">
+<media id="Workspace1" alt="Workspace">
+	   
+  <image mime-type="image/png" src="../../media/Workspace.PNG"/>
+		 
+</media>
+  <caption>
+     Workspace.
+  </caption>
+</figure></para></section><section id="eip-701"><title>Current Folder</title><para id="eip-65">The Current Folder is like the Finder in Mac OS X or Windows Explorer in Windows operating systems and allows us to browse through the files and folders. The Current Folder also displays details about files in your current directory and within the hierarchy of the folders it contains.
+</para><para id="eip-50"><figure id="CurrentFolder">
+<media id="CurrentFolder1" alt="Current Folder">
+	   
+  <image mime-type="image/png" src="../../media/CurrentFolder.PNG"/>
+		 
+</media>
+  <caption>
+     Current Folder.
+  </caption>
+</figure></para><para id="eip-648"><figure id="CurrentFolder2a">
+<media id="CurrentFolder2" alt="CurrentFolder1">
+       
+  <image mime-type="image/png" src="../../media/CurrentFolder1.PNG"/>
+         
+</media>
+  <caption>
+     Current Folder docked on the desktop.
+  </caption>
+</figure></para></section><section id="eip-911"><title>Tool Strip</title><para id="eip-740">The tool strip contains global tabs, Home, Plots and Apps. Contextual tabs become available when you need them. 
+</para><para id="eip-228"><figure id="MenuBar">
+<media id="MenuBar1" alt="Menu Bar">
+	   
+  <image mime-type="image/png" src="../../media/Toolstrip.PNG"/>
+		 
+</media>
+  <caption>
+     Tool Strip.
+  </caption>
+</figure></para><para id="eip-884"><figure id="tabs">
+<media id="tabs1" alt="tabs">
+	   
+  <image mime-type="image/png" src="../../media/Tabs.PNG"/>
+		 
+</media>
+  <caption>
+     Tabs.
+  </caption>
+</figure></para><para id="eip-97">The plots tab allows us to plot various types of graphs quickly and easily.
+<figure id="Plot">
+<media id="Plot1" alt="Plot">
+	   
+  <image mime-type="image/png" src="../../media/Plot.PNG"/>
+		 
+</media>
+  <caption>
+     The plots tab.
+  </caption>
+</figure></para><para id="eip-825">The apps tab gives quick access to interactive applications within MATLAB environment. 
+<figure id="Apps">
+<media id="Apps1" alt="Apps">
+	   
+  <image mime-type="image/png" src="../../media/Apps.PNG"/>
+		 
+</media>
+  <caption>
+     The apps tab.
+  </caption>
+</figure></para><para id="eip-376">Layout button allows us to change the desktop layout or go back to the default configuration. 
+<figure id="Layout">
+<media id="Layout1" alt="Desktop Layout">
+	   
+  <image mime-type="image/png" src="../../media/DesktopLayout.PNG"/>
+		 
+</media>
+  <caption>
+     Layout button.
+  </caption>
+</figure></para></section><section id="eip-555"><title>Toolbar</title><para id="eip-246">The MATLAB toolbar provides on-screen buttons to access frequently used features such as, copy, paste, undo and redo.
+</para><para id="eip-73"><figure id="ToolBar"><media id="ToolBar1" alt="Tool Bar">
+	   
+  <image mime-type="image/png" src="../../media/ToolBar.PNG"/>
+		 
+</media>
+  
+<caption>Toolbar.
+  </caption></figure></para></section><section id="eip-954"><title>Keyboard shortcuts</title><para id="eip-56">MATLAB provides keyboard shortcuts for viewing a history of commands and listing contextual help. 
+<list id="eip-327" list-type="enumerated" number-style="arabic"><item>The up arrow key,</item>
+<item>The tab key,</item>
+<item>The semicolon symbol.</item></list>
+</para><section id="eip-345"><title>The Up Arrow Key</title><para id="eip-638">Suppose we want to enter the following equation:
+</para><code id="eip-974" display="block">&gt;&gt; y=sin(45)</code><para id="eip-698">But we mistakenly entered</para><code id="eip-925" display="block">&gt;&gt; y=sine(45)</code><para id="eip-238">MATLAB returns the following prompt:</para><code id="eip-793" display="block">??? Undefined function or method 'sine' for input arguments of type 'double'.</code><para id="eip-993">Instead of retyping the equation, press the up arrow key, the mistakenly entered line is displayed. Using the left arrow key, move the cursor to the misspelled letter. Make the correction and press Return or Enter to execute the command.</para><para id="eip-317">Pressing the up arrow key repeatedly recalls the previously entered commands. Likewise, typing the first characters of previously entered line and pressing the up arrow key displays the full command line. To execute that line, simply press the Return or Enter key. </para></section><section id="eip-940"><title>The Tab Key</title><para id="eip-782">Suppose you forgot how to enter the square root command. Begin typing <code>y=sq</code> in the command prompt:
+</para><code id="eip-677" display="block">&gt;&gt; y=sq</code><para id="eip-519">Then press the tab key and scroll down to <code>sqrt</code>. Select it and press Return or Enter key.</para><code id="eip-770" display="block">&gt;&gt; y=sqrt</code></section><section id="eip-93"><title>The Semicolon Symbol</title><para id="eip-864">The semicolon symbol at the end of a line suppresses the screen output. This is useful when you want to keep your command window clean.
+</para><para id="eip-204">Type the following entry and press the Return key:</para><code id="eip-776" display="block">&gt;&gt; y=2+2</code><para id="eip-985">The following output is displayed:</para><code id="eip-522" display="block">y =
+
+     4</code><para id="eip-617">Now, press the up arrow key to recall our initial entry</para><code id="eip-439" display="block">&gt;&gt; y=2+2</code><para id="eip-746">And insert a semicolon as follows:</para><code id="eip-170" display="block">&gt;&gt; y=2+2;</code><para id="eip-371">No numerical result is displayed however MATLAB stores the value of y in the memory. We can recall the value y by simply typing y and pressing Return.</para></section></section></section><section id="eip-539"><title>MATLAB Help</title><para id="eip-240">MATLAB comes with three forms of online help: help, doc and demos.</para><section id="eip-651"><title>Help</title><para id="eip-239">Typing help in the Command Window lists all primary help topics. You can display a topic by clicking on the link.
+</para><code id="eip-517" display="block">&gt;&gt; help</code><para id="eip-188"><figure id="Help">
+<media id="Help1" alt="Help">
+	   
+  <image mime-type="image/png" src="../../media/Help.PNG"/>
+		 
+</media>
+  <caption>
+     Help.
+  </caption>
+</figure></para><para id="eip-184">Or if you know the command or function you need help with, you can type help followed by the command or function. For example to learn about <code>clc</code> command, type <code>help clc</code> at the command prompt:  </para><code id="eip-757" display="block">&gt;&gt; help clc</code><para id="eip-55"><figure id="HelpCLC"><media id="HelpCLC1" alt="Help CLC">
+	   
+  <image mime-type="image/png" src="../../media/HelpCLC.PNG"/>
+		 
+</media>
+  
+<caption>The output of <code> &gt;&gt; help clc </code> command.
+  </caption></figure></para><para id="eip-867">Also try the following command:
+
+<code> &gt;&gt; help clear </code></para><para id="eip-425"><figure id="HelpClear"><media id="HelpClear1" alt="Help Clear">
+	   
+  <image mime-type="image/png" src="../../media/HelpClear.PNG"/>
+		 
+</media>
+  
+<caption>The output of <code> &gt;&gt; help clear </code> command.
+  </caption></figure></para><para id="eip-244">To learn about sine function, type <code> help sin</code> at the command prompt:</para><code id="eip-691" display="block">&gt;&gt; help sin</code></section><section id="eip-868"><title>Doc</title><para id="eip-283">Obviously, to use <code>help</code> effectively, you need to know what you are looking for. Often times, especially when you first start learning an application, it is usually difficult to ask the right questions. In the case of MATLAB, <code>doc</code> command is generally better than <code>help</code>. If you type <code>doc</code> in the command prompt, MATLAB opens a browser from where you can obtain help easier:</para><code id="eip-28" display="block">&gt;&gt; doc</code><para id="eip-234"><figure id="Doc"><media id="Doc1" alt="Doc">
+	   
+  <image mime-type="image/png" src="../../media/Doc.PNG"/>
+		 
+</media>
+  
+<caption>Built-in MATLAB Documentation.
+  </caption></figure></para><para id="eip-649">Like using <code> help sin</code>, try typing <code>doc sin</code> in the command prompt:</para><code id="eip-904" display="block">&gt;&gt; doc sin</code></section><section id="eip-813"><title>Demos</title><para id="eip-631">You can learn more about MATLAB through demos by typing <code>demo</code> in the command prompt, a list of links to demos will open in Help Browser. Demos and online seminars are available at <link url="http://www.mathworks.com/products/matlab/demos.html" window="new"> product demos and online seminars</link>.
+</para><code id="eip-294" display="block">&gt;&gt; demo</code><para id="eip-48"><figure id="Demo">
+<media id="Demo1" alt="Demo">
+	   
+  <image mime-type="image/png" src="../../media/Demo.PNG"/>
+		 
+</media>
+  <caption>
+     Built-in MATLAB Demos.
+  </caption>
+</figure></para></section></section><section id="eip-874"><title>Useful Commands and Functions</title><para id="eip-501">For a detailed explanation and examples for each of the following type ‘help function’ (without quotes) at the MATLAB prompt.
+</para><table id="eip-932" summary="Useful commands and functions">
+<tgroup cols="2"><thead>
+      <row>
+        <entry>Command/Function</entry>
+        <entry>Meaning</entry>
+       </row>
+</thead>
+<tbody>
+  <row>
+    <entry>clc</entry>
+    <entry>Clear Command Window</entry>
+  </row>
+  <row>
+    <entry>clear</entry>
+    <entry>Remove items from workspace</entry>
+  </row>
+  <row>
+    <entry>who, whos</entry>
+    <entry>List variables in workspace</entry>
+  </row>
+  <row>
+    <entry>workspace</entry>
+    <entry>Display Workspace browser</entry>
+  </row>
+  <row>
+    <entry>cd</entry>
+    <entry>Change working directory</entry>
+  </row>
+  <row>
+    <entry>pwd</entry>
+    <entry>Display current directory</entry>
+  </row>
+<row>
+    <entry>computer</entry>
+    <entry>Identify information about computer on which MATLAB is running</entry>
+  </row>
+<row>
+    <entry>ver</entry>
+    <entry>Display version information for MathWorks products</entry>
+  </row>
+  <row>
+    <entry>quit</entry>
+    <entry>Terminate MATLAB</entry>
+  </row>
+  <row>
+    <entry>exit</entry>
+    <entry>Terminate MATLAB (same as quit)</entry>
+  </row>
+</tbody>
+
+
+</tgroup><caption>Useful commands and functions</caption>
+</table></section><section id="eip-523"><title>Summary of Key Points</title><list id="eip-308" list-type="enumerated" number-style="arabic"><item>MATLAB is a popular technical computing application and MathWorks offers a trial version of MATLAB on their website,</item>
+<item>The MATLAB Desktop consists of Command Window, Command History, Workspace, Current Folder and Start Button,</item>
+<item>The up/down arrow keys, the tab key and the semicolon are convenient tools to use the Command Window,</item>
+<item>MATLAB features an online help, doc and demo,</item>
+<item>Various commands and functions make MATLAB experience easier, for example, <code>clc, clear and exit</code>.</item></list></section>
+</content>
+
+</document>

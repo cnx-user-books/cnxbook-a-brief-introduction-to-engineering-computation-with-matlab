@@ -1,0 +1,317 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Problem Set</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41624</md:content-id>
+  <md:title>Problem Set</md:title>
+  <md:abstract>Problem Set for Interpolation with MATLAB</md:abstract>
+  <md:uuid>c240b40e-0a5e-40e8-abcf-aa4e568720df</md:uuid>
+</metadata>
+
+<content>
+  <exercise id="eip-623"><problem id="eip-454">
+  <para id="eip-284">Determine the saturation temperature, specific liquid enthalpy, specific enthalpy of evaporation and specific enthalpy of dry steam at a pressure of 2.04 MPa.  
+
+<table id="steam_table" summary="steam_table">
+<tgroup cols="5"><colspec colnum="1" colname="c1"/>
+    <colspec colnum="2" colname="c2"/>
+<thead>
+      <row>
+        <entry>Pressure [MN/m<sup>2</sup>]</entry>
+        <entry>Saturation Temperature [C]</entry>
+        <entry>h<sub>f</sub> [kJ/kg]</entry>
+        <entry>h<sub>fg</sub> [kJ/kg]</entry>
+        <entry>h<sub>g</sub> [kJ/kg]</entry>
+      </row>
+</thead>
+<tbody>
+  <row>
+    <entry>2.1</entry>
+    <entry>214.9</entry>
+    <entry>920.0</entry>
+    <entry>1878.2</entry>
+    <entry>2798.2</entry>
+  </row>
+  <row>
+    <entry>2.0</entry>
+    <entry>212.4</entry>
+    <entry>908.6</entry>
+    <entry>1888.6</entry>
+    <entry>2797.2</entry>
+  </row>
+</tbody>
+
+
+
+
+
+
+
+</tgroup><caption>An extract from steam tables</caption>
+</table>
+  </para>
+</problem>
+
+<solution id="eip-829">
+  <para id="eip-984">MATLAB solution is as follows;
+<code id="eip-id1164649084519" display="block">&gt;&gt; pressure=[2.1 2.0];
+&gt;&gt; sat_temp=[214.9 212.4];
+&gt;&gt; h_f=[920 908.6];
+&gt;&gt; h_fg=[1878.2 1888.6];
+&gt;&gt; h_g=[2798.2 2797.2];
+
+&gt;&gt; sat_temp_new=interp1(pressure,sat_temp,2.04)
+
+sat_temp_new =
+
+  213.4000
+
+&gt;&gt; h_f_new=interp1(pressure,h_f,2.04)
+
+h_f_new =
+
+  913.1600
+
+&gt;&gt; h_fg_new=interp1(pressure,h_fg,2.04)
+
+h_fg_new =
+
+  1.8844e+003
+
+&gt;&gt; h_g_new=interp1(pressure,h_g,2.04)
+
+h_g_new =
+
+  2.7976e+003
+
+</code>
+  </para>
+</solution>
+</exercise><exercise id="eip-589"><problem id="eip-65">
+  <para id="eip-id1172322802794">The following table gives data for the specific heat as it changes with temperature for a perfect gas. (Data available <link resource="Chp5_Exercise2.zip">for download</link>).
+<footnote id="ThermodynamicsAndHeatPower"> 
+    <cite>
+  <cite-title>Thermodynamics and Heat Power</cite-title>
+  by Kurt C. Rolle, Pearson Prentice Hall. © 2005, (p.19)
+</cite>
+  </footnote> 
+
+  
+<table id="specific_heat" summary="specific_heat">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+    <colspec colnum="2" colname="c2"/>
+<thead>
+      <row>
+        <entry>Temperature [F]</entry>
+        <entry>Specific Heat [BTU/lbmF]</entry>
+      </row>
+</thead>
+<tbody>
+  <row>
+    <entry>25</entry>
+    <entry>0.118</entry>
+  </row>
+  <row>
+    <entry>50</entry>
+    <entry>0.120</entry>
+  </row>
+  <row>
+    <entry>75</entry>
+    <entry>0.123</entry>
+  </row>
+  <row>
+    <entry>100</entry>
+    <entry>0.125</entry>
+  </row>
+  <row>
+    <entry>125</entry>
+    <entry>0.128</entry>
+  </row>
+  <row>
+    <entry>150</entry>
+    <entry>0.131</entry>
+  </row>
+</tbody>
+
+
+</tgroup><caption>Change of specific heat with temperature</caption>
+</table>
+Using interp1 function calculate the specific heat for 30 F, 70 F and 145 F.</para>
+</problem>
+
+<solution id="eip-918">
+  <para id="eip-903">MATLAB solution is as follows:
+<code id="eip-id1169485738452" display="block">&gt;&gt; temperature=[25;50;75;100;125;150]
+
+temperature =
+
+    25
+    50
+    75
+   100
+   125
+   150
+
+&gt;&gt; specific_heat=[.118;.120;.123;.125;.128;.131]
+
+specific_heat =
+
+    0.1180
+    0.1200
+    0.1230
+    0.1250
+    0.1280
+    0.1310
+
+&gt;&gt; specific_heatAt30=interp1(temperature,specific_heat,30)
+
+specific_heatAt30 =
+
+    0.1184
+
+&gt;&gt; specific_heatAt70=interp1(temperature,specific_heat,70)
+
+specific_heatAt70 =
+
+    0.1224
+
+&gt;&gt; specific_heatAt145=interp1(temperature,specific_heat,145)
+
+specific_heatAt145 =
+
+    0.1304
+
+</code>
+  </para>
+</solution>
+</exercise><exercise id="eip-32"><problem id="eip-244">
+  <para id="eip-710">For <link target-id="eip-589">the problem above</link>, create a more detailed table in which temperature varies between 25 and 150 with 5 F increments and corresponding specific heat values. 
+  </para>
+</problem>
+
+<solution id="eip-694">
+  <para id="eip-725">MATLAB solution is as follows:
+<code id="eip-id1169485738452_0" display="block">&gt;&gt; new_temperature=25:5:150;
+&gt;&gt; new_specific_heat=interp1(temperature,specific_heat,new_temperature);
+&gt;&gt; [new_temperature',new_specific_heat']
+ans =
+
+   25.0000    0.1180
+   30.0000    0.1184
+   35.0000    0.1188
+   40.0000    0.1192
+   45.0000    0.1196
+   50.0000    0.1200
+   55.0000    0.1206
+   60.0000    0.1212
+   65.0000    0.1218
+   70.0000    0.1224
+   75.0000    0.1230
+   80.0000    0.1234
+   85.0000    0.1238
+   90.0000    0.1242
+   95.0000    0.1246
+  100.0000    0.1250
+  105.0000    0.1256
+  110.0000    0.1262
+  115.0000    0.1268
+  120.0000    0.1274
+  125.0000    0.1280
+  130.0000    0.1286
+  135.0000    0.1292
+  140.0000    0.1298
+  145.0000    0.1304
+  150.0000    0.1310
+
+</code>
+  
+  </para>
+</solution>
+</exercise><exercise id="eip-718"><problem id="eip-862">
+  <para id="eip-683">During a 12-hour shift a fuel tank has varying levels due to consumption and transfer pump automatically cutting in and out to maintain a safe fuel level. The following table of fuel tank level versus time (Data available <link resource="Chp5_Exercise4.zip">for download</link>) is missing readings for 5 and 9 AM. Using linear interpolation, estimate the fuel level at those times.  
+<table id="tank_level" summary="tank_level">
+<tgroup cols="2"><colspec colnum="1" colname="c1"/>
+    <colspec colnum="2" colname="c2"/>
+<thead>
+      <row>
+        <entry>Time [hours, AM]</entry>
+        <entry>Tank level [m]</entry>
+      </row>
+</thead>
+<tbody>
+  <row>
+    <entry>1:00</entry>
+    <entry>1.5</entry>
+  </row>
+  <row>
+    <entry>2:00</entry>
+    <entry>1.7</entry>
+  </row>
+  <row>
+    <entry>3:00</entry>
+    <entry>2.3</entry>
+  </row>
+  <row>
+    <entry>4:00</entry>
+    <entry>2.9</entry>
+  </row>
+  <row>
+    <entry>5:00</entry>
+    <entry>?</entry>
+  </row>
+  <row>
+    <entry>6:00</entry>
+    <entry>2.6</entry>
+  </row>
+  <row>
+    <entry>7:00</entry>
+    <entry>2.5</entry>
+  </row>
+  <row>
+    <entry>8:00</entry>
+    <entry>2.3</entry>
+  </row>
+  <row>
+    <entry>9:00</entry>
+    <entry>?</entry>
+  </row>
+  <row>
+    <entry>10:00</entry>
+    <entry>2.0</entry>
+  </row>
+  <row>
+    <entry>11:00</entry>
+    <entry>1.8</entry>
+  </row>
+  <row>
+    <entry>12:00</entry>
+    <entry>1.3</entry>
+  </row>
+</tbody>
+
+</tgroup><caption>Fuel tank level versus time</caption>
+</table>
+  </para>
+</problem>
+
+<solution id="eip-853">
+  <para id="eip-418"><code id="eip-id1165820062575" display="block">&gt;&gt; time=[1 2 3 4 6 7 8 10 11 12];
+&gt;&gt; tank_level=[1.5 1.7 2.3 2.9 2.6 2.5 2.3 2.0 1.8 1.3];
+
+&gt;&gt; tank_level_at_5=interp1(time,tank_level,5)
+
+tank_level_at_5 =
+
+    2.7500
+
+&gt;&gt; tank_level_at_9=interp1(time,tank_level,9)
+
+tank_level_at_9 =
+
+    2.1500
+</code>
+  </para>
+</solution>
+</exercise></content>
+
+</document>

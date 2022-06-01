@@ -1,0 +1,76 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Generating Reports with MATLAB</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41457</md:content-id>
+  <md:title>Generating Reports with MATLAB</md:title>
+  <md:abstract>Basic Publishing with MATLAB</md:abstract>
+  <md:uuid>d5602751-b88c-46e2-8e3b-8f3fbdf5ab31</md:uuid>
+</metadata>
+
+<content>
+  <para id="eip-666"><media id="publishing_0" alt="publishing">
+       
+  <image mime-type="image/jpg" src="../../media/PublishingWithMATLAB.jpg"/>
+         
+</media></para><para id="delete_me">MATLAB includes an automatic report generator called publisher. The publisher publishes a script in several formats, including HTML, XML, MS Word and PowerPoint. The published file can contain the following:
+</para><list id="eip-707"><item>Commentary on the code,</item>
+<item>MATLAB code,</item>
+<item>Results of the executed code, including the Command Window output and figures created by the code.</item></list><section id="eip-71"><title>The <code>publish</code> Function</title><para id="eip-991">The most basic syntax is <code>publish('file','format')</code> where the m-file is called and executed line by line then saved to a file in specified format. All published files are placed in the html directory although the published output might be a doc file.
+</para></section><section id="eip-1000"><title>Publishing with Editor</title><para id="eip-90">The publisher is easily accessible from the Tool Strip:
+</para><para id="eip-842"><figure id="publishing_a1"><media id="publishing_a" alt="publishing">
+       
+  <image mime-type="image/png" src="../../media/publishing0.png"/>
+         
+</media>
+  
+<caption>Publish tab on the Tool Strip.</caption></figure></para><para id="eip-577"><figure id="publishing_a2"><media id="publishing_b" alt="publishing">
+       
+  <image mime-type="image/png" src="../../media/publishing1.png"/>
+         
+</media>
+  
+<caption>Editing publishing options, currently output format is html.
+  </caption></figure></para></section><example id="eip-857"><para id="eip-578">Write a simple script and publish it in an html file.
+</para><para id="eip-254">Select File &gt; New &gt; Script to create an m-file. Once the editor is opened, type in the following code:</para><code id="eip-873" display="block">x = [0:6];   % Create a row vector
+y = 1.6*x;   % Compute y as a function of x
+[x',y']     % Transpose vectors x and y
+plot(x,y),title('Graph of y=f(x)'),xlabel('x'),ylabel('f(x)'),grid % Plot a graph</code><para id="eip-2">Save the script as publishing.m and select Publish &gt; Publish. 
+<figure id="publish4x"><media id="publish4y" alt="publish">
+       
+  <image mime-type="image/png" src="../../media/publishing4.png"/>
+         
+</media>
+  
+<caption>Publishing a script.
+  </caption></figure></para><para id="eip-669">An HTML file is generated as shown in the figure below:</para><para id="eip-580"><figure id="Publishing"><media id="Publishing1" alt="Publishing">
+       
+  <image mime-type="image/png" src="../../media/publishing3.png"/>
+         
+</media>
+  
+<caption>A script published in html
+  </caption></figure></para>
+</example><section id="eip-143"><title>The Double Percentage <code>%%</code> Sign </title><para id="eip-7">The scripts sometimes can be very long and their readability might be reduced. To improve the publishing result, sections are introduced by adding descriptive lines to the script preceded by <code>%%</code>. Consider the following example.
+</para></section><example id="eip-620"><para id="eip-427">
+Edit the script created in the example above to look like the code below:
+</para><code id="eip-104" display="block">%% This file creates vectors, displays results and plots an x-y graph
+x = [0:6];   % Create a row vector
+y = 1.6*x;   % Compute y as a function of x
+%% Tabulated data
+[x',y']     % Transpose vectors x and y
+%% Graph of y=f(x)
+plot(x,y),title('Graph of y=f(x)'),xlabel('x'),ylabel('f(x)'),grid % Plot a graph</code><para id="eip-808">Save the script, a new HTML file is generated as shown in the figure below:</para><para id="eip-125"><figure id="Publishing2"><media id="Publishing3" alt="Publishing">
+       
+  <image mime-type="image/png" src="../../media/publishing5.png"/>
+         
+</media>
+  
+<caption>An html file with sections
+  </caption></figure></para>
+</example><section id="eip-898"><title>Summary of Key Points</title><list id="eip-213" list-type="enumerated" number-style="arabic"><item>MATLAB can generate reports containing  commentary on the code, MATLAB code and the results of the executed code,</item>
+<item>The publisher generates a script in several formats, including HTML, XML, MS Word and PowerPoint.</item>
+<item>The Double Percentage <code>%%</code> can be used to creates hyper-linked sections.</item></list></section>
+</content>
+
+</document>

@@ -1,0 +1,685 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>Problem Set</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41464</md:content-id>
+  <md:title>Problem Set</md:title>
+  <md:abstract>Problem Set for MATLAB Essentials</md:abstract>
+  <md:uuid>b610ca73-a108-4a36-a462-8c5dd32f0d1a</md:uuid>
+</metadata>
+
+<content>
+  <para id="delete_me"><!-- Insert module text here -->
+Determine the value of each of the following.
+  </para><exercise id="eip-781"><problem id="eip-846">
+  <para id="eip-491"><m:math display="display">
+  <m:apply>
+    <m:minus/>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:times/>
+        <m:cn>6</m:cn>
+        <m:cn>7</m:cn>
+      </m:apply>
+      <m:apply>
+        <m:power/>
+        <m:cn>4</m:cn>
+        <m:cn>2</m:cn>
+      </m:apply>
+    </m:apply>
+    <m:apply>
+      <m:power/>
+      <m:cn>2</m:cn>
+      <m:cn>4</m:cn>
+    </m:apply>
+  </m:apply>
+</m:math></para>
+</problem>
+
+<solution id="eip-604">
+  <para id="eip-795"><code>&gt;&gt; (6*7)+4^2-2^4</code>
+
+(ans = 42)
+  </para>
+</solution>
+</exercise><exercise id="eip-594"><problem id="eip-618">
+  <para id="eip-700"><m:math>
+  <m:apply>
+    <m:plus/>
+    <m:apply>
+      <m:divide/>
+      <m:apply>
+        <m:plus/>
+        <m:apply>
+          <m:power/>
+          <m:cn>3</m:cn>
+          <m:cn>2</m:cn>
+        </m:apply>
+        <m:apply>
+          <m:power/>
+          <m:cn>2</m:cn>
+          <m:cn>3</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:minus/>
+        <m:apply>
+          <m:power/>
+          <m:cn>4</m:cn>
+          <m:cn>5</m:cn>
+        </m:apply>
+        <m:apply>
+          <m:power/>
+          <m:cn>5</m:cn>
+          <m:cn>4</m:cn>
+        </m:apply>
+      </m:apply>
+    </m:apply>
+    <m:apply>
+      <m:divide/>
+      <m:apply>
+        <m:minus/>
+        <m:apply>
+          <m:power/>
+          <m:cn>64</m:cn>
+          <m:cn>0.5</m:cn>
+        </m:apply>
+        <m:apply>
+          <m:power/>
+          <m:cn>5</m:cn>
+          <m:cn>2</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:plus/>
+        <m:apply>
+          <m:power/>
+          <m:cn>4</m:cn>
+          <m:cn>5</m:cn>
+        </m:apply>
+        <m:apply>
+          <m:power/>
+          <m:cn>5</m:cn>
+          <m:cn>6</m:cn>
+        </m:apply>
+        <m:apply>
+          <m:power/>
+          <m:cn>7</m:cn>
+          <m:cn>8</m:cn>
+        </m:apply>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math></para>
+</problem>
+
+<solution id="eip-197">
+  <para id="eip-256"><code>&gt;&gt; ((3^2+2^3)/(4^5-5^4))+((sqrt(64)-5^2)/(4^5+5^6+7^8))</code>
+
+(ans =  0.0426)
+  </para>
+</solution>
+</exercise><exercise id="eip-303"><problem id="eip-986">
+  <para id="eip-309">
+<m:math>
+  <m:apply>
+    <m:plus/>
+    <m:apply>
+      <m:log/>
+      <m:apply>
+        <m:power/>
+        <m:cn>10</m:cn>
+        <m:cn>2</m:cn>
+      </m:apply>
+    </m:apply>
+    <m:apply>
+      <m:power/>
+      <m:cn>10</m:cn>
+      <m:cn>5</m:cn>
+    </m:apply>
+  </m:apply>
+</m:math>
+  </para>
+</problem>
+
+<solution id="eip-760">
+  <para id="eip-288"><code>&gt;&gt; log10(10^2)+10^5</code>
+
+(ans = 100002)
+  </para>
+</solution>
+</exercise><exercise id="eip-644"><problem id="eip-569">
+  <para id="eip-952">
+    <m:math>
+  <m:apply>
+    <m:plus/>
+    <m:apply>
+      <m:exp/>
+      <m:cn>2</m:cn>
+    </m:apply>
+    <m:apply>
+      <m:minus/>
+      <m:apply>
+        <m:power/>
+        <m:cn>2</m:cn>
+        <m:cn>3</m:cn>
+      </m:apply>
+      <m:apply>
+        <m:ln/>
+        <m:apply>
+          <m:exp/>
+          <m:cn>2</m:cn>
+        </m:apply>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math>
+  </para>
+</problem>
+
+<solution id="eip-914">
+  <para id="eip-684"><code>&gt;&gt; exp(2)+2^3-log(exp(2))</code>
+
+(ans = 13.3891)
+  </para>
+</solution>
+</exercise><exercise id="eip-643"><problem id="eip-246">
+  <para id="eip-987">
+    <m:math>
+  <m:apply>
+    <m:plus/>
+    <m:apply>
+      <m:sin/>
+      <m:apply>
+        <m:times/>
+        <m:cn>2</m:cn>
+        <m:pi/>
+      </m:apply>
+    </m:apply>
+    <m:apply>
+      <m:cos/>
+      <m:apply>
+        <m:divide/>
+        <m:pi/>
+        <m:cn>4</m:cn>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math>
+  </para>
+</problem>
+
+<solution id="eip-719">
+  <para id="eip-295"><code>&gt;&gt; sin(2*pi)+cos(pi/4)</code>
+
+(ans = 0.7071)
+  </para>
+</solution>
+</exercise><exercise id="eip-555"><problem id="eip-474">
+  <para id="eip-60">
+    <m:math>
+  <m:apply>
+    <m:plus/>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:tan/>
+        <m:apply>
+          <m:divide/>
+          <m:pi/>
+          <m:cn>3</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:cos/>
+        <m:cn>270</m:cn>
+      </m:apply>
+    </m:apply>
+    <m:apply>
+      <m:sin/>
+      <m:cn>270</m:cn>
+    </m:apply>
+    <m:apply>
+      <m:cos/>
+      <m:apply>
+        <m:divide/>
+        <m:pi/>
+        <m:cn>3</m:cn>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math>
+  </para>
+</problem>
+
+<solution id="eip-512">
+  <para id="eip-257"><code>&gt;&gt; tan(pi/3)+cos(270*pi/180)+sin(270*pi/180)+cos(pi/3)</code>
+
+(ans = 1.2321)
+  </para>
+</solution>
+</exercise><exercise id="eip-761"><problem id="eip-223">
+  <para id="eip-862">Solve the following system of equations:
+<newline/>
+<m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:times/>
+        <m:cn>2</m:cn>
+        <m:ci>x</m:ci>
+      </m:apply>
+      <m:apply>
+        <m:times/>
+        <m:cn>4</m:cn>
+        <m:ci>y</m:ci>
+      </m:apply>
+    </m:apply>
+    <m:cn>1</m:cn>
+  </m:apply>
+</m:math>
+
+<newline/>
+
+<m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:apply>
+      <m:plus/>
+      <m:ci>x</m:ci>
+      <m:apply>
+        <m:times/>
+        <m:cn>5</m:cn>
+        <m:ci>y</m:ci>
+      </m:apply>
+    </m:apply>
+    <m:cn>2</m:cn>
+  </m:apply>
+</m:math>
+  </para>
+</problem>
+
+<solution id="eip-121">
+  <para id="eip-370">
+<code id="eip-id1869937" display="block">
+&gt;&gt; A=[2 4; 1 5]
+
+A =
+
+     2     4
+     1     5
+
+&gt;&gt; B=[1; 2]
+
+B =
+
+     1
+     2
+
+&gt;&gt; Solution=A\B
+
+Solution =
+
+   -0.5000
+    0.5000
+</code>
+  </para>
+</solution>
+</exercise><exercise id="eip-466"><problem id="eip-701">
+  <para id="eip-353">Evaluate y at 5.
+<newline/>
+<m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:times/>
+        <m:cn>4</m:cn>
+        <m:apply>
+          <m:power/>
+          <m:ci>x</m:ci>
+          <m:cn>4</m:cn>
+        </m:apply>
+      </m:apply>
+      <m:apply>
+        <m:minus/>
+        <m:apply>
+          <m:times/>
+          <m:cn>3</m:cn>
+          <m:apply>
+            <m:power/>
+            <m:ci>x</m:ci>
+            <m:cn>2</m:cn>
+          </m:apply>
+        </m:apply>
+        <m:cn>x</m:cn>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math>
+  </para>
+</problem>
+
+<solution id="eip-676">
+  <para id="eip-588"><code id="eip-id1170463297617" display="block">
+&gt;&gt; p=[4 0 3 -1 0]
+
+p =
+
+     4     0     3    -1     0
+
+&gt;&gt; polyval(p,5)
+
+ans =
+
+        2570
+
+&gt;&gt; 
+</code>
+  </para>
+</solution>
+</exercise><exercise id="eip-893"><problem id="eip-888">
+  <para id="eip-405">Given below is Load-Gage Length data for a type 304 stainless steel that underwent a tensile test. Original specimen diameter is 12.7 mm. 
+<footnote id="Shackelford_1"> 
+    <cite>
+  <cite-title>Introduction to Materials Science for Engineers</cite-title>
+  by J. F. Shackelford, Macmillan Publishing Company. © 1985, (p.304)
+</cite>
+</footnote> 
+
+<table id="data5" summary="Data">
+<tgroup cols="2"><thead>
+      <row>
+        <entry>Load [N]</entry>
+        <entry>Gage Length [mm]</entry>
+      </row>
+</thead>
+<tbody>
+  <row>
+    <entry>0.000</entry>
+    <entry>50.8000</entry>
+  </row>
+  <row>
+    <entry>4890</entry>
+    <entry>50.8102</entry>
+  </row>
+  <row>
+    <entry>9779</entry>
+    <entry>50.8203</entry>
+  </row>
+  <row>
+    <entry>14670</entry>
+    <entry>50.8305</entry>
+  </row>
+  <row>
+    <entry>19560</entry>
+    <entry>50.8406</entry>
+  </row>
+  <row>
+    <entry>24450</entry>
+    <entry>50.8508</entry>
+  </row>
+  <row>
+    <entry>27620</entry>
+    <entry>50.8610</entry>
+  </row>
+  <row>
+    <entry>29390</entry>
+    <entry>50.8711</entry>
+  </row>
+  <row>
+    <entry>32680</entry>
+    <entry>50.9016</entry>
+  </row>
+  <row>
+    <entry>33950</entry>
+    <entry>50.9270</entry>
+  </row>
+  <row>
+    <entry>34580</entry>
+    <entry>50.9524</entry>
+  </row>
+  <row>
+    <entry>35220</entry>
+    <entry>50.9778</entry>
+  </row>
+  <row>
+    <entry>35720</entry>
+    <entry>51.0032</entry>
+  </row>
+  <row>
+    <entry>40540</entry>
+    <entry>51.816</entry>
+  </row>
+  <row>
+    <entry>48390</entry>
+    <entry>53.340</entry>
+  </row>
+  <row>
+    <entry>59030</entry>
+    <entry>55.880</entry>
+  </row>
+  <row>
+    <entry>65870</entry>
+    <entry>58.420</entry>
+  </row>
+  <row>
+    <entry>69420</entry>
+    <entry>60.960</entry>
+  </row>
+  <row>
+    <entry>69670 (maximum)</entry>
+    <entry>61.468</entry>
+  </row>
+  <row>
+    <entry>68150</entry>
+    <entry>63.500</entry>
+  </row>
+  <row>
+    <entry>60810 (fracture)</entry>
+    <entry>66.040 (after fracture)</entry>
+  </row>
+
+</tbody>
+
+
+
+</tgroup>
+</table><m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>σ</m:ci>
+    <m:apply>
+      <m:divide/>
+      <m:ci>P</m:ci>
+      <m:ci>A</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math>, where P is the load [N] on the sample with an original cross-sectional area A [<m:math>
+  <m:apply>
+    <m:power/>
+    <m:ci>m</m:ci>
+    <m:cn>2</m:cn>
+  </m:apply>
+</m:math>] and the engineering strain is defined as 
+<m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>ε</m:ci>
+    <m:apply>
+      <m:divide/>
+      <m:ci>Δl</m:ci>
+      <m:ci>l</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math>, where <m:math>
+  <m:ci>Δl</m:ci>
+</m:math> is the change in length and <m:math>
+  <m:ci>l</m:ci>
+</m:math> is the initial length.
+
+<newline/>
+<newline/>
+Compute the stress and strain values for each of the measurements obtained in the tensile test. Data available <link resource="Chp2_Exercise9.zip">for download.</link>
+  
+  
+  </para></problem>
+
+<solution id="eip-805">
+  <para id="eip-225">First, we need to enter the data sets. Because it is rather a large table, using Variable Editor is more convenient. See the figures below:
+<figure id="Load"><media id="Load1" alt="Load">
+       
+  <image mime-type="image/png" src="../../media/load.png"/>
+         
+</media>
+  
+<caption>Load in Newtons
+  </caption></figure>
+<figure id="Length"><media id="Length1" alt="Length">
+       
+  <image mime-type="image/png" src="../../media/length.png"/>
+         
+</media>
+  
+<caption>Extension length in mm.
+  </caption></figure>
+
+
+</para>
+
+<para id="eip-id1168916621409">Next, we will calculate the cross-sectional area.
+<code id="eip-id1169475578485" display="block">
+Area=pi/4*(0.0127^2)
+
+Area =
+
+  1.2668e-004
+</code>
+ </para>
+<para id="eip-id1168928022731">Now, we can find the Stress values with the following, note that we are obtaining results in MPa:
+<code id="eip-id1168917402356" display="block">Sigma=(Load_N./Area)*10^(-6)
+
+Sigma =
+
+         0
+   38.6022
+   77.1964
+  115.8065
+  154.4086
+  193.0108
+  218.0351
+  232.0076
+  257.9792
+  268.0047
+  272.9780
+  278.0302
+  281.9773
+  320.0269
+  381.9955
+  465.9888
+  519.9844
+  548.0085
+  549.9820
+  537.9830
+  480.0403
+</code>
+</para>
+<para id="eip-id1168862459860">
+For strain calculation, we will first find the change in length:
+<code id="eip-id1168844081260" display="block">
+Delta_L=Length_mm-50.800
+
+Delta_L =
+
+         0
+    0.0102
+    0.0203
+    0.0305
+    0.0406
+    0.0508
+    0.0610
+    0.0711
+    0.1016
+    0.1270
+    0.1524
+    0.1778
+    0.2032
+    1.0160
+    2.5400
+    5.0800
+    7.6200
+   10.1600
+   10.6680
+   12.7000
+   15.2400
+</code>
+</para>
+<para id="eip-id1172275127106">Now we can determine Strain with the following:
+<code id="eip-id1172292726488" display="block">
+Epsilon=Delta_L./50.800
+
+Epsilon =
+
+         0
+    0.0002
+    0.0004
+    0.0006
+    0.0008
+    0.0010
+    0.0012
+    0.0014
+    0.0020
+    0.0025
+    0.0030
+    0.0035
+    0.0040
+    0.0200
+    0.0500
+    0.1000
+    0.1500
+    0.2000
+    0.2100
+    0.2500
+    0.3000
+</code>
+</para>
+<para id="eip-id1170462781842">
+The final results can be tabulated as foolows:
+<code id="eip-id1170447103472" display="block">
+[Sigma Epsilon]
+
+ans =
+
+         0         0
+   38.6022    0.0002
+   77.1964    0.0004
+  115.8065    0.0006
+  154.4086    0.0008
+  193.0108    0.0010
+  218.0351    0.0012
+  232.0076    0.0014
+  257.9792    0.0020
+  268.0047    0.0025
+  272.9780    0.0030
+  278.0302    0.0035
+  281.9773    0.0040
+  320.0269    0.0200
+  381.9955    0.0500
+  465.9888    0.1000
+  519.9844    0.1500
+  548.0085    0.2000
+  549.9820    0.2100
+  537.9830    0.2500
+  480.0403    0.3000
+</code>
+</para>
+</solution>
+</exercise>
+</content>
+
+</document>

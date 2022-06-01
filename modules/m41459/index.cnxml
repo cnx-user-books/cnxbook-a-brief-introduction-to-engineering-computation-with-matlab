@@ -1,0 +1,28 @@
+<document xmlns="http://cnx.rice.edu/cnxml">
+
+<title>Study Guide</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41459</md:content-id>
+  <md:title>Study Guide</md:title>
+  <md:abstract>Study guide for learners.</md:abstract>
+  <md:uuid>b6e6c9ea-2ff8-4eae-8833-3ead337a570c</md:uuid>
+</metadata>
+
+<content>
+  <para id="delete_me"><!-- Insert module text here -->
+MATLAB, a sub-course of Computer Technology 1 and this text are specifically designed for students with no programming experience. However, students are expected to be proficient in First Year Mathematics and Sciences and access to good reference books are highly recommended. I also assume that students have a working knowledge of the Mac OS X or Microsoft Windows operating systems.
+  </para><para id="eip-520">The strategic goal of the course and book is to provide learners with an appreciation for the role computation plays in solving engineering problems. The MATLAB specific skills that I would like students to acquire are as follows:
+<list id="objectives"><item>Write scripts to solve engineering problems including interpolation, numerical integration and regression analysis,</item>
+<item>Plot graphs to visualize, analyze and present numerical data,</item>
+<item>Publish reports.</item>
+</list></para><para id="eip-261">The best way to learn about engineering computation is to actually do it. We will therefore solve many engineering problems mainly using a recent version of MATLAB in this book. Since the primary focus is engineering computation, we will concentrate on the mathematical solutions and, to a limited extent, the graphical user interface (GUI) features of MATLAB. </para><para id="eip-148">Learning a new skill, especially a computer program, can be an overwhelming experience. To make the best of this process, students are encouraged to observe the following guidelines that have proven to work well: 
+<list id="guidelines">
+<item>Plan to study 2 hours outside of class for every hour inside of class,</item>
+<item>Practice, practice, practice: As the old saying goes, practice makes one perfect or perhaps we should modify that statement: Good practice makes one perfect,</item>
+<item>Buddy system: Study with a classmate. Helping one another drastically improves your understanding of the material. Particularly, students are advised to work the problem sets in this fashion,</item>
+<item>Muddy points: Make a note of muddy points as they may occur during lectures and email your notes to me. I will address those issues at the beginning of the next class,</item>
+<item>Open book exam: Do not try to memorize commands, functions or their syntax but learn where and how to find that information. Through many exercises and problem sets you will have solved by the end of the course, most computational routines will become second nature to you. The exam is open book, so keep your learning materials and m-files well organized.</item>
+</list></para>
+</content>
+
+</document>

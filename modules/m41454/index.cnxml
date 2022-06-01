@@ -1,0 +1,594 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>Computing the Area Under a Curve</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41454</md:content-id>
+  <md:title>Computing the Area Under a Curve</md:title>
+  <md:abstract>Basic Numerical Integration with MATLAB</md:abstract>
+  <md:uuid>81510351-a381-4f8e-bf86-c8d3f3b3cb1b</md:uuid>
+</metadata>
+
+<content>
+  <para id="eip-313"><media id="Plot1" alt="Plot">
+       
+  <image mime-type="image/png" src="../../media/NumericalIntegration.jpg"/>
+         
+</media>
+</para><para id="delete_me"><!-- Insert module text here -->
+This chapter essentially deals with the problem of computing the area under a curve. First, we will employ a basic approach and form trapezoids under a curve. From these trapezoids, we can calculate the total area under a given curve. This method can be tedious and is prone to errors, so in the second half of the chapter, we will utilize a built-in MATLAB function to carry out numerical integration. 
+  </para><section id="eip-294"><title>A Basic Approach</title><para id="eip-972">There are various methods to calculating the area under a curve, for example, <link url="http://en.wikipedia.org/wiki/Rectangle_method" window="new"> Rectangle Method</link>, <link url="http://en.wikipedia.org/wiki/Trapezoidal_rule" window="new"> Trapezoidal Rule</link> and <link url="http://en.wikipedia.org/wiki/Simpson%27s_rule" window="new"> Simpson's Rule</link>. The following procedure is a simplified method.   </para><para id="eip-916">Consider the curve below:
+</para><para id="eip-889"><figure id="integration"><media id="integration1" alt="integration">
+       
+  <image mime-type="image/png" src="../../media/integration.png"/>
+         
+</media>
+  
+<caption>Numerical integration
+  </caption></figure></para><para id="eip-655">Each segment under the curve can be calculated as follows:</para><equation id="eip-475"><m:math>
+  <m:apply>
+    <m:plus/>
+    <m:apply>
+      <m:times/>
+      <m:apply>
+        <m:divide/>
+        <m:cn>1</m:cn>
+        <m:cn>2</m:cn>
+      </m:apply>
+      <m:apply>
+        <m:plus/>
+        <m:msub>
+          <m:mi>y</m:mi>
+          <m:mn>0</m:mn>
+        </m:msub>
+        <m:msub>
+          <m:mi>y</m:mi>
+          <m:mn>1</m:mn>
+        </m:msub>
+      </m:apply>
+      <m:ci>Δx</m:ci>
+    </m:apply>
+    <m:apply>
+      <m:times/>
+      <m:apply>
+        <m:divide/>
+        <m:cn>1</m:cn>
+        <m:cn>2</m:cn>
+      </m:apply>
+      <m:apply>
+        <m:plus/>
+        <m:msub>
+          <m:mi>y</m:mi>
+          <m:mn>1</m:mn>
+        </m:msub>
+        <m:msub>
+          <m:mi>y</m:mi>
+          <m:mn>2</m:mn>
+        </m:msub>
+      </m:apply>
+      <m:ci>Δx</m:ci>
+    </m:apply>
+    <m:apply>
+      <m:times/>
+      <m:apply>
+        <m:divide/>
+        <m:cn>1</m:cn>
+        <m:cn>2</m:cn>
+      </m:apply>
+      <m:apply>
+        <m:plus/>
+        <m:msub>
+          <m:mi>y</m:mi>
+          <m:mn>2</m:mn>
+        </m:msub>
+        <m:msub>
+          <m:mi>y</m:mi>
+          <m:mn>3</m:mn>
+        </m:msub>
+      </m:apply>
+      <m:ci>Δx</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math></equation><para id="eip-957">Therefore, if we take the sum of the area of each trapezoid, given the limits, we calculate the total area under a curve. Consider the following example.</para></section><example id="eip-464"><para id="eip-998">
+Given the following data, plot an x-y graph and determine the area under a curve between x=3 and x=30
+</para><table id="eip-159" summary="Data Set">
+<tgroup cols="3"><thead>
+      <row>
+        <entry>Index</entry>
+        <entry>x [m]</entry>
+        <entry>y [N]</entry>
+      </row>
+</thead>
+
+<tbody>
+  <row>
+    <entry>1</entry>
+    <entry>3</entry>
+    <entry>27.00</entry>
+  </row>
+  <row>
+    <entry>2</entry>
+    <entry>10</entry>
+    <entry>14.50</entry>
+  </row>
+  <row>
+    <entry>3</entry>
+    <entry>15</entry>
+    <entry>9.40</entry>
+  </row>
+  <row>
+    <entry>4</entry>
+    <entry>20</entry>
+    <entry>6.70</entry>
+  </row>
+  <row>
+    <entry>5</entry>
+    <entry>25</entry>
+    <entry>5.30</entry>
+  </row>
+  <row>
+    <entry>6</entry>
+    <entry>30</entry>
+    <entry>4.50</entry>
+  </row>
+</tbody>
+
+
+
+</tgroup><caption>Data Set</caption>
+</table><para id="eip-541">First, let us enter the data set. For x, issue the following command <code>x=[3,10,15,20,25,30];</code>. And for y, <code>y=[27,14.5,9.4,6.7,5.3,4.5];</code>. If yu type in <code>[x',y']</code>, you will see the following tabulated result. Here we transpose row vectors with ' and displaying them as columns:</para><code id="eip-928" display="block">ans =
+
+    3.0000   27.0000
+   10.0000   14.5000
+   15.0000    9.4000
+   20.0000    6.7000
+   25.0000    5.3000
+   30.0000    4.5000</code><para id="eip-178">Compare the data set above with the given information in <link target-id="eip-159">the question</link>.
+
+
+</para><para id="eip-34">To plot the data type the following:</para><code id="eip-970" display="block">plot(x,y),title('Distance-Force Graph'),xlabel('Distance[m]'),ylabel('Force[N]'),grid</code><para id="eip-774">The following figure is generated:</para><para id="eip-848"><figure id="integration01"><media id="integration02" alt="integration">
+       
+  <image mime-type="image/png" src="../../media/integration01.png"/>
+         
+</media>
+  
+<caption>Distance-Force Graph
+  </caption></figure>
+</para><para id="eip-515">To compute dx for consecutive x values, we will use the index for each x value, see the given data in <link target-id="eip-159">the question</link>.:</para><code id="eip-503" display="block">dx=[x(2)-x(1),x(3)-x(2),x(4)-x(3),x(5)-x(4),x(6)-x(5)];</code><para id="eip-241">dy is computed by the following command:</para><code id="eip-80" display="block">dy=[0.5*(y(2)+y(1)),0.5*(y(3)+y(2)),0.5*(y(4)+y(3)),0.5*(y(5)+y(4)),0.5*(y(6)+y(5))];</code><para id="eip-973">dx and dy can be displayed with the following command: <code>[dx',dy']</code>. The result will look like this:
+</para><code id="eip-457" display="block">[dx',dy']
+
+ans =
+
+    7.0000   20.7500
+    5.0000   11.9500
+    5.0000    8.0500
+    5.0000    6.0000
+    5.0000    4.9000</code><para id="eip-579">Our results so far are shown below</para><table id="eip-898" summary="x, y and corresponding differential elements">
+<tgroup cols="4"><thead>
+      <row>
+        <entry>x [m]</entry>
+        <entry>y [N]</entry>
+        <entry>dx [m]</entry>
+<entry>dy [N]</entry>
+      </row>
+</thead>
+
+<tbody>
+  <row>
+    <entry>3</entry>
+    <entry>27.00</entry>
+    <entry/>
+    <entry/>
+
+  </row>
+  <row>
+    <entry>10</entry>
+    <entry>14.50</entry>
+    <entry>7.00</entry>
+    <entry>20.75</entry>
+
+  </row>
+  <row>
+    <entry>15</entry>
+    <entry>9.40</entry>
+    <entry>5.00</entry>
+    <entry>11.95</entry>
+
+  </row>
+  <row>
+    <entry>20</entry>
+    <entry>6.70</entry>
+    <entry>5.00</entry>
+    <entry>8.05</entry>
+
+  </row>
+  <row>
+    <entry>25</entry>
+    <entry>5.30</entry>
+    <entry>5.00</entry>
+    <entry>6.00</entry>
+
+  </row>
+  <row>
+    <entry>30</entry>
+    <entry>4.50</entry>
+    <entry>5.00</entry>
+    <entry>4.90</entry>
+
+  </row>
+</tbody>
+
+
+
+</tgroup><caption>x, y and corresponding differential elements</caption>
+</table><para id="eip-405">If we multiply dx by dy, we find da for each element under the curve. The differential area da=dx*dy, can be computed using the 'term by term multiplication' technique in MATLAB as follows:</para><code id="eip-385" display="block">da=dx.*dy
+
+da =
+
+  145.2500   59.7500   40.2500   30.0000   24.5000</code><para id="eip-649">Each value above represents an element under the curve or the area of trapezoid. By taking the sum of array elements, we find the total area under the curve.</para><code id="eip-265" display="block">sum(da)
+
+ans =
+
+  299.7500</code><para id="eip-224"><link target-id="eip-633">The following</link> illustrates all the steps and results of our MATLAB computation. </para><table id="eip-633" summary="Computation of the approximate area under a curve">
+<tgroup cols="5"><thead>
+      <row>
+        <entry>x [m]</entry>
+        <entry>y [N]</entry>
+        <entry>dx [m]</entry>
+<entry>dy [N]</entry>
+        <entry>dA [Nm]</entry>
+      </row>
+</thead>
+
+<tbody>
+  <row>
+    <entry>3</entry>
+    <entry>27.00</entry>
+    <entry/>
+    <entry/>
+    <entry/>
+  </row>
+  <row>
+    <entry>10</entry>
+    <entry>14.50</entry>
+    <entry>7.00</entry>
+    <entry>20.75</entry>
+    <entry>145.25</entry>
+  </row>
+  <row>
+    <entry>15</entry>
+    <entry>9.40</entry>
+    <entry>5.00</entry>
+    <entry>11.95</entry>
+    <entry>59.75</entry>
+  </row>
+  <row>
+    <entry>20</entry>
+    <entry>6.70</entry>
+    <entry>5.00</entry>
+    <entry>8.05</entry>
+    <entry>40.25</entry>
+  </row>
+  <row>
+    <entry>25</entry>
+    <entry>5.30</entry>
+    <entry>5.00</entry>
+    <entry>6.00</entry>
+    <entry>30.00</entry>
+  </row>
+  <row>
+    <entry>30</entry>
+    <entry>4.50</entry>
+    <entry>5.00</entry>
+    <entry>4.90</entry>
+    <entry>24.50</entry>
+  </row>
+  <row>
+    <entry/>
+    <entry/>
+    <entry/>
+    <entry/>
+    <entry>299.75</entry>
+  </row>
+</tbody>
+
+
+
+
+
+
+</tgroup><caption>Computation of the approximate area under a curve</caption>
+</table>
+</example><section id="eip-528"><title>The Trapezoidal Rule</title><para id="eip-877">Sometimes it is rather convenient to use a numerical approach to solve a definite integral. The trapezoid rule allows us to approximate a definite integral using trapezoids.
+</para><section id="eip-453"><title>The <code>trapz</code> Command</title><para id="eip-135">Z = trapz(Y) computes an approximation of the integral of Y using the trapezoidal method.
+</para></section><para id="eip-199">Now, let us see a typical problem.</para></section><example id="eip-381"><para id="eip-874">Given
+
+<m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>Area</m:ci>
+    <m:apply>
+      <m:int/>
+      <m:bvar>
+        <m:ci>x</m:ci>
+      </m:bvar>
+      <m:lowlimit>
+        <m:cn>2</m:cn>
+      </m:lowlimit>
+      <m:uplimit>
+        <m:cn>5</m:cn>
+      </m:uplimit>
+      <m:apply>
+        <m:power/>
+        <m:ci>x</m:ci>
+        <m:cn>2</m:cn>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math>,
+
+an analytical solution would produce 39. Use trapz command and solve it 
+</para><list id="eip-92" list-type="enumerated" number-style="arabic"><item>Initialize variable x as a row vector, from 2 with increments of 0.1 to 5: <code>x=2:.1:5;</code>  </item>
+<item>Declare variable y as <code>y=x^2;</code>. Note the following error prompt: <code>??? Error using ==&gt; mpower
+Inputs must be a scalar and a square matrix.</code> This is because x is a vector quantity and MATLAB is expecting a scalar input for y. Because of that, we need to compute y as a vector and to do that we will use the dot operator as follows: <code>y=x.^2;</code>. This tells MATLAB to create vector y by taking each x value and raising its power to 2. </item>
+<item>Now we can issue the following command to calculate the first area, the output will be as follows:</item></list><code id="eip-971" display="block">area1=trapz(x,y)
+
+area1 =
+
+   39.0050</code><para id="eip-414">Notice that this numerical value is slightly off. So let us increase the number of increments and calculate the area again: </para><code id="eip-397" display="block">x=2:.01:5;
+y=x.^2;
+area2=trapz(x,y)
+
+area2 =
+
+   39.0001</code><para id="eip-684">Yet another increase in the number of increments:</para><code id="eip-141" display="block">x=2:.001:5;
+y=x.^2;
+area3=trapz(x,y)
+
+area3 =
+
+   39.0000</code>
+</example><example id="eip-214"><para id="eip-263">Determine the value of the following integral:</para><para id="eip-272"><m:math display="display">
+  <m:apply>
+    <m:int/>
+    <m:bvar>
+      <m:ci>x</m:ci>
+    </m:bvar>
+    <m:lowlimit>
+      <m:cn>0</m:cn>
+    </m:lowlimit>
+    <m:uplimit>
+      <m:pi/>
+    </m:uplimit>
+    <m:apply>
+      <m:sin/>
+      <m:ci>x</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math></para><list id="eip-51" list-type="enumerated" number-style="arabic"><item>Initialize variable x as a row vector, from 0 with increments of pi/100 to pi: <code>x=0:pi/100:pi;</code>  </item>
+<item>Declare variable y as <code>y=sin(x);</code></item>
+<item>Issue the following command to calculate the first area, the output will be as follows:</item></list><code id="eip-654" display="block">area1=trapz(x,y)
+
+area1 =
+
+    1.9998</code><para id="eip-209">let us increase the increments as above:</para><code id="eip-349" display="block">x=0:pi/1000:pi;
+y=sin(x);
+area2=trapz(x,y)
+
+area2 =
+
+    2.0000</code>
+</example>
+
+<example id="eip-399"><para id="eip-36">A gas expands according to the law, PV<sup>1.4</sup>=c. Initially, the pressure is 100 kPa when the volume is 1 m<sup>3</sup>. Write a script to compute the work done by the gas in expanding to three times its original volume<footnote id="ON_Math2"> 
+    <cite>
+  <cite-title>O. N. Mathematics: 2</cite-title>
+  by J. Dobinson, Penguin Library of Technology. © 1969, (p. 184)
+</cite>
+  </footnote>. 
+
+</para><para id="eip-430">Recall that PV diagrams can be used to estimate the net work performed by a thermodynamic cycle, <link url="http://en.wikipedia.org/wiki/Pressure_volume_diagram#Thermodynamics" window="new"> see Wikipedia</link> or we can use definite integral to compute the work done (WD) as follows: </para><equation id="eip-418"><m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>WD</m:ci>
+    <m:apply>
+      <m:int/>
+      <m:bvar>
+        <m:ci>v</m:ci>
+      </m:bvar>
+      <m:lowlimit>
+        <m:ci/>
+      </m:lowlimit>
+      <m:uplimit>
+        <m:ci/>
+      </m:uplimit>
+      <m:ci>p</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math></equation><para id="eip-733">If we rearrange the expression pressure as a function of volume, we get:</para><equation id="eip-222"><m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>P</m:ci>
+    <m:apply>
+      <m:divide/>
+      <m:ci>c</m:ci>
+      <m:apply>
+        <m:power/>
+        <m:ci>V</m:ci>
+        <m:cn>1.4</m:cn>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math></equation><para id="eip-396">By considering the initial state, we can determine the value of c:</para><equation id="eip-637"><m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>c</m:ci>
+    <m:apply>
+      <m:times/>
+      <m:cn>100</m:cn>
+      <m:apply>
+        <m:power/>
+        <m:cn>1</m:cn>
+        <m:cn>1.4</m:cn>
+      </m:apply>
+    </m:apply>
+    <m:cn>100</m:cn>
+  </m:apply>
+</m:math></equation><para id="eip-855">From <link target-id="eip-222">the equation</link> and <link target-id="eip-637">the equation</link> above, we can write:</para><equation id="eip-719"><m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>P</m:ci>
+    <m:apply>
+      <m:divide/>
+      <m:cn>100</m:cn>
+      <m:apply>
+        <m:power/>
+        <m:ci>V</m:ci>
+        <m:cn>1.4</m:cn>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math></equation><para id="eip-492">By inserting <link target-id="eip-719">P</link> in <link target-id="eip-418">WD</link>, we get:</para><equation id="eip-57"><m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>WD</m:ci>
+    <m:apply>
+      <m:int/>
+      <m:bvar>
+        <m:ci>v</m:ci>
+      </m:bvar>
+      <m:lowlimit>
+        <m:cn>1</m:cn>
+      </m:lowlimit>
+      <m:uplimit>
+        <m:cn>3</m:cn>
+      </m:uplimit>
+      <m:apply>
+        <m:divide/>
+        <m:cn>100</m:cn>
+        <m:apply>
+          <m:power/>
+          <m:ci>v</m:ci>
+          <m:cn>1.4</m:cn>
+        </m:apply>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math></equation><para id="eip-556">For MATLAB solution, we will consider <link target-id="eip-719">P as a function of V</link> and <link target-id="eip-57">WD</link>. Now, let us apply the three-step approach we have used earlier:
+
+</para><list id="eip-896" list-type="enumerated" number-style="arabic"><item>Initialize variable volume as a row vector, from 1 with increments of 0.001 to 3: <code>v=1:0.001:3;</code></item>
+<item>Declare variable pressure as <code>p=100./v.^1.4;</code></item>
+<item>Use the <code>trapz</code> function to calculate the work done, the output will be as follows:</item></list><code id="eip-264" display="block">WorkDone=trapz(v,p)
+
+WorkDone =
+
+   88.9015</code><para id="eip-530">These steps can be combined in an m-file as follows:</para><code id="eip-2" display="block">clc
+disp('A gas expands according to the law, pv^1.4=C')
+disp('Initial pressure is 100 kPa when the volume is 1 m3')
+disp('Compute the work done by the gas in expanding')
+disp('To three times its original volume')
+disp(' ')                     % Display blank line
+v=1:.001:3;         % Creating a row vector for volume, v
+p=100./(v.^1.4);    % Computing pressure for volume
+WorkDone=trapz(v,p) % Integrating p*dv over 1 to 3 cubic meters</code>
+</example>
+
+<example id="eip-217"><para id="eip-119">A body moves from rest under the action of a direct force given by <m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>F</m:ci>
+    <m:apply>
+      <m:divide/>
+      <m:cn>15</m:cn>
+      <m:apply>
+        <m:plus/>
+        <m:ci>x</m:ci>
+        <m:cn>3</m:cn>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math> where x is the distance in meters from the starting point. Write a script to compute the total work done in moving a distance 10 m.<footnote id="ON_Math2_1"> 
+    <cite>
+  <cite-title>O. N. Mathematics: 2</cite-title>
+  by J. Dobinson, Penguin Library of Technology. © 1969, (p. 183)
+</cite>
+  </footnote>
+</para><para id="eip-88">Recall that the general definition of mechanical work is given by the following integral, <link url="http://en.wikipedia.org/wiki/Work_%28physics%29#Force_and_displacement" window="new"> see Wikipedia</link>: 
+</para><equation id="eip-15"><m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>WD</m:ci>
+    <m:apply>
+      <m:int/>
+      <m:bvar>
+        <m:ci>x</m:ci>
+      </m:bvar>
+      <m:lowlimit>
+        <m:ci/>
+      </m:lowlimit>
+      <m:uplimit>
+        <m:ci/>
+      </m:uplimit>
+      <m:ci>F</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math></equation><para id="eip-204">Therefore we can write:</para><equation id="eip-697"><m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>WD</m:ci>
+    <m:apply>
+      <m:int/>
+      <m:bvar>
+        <m:ci>x</m:ci>
+      </m:bvar>
+      <m:lowlimit>
+        <m:cn>0</m:cn>
+      </m:lowlimit>
+      <m:uplimit>
+        <m:cn>10</m:cn>
+      </m:uplimit>
+      <m:apply>
+        <m:divide/>
+        <m:cn>15</m:cn>
+        <m:apply>
+          <m:plus/>
+          <m:ci>x</m:ci>
+          <m:cn>3</m:cn>
+        </m:apply>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math></equation><para id="eip-43">Applying the steps we followed in the previous examples, we write:</para><code id="eip-835" display="block">clc
+disp('A body moves from rest under the action of a direct force given')
+disp('by F=15/(x+3) where x is the distance in meters')
+disp('From the starting point.')
+disp('Compute the total work done in moving a distance 10 m.')
+disp(' ')                     % Display blank line
+x=0:.001:10;     % Creating a row vector for distance, x
+F=15./(x+3);    % Computing Force for x
+WorkDone=trapz(x,F) % Integrating F*dx over 0 to 10 meters.</code><para id="eip-291">The output of the above code is:</para><code id="eip-734" display="block">A body moves from rest under the action of a direct force given
+by F=15/(x+3) where x is the distance in meters
+From the starting point.
+Compute the total work done in moving a distance 10 m.
+ 
+
+WorkDone =
+
+   21.9951</code>
+</example>
+
+<section id="eip-342"><title>The <code>integral</code> Function</title><para id="eip-505">As we have seen earlier, <code>trapz</code> gives a good approximation for definite integrals. The <code>integral</code> function streamlines numerical integration even further. Before we learn about <code>integral</code> function, first we will look at anonymous functions. 
+</para><section id="eip-992"><title>Anonymous Functions</title><para id="eip-491">An anonymous function is a function that can be defined in the command window (i.e. it does not need to be stored in a program file). Anonymous functions can accept inputs and return outputs, just as standard functions do such as <code>sqrt(X)</code> or <code>log(X)</code>.
+</para><para id="eip-164">To define an anonymous function, first we create a handle with <code>@(x)</code> and type in the function: <code>myfunction=@(x) x^2+1</code>.</para><para id="eip-631">If you want to evaluate <code>myfunction</code> at 1, just type in <code>a=myfunction(1)</code> at the command window and you get the result of <code>2</code>.</para></section><para id="eip-288"><title>Syntax for <code>integral</code></title>To evaluate an integral from a minimum to a maximum value, we specify a function and its minimum and maximum <code>Z = integral(fun,xmin,xmax)</code>.</para><example id="eip-287"><para id="eip-842">Given <code>y=x^2</code>, evaluate the integral from x=2 to x=5 as we have done it with <link target-id="eip-381"><code>trapz</code></link> command.
+</para><list id="eip-885" list-type="enumerated" number-style="arabic"><item>Define function <code>myfunction=@(x) x.^2;</code></item>
+<item>Apply the syntax to <code>myfunction</code> as follows <code>Z = integral(myfunction,2,5)</code></item>
+<item>You should get a result of <code>Z = 39</code>.</item>
+
+</list><note id="eip-347" type="aside">Notice that, unlike in <link target-id="eip-381"><code>trapz</code></link> example, we did not need to define a vector and change the increments to get an accurate result.</note></example></section><section id="eip-165"><title>Summary of Key Points</title><list id="eip-435" list-type="enumerated" number-style="arabic"><item>In its simplest form, numerical integration involves calculating the areas of segments that make up the area under a curve,</item>
+<item>MATLAB has built-in functions to perform numerical integration,</item>
+<item><code>Z = trapz(Y)</code> computes an approximation of the integral of Y using the trapezoidal method.</item>
+<item>Anonymous functions are inline statements that we can define with <code>@(x)</code>,</item>
+<item><code>Z = integral(fun,xmin,xmax)</code> numerically integrates function <code>fun</code> from <code>xmin</code> to <code>xmax</code>.</item></list></section>
+
+</content>
+
+</document>

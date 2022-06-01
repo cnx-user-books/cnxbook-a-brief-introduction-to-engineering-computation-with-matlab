@@ -1,0 +1,699 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>Problem Set</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41466</md:content-id>
+  <md:title>Problem Set</md:title>
+  <md:abstract>Problem Set for Graphing with MATLAB</md:abstract>
+  <md:uuid>1f815412-2e2d-40db-8ba4-8768b0658e47</md:uuid>
+</metadata>
+
+<content>
+  <exercise id="eip-781"><problem id="eip-846">
+  <para id="eip-491">Plot <m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:plus/>
+      <m:ci>a</m:ci>
+      <m:apply>
+        <m:times/>
+        <m:ci>b</m:ci>
+        <m:ci>x</m:ci>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math>, using the specified coefficients and ranges (use increments of 0.1): 
+
+<list id="exerciselist" list-type="enumerated" number-style="lower-alpha"><item><m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>a</m:ci>
+    <m:cn>2</m:cn>
+  </m:apply>
+</m:math>, <m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>b</m:ci>
+    <m:cn>0.3</m:cn>
+  </m:apply>
+</m:math>
+
+for 
+<m:math>
+  <m:apply>
+    <m:leq/>
+    <m:cn>0</m:cn>
+    <m:ci>x</m:ci>
+    <m:cn>5</m:cn>
+  </m:apply>
+</m:math></item>
+
+ 
+
+<item><m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>a</m:ci>
+    <m:cn>3</m:cn>
+  </m:apply>
+</m:math>, <m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>b</m:ci>
+    <m:cn>0</m:cn>
+  </m:apply>
+</m:math> for
+<m:math>
+  <m:apply>
+    <m:leq/>
+    <m:cn>0</m:cn>
+    <m:ci>x</m:ci>
+    <m:cn>10</m:cn>
+  </m:apply>
+</m:math>
+</item>
+  
+
+
+<item><m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>a</m:ci>
+    <m:cn>4</m:cn>
+  </m:apply>
+</m:math>,
+ <m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>b</m:ci>
+    <m:cn>-0.3</m:cn>
+  </m:apply>
+</m:math> for <m:math>
+  <m:apply>
+    <m:leq/>
+    <m:cn>0</m:cn>
+    <m:ci>x</m:ci>
+    <m:cn>15</m:cn>
+  </m:apply>
+</m:math></item>
+</list>
+
+
+
+</para>
+</problem>
+
+<solution id="eip-604">
+  <para id="eip-795"><list id="solutionlist" list-type="enumerated" number-style="lower-alpha"><item>
+<code id="eip-id1167175375346" display="block">a=2; b=.3; x=[0:.1:5]; y=a+b*x; 
+plot(x,y),title('Graph of y=a+bx'),xlabel('x'),ylabel('y'),grid
+</code>
+</item>
+  
+<item>
+<code id="eip-id1167175375346_1" display="block">a=3; b=.0; x=[0:.1:10]; y=a+b*x; 
+plot(x,y),title('Graph of y=a+bx'),xlabel('x'),ylabel('y'),grid
+</code>
+</item>
+  
+<item>
+<code id="eip-id1167160984472" display="block">a=2; b=.3; x=[0:.1:5]; y=a+b*x; 
+plot(x,y),title('Graph of y=a+bx'),xlabel('x'),ylabel('y'),grid
+</code>
+</item>
+</list>
+
+  </para>
+</solution>
+</exercise><exercise id="eip-594"><problem id="eip-618">
+  <para id="eip-700">Plot the following functions, using increments of 0.01 and <m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>a</m:ci>
+    <m:cn>6</m:cn>
+  </m:apply>
+</m:math>, <m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>b</m:ci>
+    <m:cn>0.8</m:cn>
+  </m:apply>
+</m:math>, <m:math>
+  <m:apply>
+    <m:leq/>
+    <m:cn>0</m:cn>
+    <m:ci>x</m:ci>
+    <m:cn>5</m:cn>
+  </m:apply>
+</m:math>: 
+
+<list id="functionlist" list-type="enumerated" number-style="lower-alpha"><item><m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:plus/>
+      <m:ci>a</m:ci>
+      <m:apply>
+        <m:power/>
+        <m:ci>x</m:ci>
+        <m:ci>b</m:ci>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math>
+</item>
+  
+
+<item><m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:times/>
+      <m:ci>a</m:ci>
+      <m:apply>
+        <m:power/>
+        <m:ci>x</m:ci>
+        <m:ci>b</m:ci>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math>
+</item>
+
+<item>
+<m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:times/>
+      <m:ci>a</m:ci>
+      <m:apply>
+        <m:sin/>
+        <m:ci>x</m:ci>
+      </m:apply>
+    </m:apply>
+  </m:apply>
+</m:math>
+</item>
+</list>
+
+</para>
+</problem>
+
+<solution id="eip-197">
+  <para id="eip-256"><list id="solutionlist2" list-type="enumerated" number-style="lower-alpha"><item>
+<code id="eip-id1167175375346_a" display="block">a=6; b=.8; x=[0:.01:5]; y=a+x.^b; 
+plot(x,y),title('Graph of y=a+x^b'),xlabel('x'),ylabel('y'),grid
+</code>
+<media id="Sol_a" alt="2a">
+       
+  <image mime-type="image/png" src="../../media/2a.png"/>
+         
+</media>
+
+</item>
+  
+<item>
+<code id="eip-id1167175375346_b" display="block">a=6; b=.8; x=[0:.01:5]; y=a*x.^b; 
+plot(x,y),title('Graph of y=ax^b'),xlabel('x'),ylabel('y'),grid
+</code>
+<media id="Sol_b" alt="2a">
+       
+  <image mime-type="image/png" src="../../media/2b.png"/>
+         
+</media>
+</item>
+  
+<item>
+<code id="eip-id1167175375346_c" display="block">a=6; x=[0:.01:5]; y=a*sin(x); 
+plot(x,y),title('Graph of y=a*sin(x)'),xlabel('x'),ylabel('y'),grid
+</code>
+<media id="Sol_c" alt="2a">
+       
+  <image mime-type="image/png" src="../../media/2c.png"/>
+         
+</media>
+</item>
+</list>
+  </para>
+</solution>
+</exercise><exercise id="eip-167"><problem id="eip-457">
+  <para id="eip-120">Plot function
+
+<m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:divide/>
+      <m:apply>
+        <m:sin/>
+        <m:ci>x</m:ci>
+      </m:apply>
+      <m:ci>x</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math>
+
+for
+
+<m:math>
+  <m:apply>
+    <m:leq/>
+    <m:apply>
+      <m:divide/>
+      <m:pi/>
+      <m:cn>100</m:cn>
+    </m:apply>
+    <m:ci>x</m:ci>
+    <m:apply>
+      <m:times/>
+      <m:cn>10</m:cn>
+      <m:pi/>
+    </m:apply>
+  </m:apply>
+</m:math>
+
+using increments of
+
+<m:math>
+  <m:apply>
+    <m:divide/>
+    <m:pi/>
+    <m:cn>100</m:cn>
+  </m:apply>
+</m:math>
+
+
+
+  </para>
+</problem>
+
+<solution id="eip-703">
+  <para id="eip-893"><code id="eip-id1171999205198" display="block">x = pi/100:pi/100:10*pi;
+y = sin(x)./x;
+plot(x,y),title('Graph of y=sin(x)/x'),xlabel('x'),ylabel('y'),grid
+</code>
+<figure id="PlotExercise"><media id="PlotExercise1" alt="PlotExercise">
+       
+  <image mime-type="image/png" src="../../media/PlotExercise.png"/>
+         
+</media>
+  
+<caption>Graph of <m:math>
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:divide/>
+      <m:apply>
+        <m:sin/>
+        <m:ci>x</m:ci>
+      </m:apply>
+      <m:ci>x</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math>
+  </caption></figure>
+
+  </para>
+</solution>
+</exercise><exercise id="eip-406"><problem id="eip-887">
+  <para id="eip-408">Data collected from Boyle's Law experiment are as follows: (Data available <link resource="Chp3_Exercise4.zip">for download.</link>)
+<table id="data" summary="Data">
+<tgroup cols="2"><thead>
+      <row>
+        <entry>Volume [cm^3]</entry>
+        <entry>Pressure [Pa]</entry>
+      </row>
+</thead>
+<tbody>
+  <row>
+    <entry>7.34</entry>
+    <entry>100330</entry>
+  </row>
+  <row>
+    <entry>7.24</entry>
+    <entry>102200</entry>
+  </row>
+  <row>
+    <entry>7.14</entry>
+    <entry>103930</entry>
+  </row>
+  <row>
+    <entry>7.04</entry>
+    <entry>105270</entry>
+  </row>
+  <row>
+    <entry>6.89</entry>
+    <entry>107400</entry>
+  </row>
+  <row>
+    <entry>6.84</entry>
+    <entry>108470</entry>
+  </row>
+  <row>
+    <entry>6.79</entry>
+    <entry>109400</entry>
+  </row>
+  <row>
+    <entry>6.69</entry>
+    <entry>111140</entry>
+  </row>
+  <row>
+    <entry>6.64</entry>
+    <entry>112200</entry>
+  </row>
+</tbody>
+</tgroup>
+</table>
+
+Plot a graph of Pressure vs Volume, annotate your graph.
+  </para>
+</problem>
+
+<solution id="eip-666">
+  <para id="eip-534"><code id="eip-id1171999205198_1" display="block">Pressure=[100330,102200,103930,105270,107400,108470,109400,111140,112200];
+Volume=[7.34,7.24,7.14,7.04,6.89,6.84,6.79,6.69,6.64];
+plot(Volume, Pressure),title('Pressure Volume Graph'),xlabel('Volume'),ylabel('Pressure'),grid
+</code>
+<media id="PVGraph" alt="PV Graph">
+       
+  <image mime-type="image/png" src="../../media/PV.png"/>
+         
+</media>
+
+  </para>
+</solution>
+</exercise><exercise id="eip-53"><problem id="eip-133">
+  <para id="eip-443">The original data collected from Boyle's
+<footnote id="Brockman"> 
+    <cite>
+  <cite-title>Introduction to Engineering: Modeling and Problem Solving</cite-title>
+  by J. B. Brockman, John Wiley and Sons, Inc. © 2009, (p.246)
+</cite>
+</footnote> 
+experiment are as follows: (Data available <link resource="Chp3_Exercise5.zip">for download.</link>)
+<table id="data1" summary="Data">
+<tgroup cols="2"><thead>
+      <row>
+        <entry>Volume [tube-inches]</entry>
+        <entry>Pressure [inches-Hg]</entry>
+      </row>
+</thead>
+<tbody>
+  <row>
+    <entry>12</entry>
+    <entry>29.125</entry>
+  </row>
+  <row>
+    <entry>10</entry>
+    <entry>35.000</entry>
+  </row>
+  <row>
+    <entry>8</entry>
+    <entry>43.688</entry>
+  </row>
+  <row>
+    <entry>6</entry>
+    <entry>58.250</entry>
+  </row>
+  <row>
+    <entry>5</entry>
+    <entry>70.000</entry>
+  </row>
+  <row>
+    <entry>4</entry>
+    <entry>87.375</entry>
+  </row>
+  <row>
+    <entry>3</entry>
+    <entry>116.500</entry>
+  </row>
+</tbody>
+
+</tgroup>
+</table>
+
+Plot a graph of Pressure vs Volume, annotate your graph.
+  </para>
+</problem>
+
+<solution id="eip-463">
+  <para id="eip-553"><code id="eip-id1171999205198_2" display="block">&gt;&gt; P=[29.125,35,43.688,58.25,70,87.375,116.5];
+&gt;&gt; V=[12,10,8,6,5,4,3];
+&gt;&gt; plot(V,P),title('Pressure Volume Graph'),xlabel('Volume'),ylabel('Pressure'),grid
+</code>
+<media id="PVGrapha" alt="PV Graph">
+       
+  <image mime-type="image/png" src="../../media/PVa.png"/>
+         
+</media></para>
+</solution>
+</exercise><exercise id="eip-332"><problem id="eip-306">
+  <para id="eip-116">Display the two plots created earlier in one plot.
+  </para>
+</problem>
+
+<solution id="eip-423">
+  <para id="eip-307"><media id="PVGraphb" alt="PV Graph">
+       
+  <image mime-type="image/png" src="../../media/PVb.png"/>
+         
+</media>
+  </para>
+</solution>
+</exercise><exercise id="eip-844"><problem id="eip-277">
+  <para id="eip-668">A tensile test of SAE 1020 steel produced the data below (Data available <link resource="Chp3_Exercise7.zip">for download.</link>)
+<footnote id="Shackelford"> 
+    <cite>
+  <cite-title>Introduction to Materials Science for Engineers | Instructor's Manual</cite-title>
+  by J. F. Shackelford, Macmillan Publishing Company. © 1992, (p.440)
+</cite>
+</footnote> 
+experiment are as follows:
+<table id="data3" summary="Data">
+<tgroup cols="2"><thead>
+      <row>
+        <entry>Extension [mm]</entry>
+        <entry>Load [kN]</entry>
+      </row>
+</thead>
+<tbody>
+  <row>
+    <entry>0.00</entry>
+    <entry>0.0</entry>
+  </row>
+  <row>
+    <entry>0.09</entry>
+    <entry>1.9</entry>
+  </row>
+  <row>
+    <entry>0.31</entry>
+    <entry>6.1</entry>
+  </row>
+  <row>
+    <entry>0.47</entry>
+    <entry>9.4</entry>
+  </row>
+  <row>
+    <entry>2.13</entry>
+    <entry>11.0</entry>
+  </row>
+  <row>
+    <entry>5.05</entry>
+    <entry>11.7</entry>
+  </row>
+  <row>
+    <entry>10.50</entry>
+    <entry>12.0</entry>
+  </row>
+  <row>
+    <entry>16.50</entry>
+    <entry>11.9</entry>
+  </row>
+  <row>
+    <entry>23.70</entry>
+    <entry>10.7</entry>
+  </row>
+  <row>
+    <entry>27.70</entry>
+    <entry>9.3</entry>
+  </row>
+  <row>
+    <entry>34.50</entry>
+    <entry>8.1</entry>
+  </row>
+</tbody>
+
+
+
+</tgroup>
+</table>
+
+Plot a graph of Load vs Extension, annotate your graph.
+  
+  </para></problem>
+
+<solution id="eip-728">
+  <para id="eip-791"><code id="eip-id1171999205198_4" display="block">Extension=[0.00,0.09,0.31,0.47,2.13,5.05,10.50,16.50,23.70,27.70,34.50];
+Load=[0.0,1.9,6.1,9.4,11.0,11.7,12.0,11.9,10.7,9.3,8.1];
+
+plot(Extension, Load),title('Load versus Extension Curve'),xlabel('Extension'),ylabel('Load'),grid
+</code>
+<media id="LoadVsExtension" alt="LoadVsExtension">
+       
+  <image mime-type="image/png" src="../../media/LoadVsExtension.png"/>
+         
+</media>
+  </para>
+</solution>
+</exercise><exercise id="eip-763"><problem id="eip-290">
+  <para id="eip-304">Given below is Stress-Strain data for a type 304 stainless steel.
+<footnote id="Shackelford_1"> 
+    <cite>
+  <cite-title>Introduction to Materials Science for Engineers</cite-title>
+  by J. F. Shackelford, Macmillan Publishing Company. © 1985, (p.304)
+</cite>
+</footnote> 
+experiment are as follows: (Data available <link resource="Chp3_Exercise8.zip">for download.</link>)
+<table id="data5" summary="Data">
+<tgroup cols="2"><thead>
+      <row>
+        <entry>Stress [MPa]</entry>
+        <entry>Strain [mm/mm]</entry>
+      </row>
+</thead>
+<tbody>
+  <row>
+    <entry>0.0</entry>
+    <entry>0.0000</entry>
+  </row>
+  <row>
+    <entry>38.6</entry>
+    <entry>0.0002</entry>
+  </row>
+  <row>
+    <entry>77.2</entry>
+    <entry>0.0004</entry>
+  </row>
+  <row>
+    <entry>115.8</entry>
+    <entry>0.0006</entry>
+  </row>
+  <row>
+    <entry>154.4</entry>
+    <entry>0.0008</entry>
+  </row>
+  <row>
+    <entry>193.0</entry>
+    <entry>0.0010</entry>
+  </row>
+  <row>
+    <entry>218.0</entry>
+    <entry>0.0012</entry>
+  </row>
+  <row>
+    <entry>232.0</entry>
+    <entry>0.0014</entry>
+  </row>
+  <row>
+    <entry>258.0</entry>
+    <entry>0.0020</entry>
+  </row>
+  <row>
+    <entry>268.0</entry>
+    <entry>0.0025</entry>
+  </row>
+  <row>
+    <entry>273.0</entry>
+    <entry>0.0030</entry>
+  </row>
+  <row>
+    <entry>278.0</entry>
+    <entry>0.0035</entry>
+  </row>
+  <row>
+    <entry>282.0</entry>
+    <entry>0.0040</entry>
+  </row>
+  <row>
+    <entry>320.0</entry>
+    <entry>0.0200</entry>
+  </row>
+  <row>
+    <entry>382.0</entry>
+    <entry>0.0500</entry>
+  </row>
+  <row>
+    <entry>466.0</entry>
+    <entry>0.1000</entry>
+  </row>
+  <row>
+    <entry>520.0</entry>
+    <entry>0.1500</entry>
+  </row>
+  <row>
+    <entry>548.0</entry>
+    <entry>0.2000</entry>
+  </row>
+  <row>
+    <entry>550.0</entry>
+    <entry>0.2100</entry>
+  </row>
+  <row>
+    <entry>538.0</entry>
+    <entry>0.2500</entry>
+  </row>
+  <row>
+    <entry>480.0</entry>
+    <entry>0.3000</entry>
+  </row>
+
+</tbody>
+
+
+
+
+
+
+</tgroup>
+</table>
+
+Plot a graph of Stress vs Strain, annotate your graph.
+  
+  
+  </para></problem>
+
+<solution id="eip-811">
+  <para id="eip-200">The data can be entered using Variable Editor:
+<newline/>
+<newline/>
+<media id="variables" alt="variables">
+       
+  <image mime-type="image/png" src="../../media/variables.png"/>
+         
+</media>
+<newline/>
+<newline/>
+Then execute the following:
+<newline/>
+<code id="eip-id1172271988496" display="block">plot(Strain,Stress),title('Stress versus Strain Curve'),xlabel('Strain [mm/mm]'),ylabel('Stress [mPa]'),grid
+</code>
+<newline/>
+<media id="StressStrain" alt="StressStrain">
+       
+  <image mime-type="image/png" src="../../media/StressStrain.png"/>
+         
+</media>
+
+</para>
+</solution>
+</exercise></content>
+
+</document>

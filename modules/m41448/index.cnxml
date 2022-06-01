@@ -1,0 +1,234 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+
+<title>Regression Analysis</title>
+<metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m41448</md:content-id>
+  <md:title>Regression Analysis</md:title>
+  <md:abstract>Basic curve fitting and linear regression.</md:abstract>
+  <md:uuid>e4bb5d69-216e-4b2a-890e-536dedad60e9</md:uuid>
+</metadata>
+
+<content>
+  <para id="eip-333"><media id="RegressionAnalysis" alt="RegressionAnalysis">
+       
+  <image mime-type="image/png" src="../../media/RegressionAnalysis.jpg"/>
+         
+</media>
+</para><section id="eip-800"><title>What is Regression Analysis?</title><para id="eip-168">Suppose we calculate some variable of interest, y, as a function of some other variable x. We call y the dependent variable and x the independent variable. For example, consider the data set below,  taken from a simple experiment involving a vehicle, its velocity versus time is tabulated. In this case, velocity is a function of time, thus velocity is the dependent variable and the time is the independent variable.    
+</para><table id="eip-886" summary="Vehicle velocity versus time.">
+<tgroup cols="2"><thead>
+      <row>
+        <entry>Time [s]</entry>
+        <entry>Velocity [m/s]</entry>
+      </row>
+</thead>
+<tbody>
+  <row>
+    <entry>0</entry>
+    <entry>20</entry>
+  </row>
+  <row>
+    <entry>10</entry>
+    <entry>39</entry>
+  </row>
+  <row>
+    <entry>20</entry>
+    <entry>67</entry>
+  </row>
+  <row>
+    <entry>30</entry>
+    <entry>89</entry>
+  </row>
+  <row>
+    <entry>40</entry>
+    <entry>111</entry>
+  </row>
+  <row>
+    <entry>50</entry>
+    <entry>134</entry>
+  </row>
+  <row>
+    <entry>60</entry>
+    <entry>164</entry>
+  </row>
+  <row>
+    <entry>70</entry>
+    <entry>180</entry>
+  </row>
+  <row>
+    <entry>80</entry>
+    <entry>200</entry>
+  </row>
+</tbody>
+
+
+
+</tgroup><caption>Vehicle velocity versus time.</caption>
+</table><para id="eip-222">In its simplest form regression analysis involves fitting the best straight line relationship to explain how the variation in a dependent variable, y, depends on the variation in an independent variable, x. In our example above, once the relationship (in this case a linear relationship) has been estimated we can produce a linear equation in the following form:</para><equation id="eip-842"><m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:times/>
+        <m:ci>m</m:ci>
+        <m:ci>x</m:ci>
+      </m:apply>
+      <m:ci>n</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math></equation><para id="eip-775">And once an analytic equation such as the one above has been determined, dependent variables at intermediate independent values can be computed. </para></section><section id="eip-361"><title>Performing Linear Regression</title><para id="eip-165">Regression analysis with MATLAB is easy. The MATLAB Basic Fitting GUI allows us to interactively to do "curve fitting" which is a method to arrive at the best "straight line" fit for linear equations or the best curve fit for a polynomial up to the tenth degree. The procedure to perform a curve fitting with MATLAB is as follows:
+</para><list id="eip-232" list-type="enumerated" number-style="arabic"><item>Input the variables,</item>
+<item>Plot the data,</item>
+<item>Initialize the Basic Fitting GUI,</item>
+<item>Select the desired regression analysis parameters.</item></list></section><example id="eip-456"><para id="eip-897">
+Using the data set above, determine the relationship between velocity and time.
+</para><para id="eip-528">First, let us input the variables (Workspace &gt; New variable) as shown in the following figures. </para><para id="eip-504"><figure id="NewVariable"><media id="NewVariable1" alt="NewVariable">
+       
+  <image mime-type="image/png" src="../../media/Workspace10.PNG"/>
+         
+</media>
+  
+<caption>A new variable is created in the Workspace.
+  </caption></figure>
+</para><para id="eip-138"><figure id="NewVariable2"><media id="NewVariable3" alt="NewVariable">
+       
+  <image mime-type="image/png" src="../../media/Workspace11.PNG"/>
+         
+</media>
+  
+<caption>New variables are entered in the Variable Editor.
+  </caption></figure></para><para id="eip-392">Second, we will plot the data by typing in <code>plot(time,velocity)</code> at the MATLAB prompt. The following plot is generated, select Tools &gt; Basic Fitting:</para><para id="eip-792"><figure id="NewVariable4"><media id="NewVariable5" alt="NewVariable">
+       
+  <image mime-type="image/png" src="../../media/Workspace12.PNG"/>
+         
+</media>
+  
+<caption>A plot is generated in Figure 1. The Basic Fitting tool can be initialized from Tools &gt; Basic Fitting.
+  </caption></figure></para><para id="eip-179">In the "Basic Fitting" window, select "linear" and "Show equations". The best fitting linear line along with the corresponding equation are displayed on the plot:</para><para id="eip-968"><figure id="NewVariable6"><media id="NewVariable7" alt="NewVariable">
+       
+  <image mime-type="image/png" src="../../media/Workspace13.PNG"/>
+         
+</media>
+  
+<caption>Basic Fitting window is used to select the desired regression analysis parameters.
+  </caption></figure></para>
+</example><para id="eip-562">Now let us do another curve fitting and obtain an equation for the function. Using that equation, we can evaluate the function at a desired value with <code>polyval</code>.</para><example id="eip-152"><para id="eip-31">The following is a collection of data for an iron-constantan thermocouple (data available <link resource="Chp7_Example2.zip">for download</link>).
+
+<footnote id="McGraw-Hill"> 
+    <cite>
+  <cite-title>Engineering Fundamentals and Problem Solving</cite-title>
+  by Arvid  R.  Eide, Roland  Jenison, Larry  L.  Northup, Steven K. Mikelson , 
+McGraw-Hill Higher Education. © 2007 p.114
+</cite>
+</footnote> </para><table id="eip-712" summary="Temperature [C] vs Voltage [mV]">
+<tgroup cols="2"><thead>
+      <row>
+        <entry>Temperature [C]</entry>
+        <entry>Voltage [mV]</entry>
+      </row>
+</thead>
+<tbody>
+  <row>
+    <entry>50</entry>
+    <entry>2.6</entry>
+  </row>
+  <row>
+    <entry>100</entry>
+    <entry>6.7</entry>
+  </row>
+  <row>
+    <entry>150</entry>
+    <entry>8.8</entry>
+  </row>
+  <row>
+    <entry>200</entry>
+    <entry>11.2</entry>
+  </row>
+  <row>
+    <entry>300</entry>
+    <entry>17.0</entry>
+  </row>
+  <row>
+    <entry>400</entry>
+    <entry>22.5</entry>
+  </row>
+  <row>
+    <entry>500</entry>
+    <entry>26</entry>
+  </row>
+  <row>
+    <entry>600</entry>
+    <entry>32.5</entry>
+  </row>
+  <row>
+    <entry>700</entry>
+    <entry>37.7</entry>
+  </row>
+  <row>
+    <entry>800</entry>
+    <entry>41</entry>
+  </row>
+  <row>
+    <entry>900</entry>
+    <entry>48</entry>
+  </row>
+  <row>
+    <entry>1000</entry>
+    <entry>55.2</entry>
+  </row>
+</tbody>
+
+
+</tgroup><caption>Temperature [C] vs Voltage [mV]</caption>
+</table><list id="eip-261" list-type="enumerated" number-style="lower-alpha"><item>Plot a graph with Temperature as the independent variable.</item>
+<item>Determine the equation of the relationship using the Basic Fitting tools.</item>
+<item>Estimate the Voltage that corresponds to a Temperature of 650 C and 1150 C.</item></list><para id="eip-269">We will input the variables first:</para><code id="eip-335" display="block">Temp=[50;100;150;200;300;400;500;600;700;800;900;1000]</code><code id="eip-362" display="block">Voltage=[2.6;6.7;8.8;11.2;17;22.5;26;32.5;37.7;41;48;55.2]</code><para id="eip-71">To plot the graph, type in: </para><code id="eip-784" display="block">plot(Temp,Voltage)</code><para id="eip-9">We can now use the Plot Tools and Basic Fitting settings and determine the equation: </para><para id="eip-666"><figure id="NewVariable8"><media id="NewVariable9" alt="NewVariable">
+       
+  <image mime-type="image/png" src="../../media/Workspace14.PNG"/>
+         
+</media>
+  
+<caption>Basic Fitting window is used to select the desired regression analysis parameters.
+  </caption></figure></para><para id="eip-696">By clicking the right arrow twice at the bottom right corner on the Basic Fitting window, we can evaluate the function at a desired value. See the figure below which illustrates this process for the temperature value 1150 C. </para><para id="eip-472"><figure id="Workspace15"><media id="Workspace15_1" alt="Evalu">
+       
+  <image mime-type="image/png" src="../../media/Workspace15.PNG"/>
+         
+</media>
+  
+<caption>Estimating the Voltage that corresponds to a Temperature of 1150 C.
+  </caption></figure>
+</para><para id="eip-284">Now let us check our answer with a technique we learned earlier. As displayed on the plot, we have obtained the following equation: <m:math display="display">
+  <m:apply>
+    <m:eq/>
+    <m:ci>y</m:ci>
+    <m:apply>
+      <m:plus/>
+      <m:apply>
+        <m:times/>
+        <m:ci>0.052831</m:ci>
+        <m:ci>x</m:ci>
+      </m:apply>
+      <m:ci>0.67202</m:ci>
+    </m:apply>
+  </m:apply>
+</m:math>
+
+This equation can be entered as polynomial and evaluated at 650 and 1150 as follows:</para><code id="eip-756" display="block">&gt;&gt; p=[0.052831,0.67202]
+
+p =
+
+    0.0528    0.6720
+
+&gt;&gt; polyval(p,1150)
+
+ans =
+
+   61.4277</code></example><section id="eip-509"><title>Summary of Key Points</title><list id="eip-212" list-type="enumerated" number-style="arabic"><item>Linear regression involves fitting the best straight line relationship to explain how the variation in a dependent variable, y, depends on the variation in an independent variable, x,</item>
+<item>Basic Fitting GUI allows us to interactively perform curve fitting,</item>
+<item>Some of the plot fits available are linear, quadratic and cubic functions,</item>
+<item>Basic Fitting GUI can evaluate functions at given points.</item></list></section>
+</content>
+
+</document>
