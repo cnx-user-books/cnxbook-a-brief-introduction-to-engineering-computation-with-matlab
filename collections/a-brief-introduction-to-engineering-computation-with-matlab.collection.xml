@@ -1,12 +1,13 @@
-<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en">
+<?xml version="1.0"?>
+<col:collection xmlns="http://cnx.rice.edu/collxml" xmlns:md="http://cnx.rice.edu/mdml" xmlns:col="http://cnx.rice.edu/collxml" xml:lang="en" authors="Serhat Beyenir">
   <metadata xmlns:md="http://cnx.rice.edu/mdml" mdml-version="0.5">
     <md:content-id>col11371</md:content-id>
     <md:title>A Brief Introduction to Engineering Computation with MATLAB</md:title>
     <md:language>en</md:language>
     <md:license url="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution License</md:license>
     <md:uuid>a93af66d-3ab3-4ec7-8f1b-10dc31b79f3d</md:uuid>
-<md:slug>a-brief-introduction-to-engineering-computation-with-matlab</md:slug>
-</metadata>
+    <md:slug>a-brief-introduction-to-engineering-computation-with-matlab</md:slug>
+  </metadata>
   <col:content>
     <col:module document="m50977"/>
     <col:module document="m41458"/>
