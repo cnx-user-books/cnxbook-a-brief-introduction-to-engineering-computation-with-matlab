@@ -94,7 +94,7 @@
 </tgroup><caption>Operators</caption>
 </table><note id="eip-583">The backslash operator is used to solve linear systems of equations, see <link target-id="eip-482"/>.</note><note id="eip-642" type="important">Matrix is a rectangular array of numbers and formed by rows and columns. For example
 
-<m:math display="display">
+<m:math>
   <m:apply>
     <m:eq/>
     <m:ci>A</m:ci>
@@ -163,7 +163,7 @@
   </m:apply>
 </m:math> </note><note id="eip-265">Array operations refer to element-wise calculations on the arrays, for example if x is an a by b matrix and y is a c by d matrix then x.*y can be performed only if a=c and b=d. Consider the following example, x consists of 2 rows and 3 columns and therefore it is a 2x3 matrix. Likewise, y has 2 rows and 3 columns and an array operation is possible.
 
-<m:math display="display">
+<m:math>
   <m:apply>
     <m:eq/>
     <m:ci>x</m:ci>
@@ -185,7 +185,7 @@
 
 and 
 
-<m:math display="display">
+<m:math>
   <m:apply>
     <m:eq/>
     <m:ci>y</m:ci>
@@ -207,7 +207,7 @@ and
 
 then 
 
-<m:math display="display">
+<m:math>
   <m:apply>
     <m:eq/>
     <m:ci>x.*y</m:ci>
@@ -243,7 +243,7 @@ then
 <item>Addition (+), subtraction (-)</item></list></section></section>
 
 <section id="eip-966"><title>Mathematical Functions</title><para id="eip-494">MATLAB has all of the usual mathematical functions found on a scientific calculator including square root, logarithm, and sine. </para><note id="eip-372" type="important">Typing <code>pi</code> returns the number 3.1416. To find the sine of pi, type in <code>sin(pi)</code> and press enter.</note><note id="eip-686" type="important">The arguments in trigonometric functions are in radians. Multiply degrees by pi/180 to get radians. For example, to calculate sin(90), type in <code>sin(90*pi/180)</code>.</note><note id="eip-320" type="warning">In MATLAB <code>log</code> returns the natural logarithm of the value. To find the ln of 10, type in log(10) and press enter, (ans = 2.3026).</note><note id="eip-105" type="warning">MATLAB accepts <code>log10</code> for common (base 10) logarithm. To find the log of 10, type in log10(10) and press enter, (ans = 1).</note><para id="eip-868">Practice the following examples to familiarize yourself with the common mathematical functions. Be sure to read the relevant <code>help</code> and <code>doc</code> pages for functions that are not self explanatory. </para><example id="eip-854"><para id="eip-135">Calculate the following quantities:
-</para><list id="eip-930" list-type="enumerated" number-style="arabic"><item><m:math display="display">
+</para><list id="eip-930" list-type="enumerated" number-style="arabic"><item><m:math>
   <m:apply>
     <m:divide/>
     <m:apply>
@@ -290,7 +290,7 @@ then
     </m:apply>
   </m:apply>
 </m:math> for d=2</item>
-</list><para id="eip-359">MATLAB inputs and outputs are as follows:</para><list id="eip-619" list-type="enumerated" number-style="arabic"><item><m:math display="display">
+</list><para id="eip-359">MATLAB inputs and outputs are as follows:</para><list id="eip-619" list-type="enumerated" number-style="arabic"><item><m:math>
   <m:apply>
     <m:divide/>
     <m:apply>
@@ -572,7 +572,7 @@ This example is a 5x2 matrix:
 <section id="eip-482"><title>Linear Equations</title><para id="eip-343">Systems of linear equations are very important in engineering studies. In the course of solving a problem, we often reduce the problem to simultaneous equations from which the results are obtained. As you learned earlier, MATLAB stands for Matrix Laboratory and has features to handle matrices. Using the coefficients of simultaneous linear equations, a matrix can be formed to solve a set of simultaneous equations.  
 </para><example id="eip-96"><para id="eip-5">
 Let's solve the following simultaneous equations: 
-</para><equation id="eip-339"><m:math display="display">
+</para><equation id="eip-339"><m:math>
   <m:apply>
     <m:eq/>
     <m:apply>
@@ -582,7 +582,7 @@ Let's solve the following simultaneous equations:
     </m:apply>
     <m:cn>1</m:cn>
   </m:apply>
-</m:math></equation><equation id="eip-437"><m:math display="display">
+</m:math></equation><equation id="eip-437"><m:math>
   <m:apply>
     <m:eq/>
     <m:apply>

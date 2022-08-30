@@ -12,7 +12,7 @@
   <para id="delete_me"><!-- Insert module text here -->
 Determine the value of each of the following.
   </para><exercise id="eip-781"><problem id="eip-846">
-  <para id="eip-491"><m:math display="display">
+  <para id="eip-491"><m:math>
   <m:apply>
     <m:minus/>
     <m:apply>
@@ -262,7 +262,7 @@ Determine the value of each of the following.
 </exercise><exercise id="eip-761"><problem id="eip-223">
   <para id="eip-862">Solve the following system of equations:
 <newline/>
-<m:math display="display">
+<m:math>
   <m:apply>
     <m:eq/>
     <m:apply>
@@ -284,7 +284,7 @@ Determine the value of each of the following.
 
 <newline/>
 
-<m:math display="display">
+<m:math>
   <m:apply>
     <m:eq/>
     <m:apply>
@@ -490,7 +490,7 @@ ans =
 
 
 </tgroup>
-</table><m:math display="display">
+</table><m:math>
   <m:apply>
     <m:eq/>
     <m:ci>σ</m:ci>

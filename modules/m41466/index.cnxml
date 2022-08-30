@@ -10,7 +10,7 @@
 
 <content>
   <exercise id="eip-781"><problem id="eip-846">
-  <para id="eip-491">Plot <m:math display="display">
+  <para id="eip-491">Plot <m:math>
   <m:apply>
     <m:eq/>
     <m:ci>y</m:ci>
@@ -26,13 +26,13 @@
   </m:apply>
 </m:math>, using the specified coefficients and ranges (use increments of 0.1): 
 
-<list id="exerciselist" list-type="enumerated" number-style="lower-alpha"><item><m:math display="display">
+<list id="exerciselist" list-type="enumerated" number-style="lower-alpha"><item><m:math>
   <m:apply>
     <m:eq/>
     <m:ci>a</m:ci>
     <m:cn>2</m:cn>
   </m:apply>
-</m:math>, <m:math display="display">
+</m:math>, <m:math>
   <m:apply>
     <m:eq/>
     <m:ci>b</m:ci>
@@ -52,13 +52,13 @@ for
 
  
 
-<item><m:math display="display">
+<item><m:math>
   <m:apply>
     <m:eq/>
     <m:ci>a</m:ci>
     <m:cn>3</m:cn>
   </m:apply>
-</m:math>, <m:math display="display">
+</m:math>, <m:math>
   <m:apply>
     <m:eq/>
     <m:ci>b</m:ci>
@@ -77,14 +77,14 @@ for
   
 
 
-<item><m:math display="display">
+<item><m:math>
   <m:apply>
     <m:eq/>
     <m:ci>a</m:ci>
     <m:cn>4</m:cn>
   </m:apply>
 </m:math>,
- <m:math display="display">
+ <m:math>
   <m:apply>
     <m:eq/>
     <m:ci>b</m:ci>
@@ -128,13 +128,13 @@ plot(x,y),title('Graph of y=a+bx'),xlabel('x'),ylabel('y'),grid
   </para>
 </solution>
 </exercise><exercise id="eip-594"><problem id="eip-618">
-  <para id="eip-700">Plot the following functions, using increments of 0.01 and <m:math display="display">
+  <para id="eip-700">Plot the following functions, using increments of 0.01 and <m:math>
   <m:apply>
     <m:eq/>
     <m:ci>a</m:ci>
     <m:cn>6</m:cn>
   </m:apply>
-</m:math>, <m:math display="display">
+</m:math>, <m:math>
   <m:apply>
     <m:eq/>
     <m:ci>b</m:ci>
@@ -185,7 +185,7 @@ plot(x,y),title('Graph of y=a+bx'),xlabel('x'),ylabel('y'),grid
 </item>
 
 <item>
-<m:math display="display">
+<m:math>
   <m:apply>
     <m:eq/>
     <m:ci>y</m:ci>

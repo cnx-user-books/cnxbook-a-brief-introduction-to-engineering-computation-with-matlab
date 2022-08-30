@@ -72,11 +72,11 @@ we can now plot the data by typing in <code id="eip-id1170196378387_00" display=
 As shown above, the relationship between distance and time is:
 <newline/>
 <newline/>
-<m:math display="display"><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:minus/><m:apply><m:times/><m:cn>4.8</m:cn><m:ci>x</m:ci></m:apply><m:apply><m:times/><m:cn>1.7</m:cn><m:apply><m:power/><m:cn>10</m:cn><m:apply><m:minus/><m:cn>14</m:cn></m:apply></m:apply></m:apply></m:apply></m:apply></m:math>
+<m:math><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:minus/><m:apply><m:times/><m:cn>4.8</m:cn><m:ci>x</m:ci></m:apply><m:apply><m:times/><m:cn>1.7</m:cn><m:apply><m:power/><m:cn>10</m:cn><m:apply><m:minus/><m:cn>14</m:cn></m:apply></m:apply></m:apply></m:apply></m:apply></m:math>
 <newline/>
 or
 <newline/>
-<m:math display="display"><m:apply><m:eq/><m:ci>Distance</m:ci><m:apply><m:minus/><m:apply><m:times/><m:cn>4.8</m:cn><m:ci>Time</m:ci></m:apply><m:apply><m:times/><m:cn>1.7</m:cn><m:apply><m:power/><m:cn>10</m:cn><m:apply><m:minus/><m:cn>14</m:cn></m:apply></m:apply></m:apply></m:apply></m:apply></m:math>
+<m:math><m:apply><m:eq/><m:ci>Distance</m:ci><m:apply><m:minus/><m:apply><m:times/><m:cn>4.8</m:cn><m:ci>Time</m:ci></m:apply><m:apply><m:times/><m:cn>1.7</m:cn><m:apply><m:power/><m:cn>10</m:cn><m:apply><m:minus/><m:cn>14</m:cn></m:apply></m:apply></m:apply></m:apply></m:apply></m:math>
 
 
 
@@ -145,11 +145,11 @@ we can now plot the data by typing in <code id="eip-id1170196378387_2" display="
 <newline/>As shown above, the relationship between temperature and internal energy is:
 <newline/>
 <newline/>
-<m:math display="display"><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:plus/><m:apply><m:times/><m:cn>1.6</m:cn><m:ci>x</m:ci></m:apply><m:cn>2347.2</m:cn></m:apply></m:apply></m:math>
+<m:math><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:plus/><m:apply><m:times/><m:cn>1.6</m:cn><m:ci>x</m:ci></m:apply><m:cn>2347.2</m:cn></m:apply></m:apply></m:math>
 <newline/>
 or
 <newline/>
-<m:math display="display"><m:apply><m:eq/><m:ci>internal energy</m:ci><m:apply><m:plus/><m:apply><m:times/><m:cn>1.6</m:cn><m:ci>temperature</m:ci></m:apply><m:cn>2347.2</m:cn></m:apply></m:apply></m:math>
+<m:math><m:apply><m:eq/><m:ci>internal energy</m:ci><m:apply><m:plus/><m:apply><m:times/><m:cn>1.6</m:cn><m:ci>temperature</m:ci></m:apply><m:cn>2347.2</m:cn></m:apply></m:apply></m:math>
 
 
 </para></solution>
@@ -216,7 +216,7 @@ we can now plot the data by typing in <code id="eip-id1170196378387_03" display=
 As shown above, the relationship between velocity and time is:
 <newline/>
 <newline/>
-<m:math display="display"><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:plus/><m:apply><m:times/><m:cn>4.8</m:cn><m:apply><m:power/><m:ci>x</m:ci><m:cn>2</m:cn></m:apply></m:apply><m:apply><m:times/><m:cn>2</m:cn><m:ci>x</m:ci></m:apply><m:cn>12</m:cn></m:apply></m:apply></m:math>
+<m:math><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:plus/><m:apply><m:times/><m:cn>4.8</m:cn><m:apply><m:power/><m:ci>x</m:ci><m:cn>2</m:cn></m:apply></m:apply><m:apply><m:times/><m:cn>2</m:cn><m:ci>x</m:ci></m:apply><m:cn>12</m:cn></m:apply></m:apply></m:math>
   </para></solution>
 </exercise>
 </content>

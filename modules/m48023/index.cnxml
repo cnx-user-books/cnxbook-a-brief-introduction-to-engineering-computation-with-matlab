@@ -115,7 +115,7 @@ The html output:
   </para>
 </solution>
 </exercise><exercise id="eip-594"><problem id="eip-618">
-  <para id="eip-700">A force F acting on a body at a distance s from a fixed point is given by <m:math display="display"><m:apply><m:eq/><m:ci>F</m:ci><m:apply><m:plus/><m:apply><m:times/><m:cn>3</m:cn><m:ci>s</m:ci></m:apply><m:apply><m:divide/><m:cn>1</m:cn><m:apply><m:power/><m:ci>s</m:ci><m:cn>2</m:cn></m:apply></m:apply></m:apply></m:apply></m:math>. Write a script to compute the work done when the body moves from the position where s=1 to that where s=10 and and publish your solution to an html file. Include a table of contents in the output file. <link document="m41541" target-id="eip-856">This is the same problem as this Problem you have solved before.</link> 
+  <para id="eip-700">A force F acting on a body at a distance s from a fixed point is given by <m:math><m:apply><m:eq/><m:ci>F</m:ci><m:apply><m:plus/><m:apply><m:times/><m:cn>3</m:cn><m:ci>s</m:ci></m:apply><m:apply><m:divide/><m:cn>1</m:cn><m:apply><m:power/><m:ci>s</m:ci><m:cn>2</m:cn></m:apply></m:apply></m:apply></m:apply></m:math>. Write a script to compute the work done when the body moves from the position where s=1 to that where s=10 and and publish your solution to an html file. Include a table of contents in the output file. <link document="m41541" target-id="eip-856">This is the same problem as this Problem you have solved before.</link> 
 
   </para></problem>
 

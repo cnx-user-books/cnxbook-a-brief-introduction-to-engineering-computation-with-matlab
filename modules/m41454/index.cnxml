@@ -302,7 +302,7 @@ ans =
 </para><section id="eip-453"><title>The <code>trapz</code> Command</title><para id="eip-135">Z = trapz(Y) computes an approximation of the integral of Y using the trapezoidal method.
 </para></section><para id="eip-199">Now, let us see a typical problem.</para></section><example id="eip-381"><para id="eip-874">Given
 
-<m:math display="display">
+<m:math>
   <m:apply>
     <m:eq/>
     <m:ci>Area</m:ci>
@@ -347,7 +347,7 @@ area3=trapz(x,y)
 area3 =
 
    39.0000</code>
-</example><example id="eip-214"><para id="eip-263">Determine the value of the following integral:</para><para id="eip-272"><m:math display="display">
+</example><example id="eip-214"><para id="eip-263">Determine the value of the following integral:</para><para id="eip-272"><m:math>
   <m:apply>
     <m:int/>
     <m:bvar>
@@ -404,7 +404,7 @@ area2 =
       <m:ci>p</m:ci>
     </m:apply>
   </m:apply>
-</m:math></equation><para id="eip-733">If we rearrange the expression pressure as a function of volume, we get:</para><equation id="eip-222"><m:math display="display">
+</m:math></equation><para id="eip-733">If we rearrange the expression pressure as a function of volume, we get:</para><equation id="eip-222"><m:math>
   <m:apply>
     <m:eq/>
     <m:ci>P</m:ci>
@@ -418,7 +418,7 @@ area2 =
       </m:apply>
     </m:apply>
   </m:apply>
-</m:math></equation><para id="eip-396">By considering the initial state, we can determine the value of c:</para><equation id="eip-637"><m:math display="display">
+</m:math></equation><para id="eip-396">By considering the initial state, we can determine the value of c:</para><equation id="eip-637"><m:math>
   <m:apply>
     <m:eq/>
     <m:ci>c</m:ci>

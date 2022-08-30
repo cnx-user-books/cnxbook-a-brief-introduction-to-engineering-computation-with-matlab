@@ -64,7 +64,7 @@
 
 
 </tgroup><caption>Vehicle velocity versus time.</caption>
-</table><para id="eip-222">In its simplest form regression analysis involves fitting the best straight line relationship to explain how the variation in a dependent variable, y, depends on the variation in an independent variable, x. In our example above, once the relationship (in this case a linear relationship) has been estimated we can produce a linear equation in the following form:</para><equation id="eip-842"><m:math display="display">
+</table><para id="eip-222">In its simplest form regression analysis involves fitting the best straight line relationship to explain how the variation in a dependent variable, y, depends on the variation in an independent variable, x. In our example above, once the relationship (in this case a linear relationship) has been estimated we can produce a linear equation in the following form:</para><equation id="eip-842"><m:math>
   <m:apply>
     <m:eq/>
     <m:ci>y</m:ci>
@@ -199,7 +199,7 @@ McGraw-Hill Higher Education. © 2007 p.114
   
 <caption>Estimating the Voltage that corresponds to a Temperature of 1150 C.
   </caption></figure>
-</para><para id="eip-284">Now let us check our answer with a technique we learned earlier. As displayed on the plot, we have obtained the following equation: <m:math display="display">
+</para><para id="eip-284">Now let us check our answer with a technique we learned earlier. As displayed on the plot, we have obtained the following equation: <m:math>
   <m:apply>
     <m:eq/>
     <m:ci>y</m:ci>

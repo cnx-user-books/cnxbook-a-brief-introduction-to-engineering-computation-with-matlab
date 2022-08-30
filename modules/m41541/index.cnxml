@@ -10,7 +10,7 @@
 
 <content>
  <exercise id="eip-476"><problem id="eip-846">
-  <para id="eip-491">Let the function y defined by <m:math display="display">
+  <para id="eip-491">Let the function y defined by <m:math>
   <m:apply>
     <m:eq/>
     <m:ci>y</m:ci>
@@ -57,7 +57,7 @@ area2 =
   </para>
 </solution>
 </exercise><exercise id="eip-727"><problem id="eip-618">
-  <para id="eip-700">Let the function y defined by <m:math display="display">
+  <para id="eip-700">Let the function y defined by <m:math>
   <m:apply>
     <m:eq/>
     <m:ci>y</m:ci>
@@ -317,7 +317,7 @@ WorkDone =
 </exercise><exercise id="eip-165"><problem id="eip-379">
   <para id="eip-489">
 The pressure p and volume v of a given mass of gas are connected by the relation
-<m:math display="display">
+<m:math>
   <m:apply>
     <m:eq/>
     <m:apply>

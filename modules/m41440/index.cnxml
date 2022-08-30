@@ -256,7 +256,7 @@ The volume of the acetylene bottle: 0.480664 cubic meters.</code></section><sect
       ...
       code
     end
-</code></para><example id="eip-844"><para id="eip-547">Calculate <m:math display="display"><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:cos/><m:ci>x</m:ci></m:apply></m:apply></m:math> for <m:math display="display"><m:apply><m:leq/><m:apply><m:minus/><m:pi/></m:apply><m:ci>x</m:ci><m:pi/></m:apply></m:math> using an increment of <m:math display="display"><m:apply><m:divide/><m:pi/><m:cn>4</m:cn></m:apply></m:math>.
+</code></para><example id="eip-844"><para id="eip-547">Calculate <m:math><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:cos/><m:ci>x</m:ci></m:apply></m:apply></m:math> for <m:math><m:apply><m:leq/><m:apply><m:minus/><m:pi/></m:apply><m:ci>x</m:ci><m:pi/></m:apply></m:math> using an increment of <m:math><m:apply><m:divide/><m:pi/><m:cn>4</m:cn></m:apply></m:math>.
 
 <code id="forloop1" display="block">
 for x=-pi:pi/4:pi       
@@ -264,7 +264,7 @@ for x=-pi:pi/4:pi
     fprintf('%8.3f %8.2f \n',x,y); 
 end
 </code>
-</para><para id="eip-21">In the brief script above, <m:math><m:ci>x</m:ci></m:math> is the loop index that is initiated from <m:math><m:apply><m:minus/><m:pi/></m:apply></m:math> and incremented with <m:math display="display"><m:apply><m:divide/><m:pi/><m:cn>4</m:cn></m:apply></m:math> to a final value of <m:math display="display"><m:pi/></m:math>. At the end of each increment, <m:math display="display"><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:cos/><m:ci>x</m:ci></m:apply></m:apply></m:math> is calculated and displayed with the fprintf command. This process continues until <m:math><m:apply><m:eq/><m:ci>x</m:ci><m:pi/></m:apply></m:math>.</para><para id="eip-528">From a previous exercise we know \n creates a new line when included in the fprintf command. Here, we also use %8.3f to specify eight spaces and three decimal places for the first variable x. Likewise %8.2f specifies the formatting for the second variable y but in this case, y is displayed with two decimal places. The result is the following:
+</para><para id="eip-21">In the brief script above, <m:math><m:ci>x</m:ci></m:math> is the loop index that is initiated from <m:math><m:apply><m:minus/><m:pi/></m:apply></m:math> and incremented with <m:math><m:apply><m:divide/><m:pi/><m:cn>4</m:cn></m:apply></m:math> to a final value of <m:math><m:pi/></m:math>. At the end of each increment, <m:math><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:cos/><m:ci>x</m:ci></m:apply></m:apply></m:math> is calculated and displayed with the fprintf command. This process continues until <m:math><m:apply><m:eq/><m:ci>x</m:ci><m:pi/></m:apply></m:math>.</para><para id="eip-528">From a previous exercise we know \n creates a new line when included in the fprintf command. Here, we also use %8.3f to specify eight spaces and three decimal places for the first variable x. Likewise %8.2f specifies the formatting for the second variable y but in this case, y is displayed with two decimal places. The result is the following:
 <code id="forloop2" display="block">
   -3.142    -1.00 
   -2.356    -0.71 
@@ -305,7 +305,7 @@ fprintf('   ----------------\n') % title row
      ...
      code
     end 
-</code></para><example id="eip-993"><para id="eip-629">Using a <code>while</code> loop, calculate <m:math display="display"><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:cos/><m:ci>x</m:ci></m:apply></m:apply></m:math> for <m:math display="display"><m:apply><m:leq/><m:apply><m:minus/><m:pi/></m:apply><m:ci>x</m:ci><m:pi/></m:apply></m:math> using an increment of <m:math display="display"><m:apply><m:divide/><m:pi/><m:cn>4</m:cn></m:apply></m:math>.
+</code></para><example id="eip-993"><para id="eip-629">Using a <code>while</code> loop, calculate <m:math><m:apply><m:eq/><m:ci>y</m:ci><m:apply><m:cos/><m:ci>x</m:ci></m:apply></m:apply></m:math> for <m:math><m:apply><m:leq/><m:apply><m:minus/><m:pi/></m:apply><m:ci>x</m:ci><m:pi/></m:apply></m:math> using an increment of <m:math><m:apply><m:divide/><m:pi/><m:cn>4</m:cn></m:apply></m:math>.
 </para><para id="eip-800">This time we need to initialize the x value outside the loop and then state the test condition in the first line of the while loop. We also need to create an increment statement within the while loop:  
 <code id="while12" display="block">
 x=-pi;
